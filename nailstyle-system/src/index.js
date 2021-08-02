@@ -1,9 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import NailStyle from "./nailstyle/NailStyle";
 
 ReactDOM.render(
-    <App />,
+    <NailStyle />,
   document.getElementById('root')
 );

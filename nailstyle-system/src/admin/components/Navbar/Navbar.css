@@ -1,0 +1,23 @@
+
+.navbar-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    font-family: 'Aladin', cursive;
+    font-size: 4em;
+    color: white;
+}
+
+.categories {
+    font-family: 'Catamaran', sans-serif;
+    font-size: 1em;
+    color: white;
+    
+}
+
+a:hover, a:visited, a:link, a:active {
+    color: white;
+    text-decoration: none;
+}

@@ -3,16 +3,24 @@ import { BsFillCalendarFill, BsPeopleFill, BsGraphUp, BsFillPersonLinesFill} fro
 
 
 function Navbar() {
+
+  const linkStyles = {
+    border: "3px solid rgba(255, 255, 255, 0.35)",
+    backgroundColor: "rgba(255, 255, 255, 0.35)",
+    borderRadius: "9px",
+  }
+
   return (
     <div className="navbar-container">
       <div className="logo">NAIL</div>
       <div className="categories">
         <ul className="links">
           <li>
-            <div className="link">
+            <div className="link" style={linkStyles}>
                 <BsFillCalendarFill className="icon"></BsFillCalendarFill>
                 <div>Bookings</div>
             </div>
+            <div className="hover-link"></div>
           </li>
           <li>
             <div className="link">

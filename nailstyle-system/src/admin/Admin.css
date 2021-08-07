@@ -8,7 +8,7 @@
 .navbar-container {
     display: flex;
     flex-direction: column;
-    width: 30%;
+    width: 23%;
     height: 100vh;
     background-color: #9F2958;
     justify-content: start;
@@ -17,7 +17,7 @@
 
 .content-container {
     display: flex;
-    width: 70%;
+    width: 77%;
     height: 100vh;
     background-color: #F0C8D3;
 }

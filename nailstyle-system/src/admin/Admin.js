@@ -1,20 +1,34 @@
 import Navbar from "./components/Navbar/Navbar";
-import "./Admin.css"
+import "./Admin.css";
+import { useState } from "react";
 
 function Admin() {
-    return (
-        <div className="container">
-            <div className="navbar-container">
-               <Navbar></Navbar>
+  const [activeLink, setActiveLink] = useState([true, false, false, false]);
+  const [bookings, setBookings] = useState(true);
+  const [customers, setCustomers] = useState(false);
+  const [analytics, setAnalytics] = useState(false);
+  const [employee, setEmployee] = useState(false);
 
-            </div>
-            <div className="content-container">
+  return (
+    <div className="container">
+      <div className="navbar-container">
+        <Navbar
+          links = {activeLink}
+          book = {bookings}
+          customer = {customers}
+          analytic = {analytics}
+          employee = {employee}
+          actBooking={(bookings) => setBookings(bookings)}
+          actCustomer={(customers) => setCustomers(customers)}
+          actAnalytic={(analytics) => setAnalytics(analytics)}
+          actEmployee={(employee) => setEmployee(employee)}
+        ></Navbar>
+      </div>
+      <div className="content-container">
+          <div>{String(employee)}</div>
+      </div>
+    </div>
+  );
+}
 
-            </div>
-            
-        </div>
-    );
-  }
-  
-  export default Admin;
-  
+export default Admin;

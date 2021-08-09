@@ -3,7 +3,7 @@ import "./Admin.css";
 import { useState } from "react";
 
 function Admin() {
-  const [activeLink, setActiveLink] = useState([true, false, false, false]);
+  const [tabState, setTabState] = useState([true, false, false, false]);
   const [bookings, setBookings] = useState(true);
   const [customers, setCustomers] = useState(false);
   const [analytics, setAnalytics] = useState(false);
@@ -13,7 +13,7 @@ function Admin() {
     <div className="container">
       <div className="navbar-container">
         <Navbar
-          links = {activeLink}
+          links = {tabState}
           book = {bookings}
           customer = {customers}
           analytic = {analytics}

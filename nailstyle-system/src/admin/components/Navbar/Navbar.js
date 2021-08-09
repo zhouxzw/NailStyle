@@ -14,15 +14,14 @@ const Navbar = (props) => {
 
   //https://stackoverflow.com/questions/55987953/how-do-i-update-states-onchange-in-an-array-of-object-in-react-hooks
   const handleLink = (index) => {
-    let toggle = !props.activeLink[index];
-    let activeLinkCopy = props.activeLink;
-    activeLinkCopy[index] = toggle
-    props.setActiveLink(activeLinkCopy)
+    let toggle = !props.tabState[index];
+    let tabStateCopy = props.tabState;
+    tabStateCopy[index] = toggle
+    props.setTabState(tabStateCopy)
   }
 
   //the following style will be applied to links that are click
   const linkStyles = {
-    border: "3px rgba(255, 255, 255, 0.4)",
     backgroundColor: "rgba(255, 255, 255, 0.4)",
     borderRadius: "9px",
     boxShadow: "0 0 15px rgba(33,33,33,.4)",

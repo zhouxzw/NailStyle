@@ -38,7 +38,6 @@ const Navbar = (props) => {
       }
     })
 
-    console.log(activeCopy)
     if(activeCopy[0] === true){
       props.actBooking(true)
       props.actCustomer(false)
@@ -71,26 +70,26 @@ const Navbar = (props) => {
       <div className="categories">
         <ul className="links">
           <li>
-            <div className="link" style={props.book ? linkStyles : null} onClick={() => trackState(0)}>
+            <div className="link" style={props.checkState.bookings ? linkStyles : null} onClick={() => trackState(0)}>
                 <BsFillCalendarFill className="icon"></BsFillCalendarFill>
                 <div>Bookings</div>
             </div>
             <div className="hover-link"></div>
           </li>
           <li>
-            <div className="link" style={props.customer ? linkStyles : null} onClick={() => trackState(1)}>
+            <div className="link" style={props.checkState.customers ? linkStyles : null} onClick={() => trackState(1)}>
                 <BsPeopleFill className="icon"></BsPeopleFill>
                 <div>Customers</div>
             </div>
           </li> 
           <li>
-            <div className="link" style={props.analytic ? linkStyles : null} onClick={() => trackState(2)}>
+            <div className="link" style={props.checkState.analytics ? linkStyles : null} onClick={() => trackState(2)}>
                 <BsGraphUp className="icon"></BsGraphUp>
                 <div>Analytics</div>
             </div>
           </li>
           <li>
-            <div className="link" style={props.employee ? linkStyles : null} onClick={() => trackState(3)}>
+            <div className="link" style={props.checkState.employee ? linkStyles : null} onClick={() => trackState(3)}>
                 <BsFillPersonLinesFill className="icon"></BsFillPersonLinesFill>
                 <div>Employee</div>
             </div>

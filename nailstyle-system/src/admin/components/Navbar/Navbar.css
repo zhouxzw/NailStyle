@@ -12,7 +12,7 @@
 
 .logo::after{
     content: "STYLE";
-    color: #000000;
+    color: #ff00ae;
 }
 
 .categories {
@@ -45,7 +45,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 15px 30px 15px 30px;
+    padding: 13px 25px 13px 25px;
     border: 3px solid transparent;
     transition: 0.4s ease-out;
     border-radius: 9px;

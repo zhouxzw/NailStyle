@@ -29,7 +29,10 @@ const Navbar = (props) => {
   }
 
   //refactor in the future!
+  //get current active toggle, set it to false
   function trackState(indexPosition){
+
+   
     let activeCopy = (props.links).map(function(state, i) {
       if(i === indexPosition){
         return true

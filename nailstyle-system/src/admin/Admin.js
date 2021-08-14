@@ -36,7 +36,7 @@ function Admin() {
       <div className="navbar-container">
         <Navbar
           links = {tabState}
-          checkState = {bookings, customers, analytics, employee}
+          checkState = {{bookings, customers, analytics, employee}}
           actBooking={(bookings) => setBookings(bookings)}
           actCustomer={(customers) => setCustomers(customers)}
           actAnalytic={(analytics) => setAnalytics(analytics)}

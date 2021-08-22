@@ -1,9 +1,6 @@
-import './NailStyle.css';
-import {
-  BrowserRouter as Router, Route
-} from "react-router-dom";
-
-import Admin from "../admin/Admin"
+import "./NailStyle.css";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Auth from "../admin/Auth";
 
 function NailStyle() {
   return (
@@ -11,7 +8,7 @@ function NailStyle() {
       <Route path="/" exact>
         <div className="parent-container">This is the main dicky</div>
       </Route>
-      <Route path="/admin" component={Admin}></Route>
+      <Route path="/adminlogin" component={Auth}></Route>
     </Router>
   );
 }

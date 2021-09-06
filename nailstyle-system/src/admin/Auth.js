@@ -1,12 +1,19 @@
 import { useState } from "react";
 import axios from "axios";
-import { BrowserRouter as Switch, Route } from "react-router-dom";
-import Admin from "../admin/Admin";
+import {
+  BrowserRouter as Switch,
+  Redirect,
+  Route,
+  useHistory,
+} from "react-router-dom";
+import Protected from "../admin/Protected";
 
-function Auth() {
+function Auth(props) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [token, setToken] = useState(false);
+  const [checkAdminState, setCheckAdminState] = useState(false);
+  //const [token, setToken] = useState(false);
+  const history = useHistory();
 
   const login = () => {
     axios({
@@ -17,7 +24,14 @@ function Auth() {
       },
       withCredentials: true,
       url: "http://localhost:4000/login",
-    }).then((res) => setToken(res.data));
+    }).then((res) => {
+      props.authenticate(res.data);
+      if (res.data === true) {
+        history.push("/admin");
+      } else {
+        history.push("/adminlogin");
+      }
+    });
   };
 
   /*
@@ -48,9 +62,11 @@ function Auth() {
         />
         <button onClick={login}>Login</button>
       </div>
-      <Switch>
-        {token ? <Route path="/admin" component={Admin}></Route> : null}
+      {/*
+            <Switch>
+        <Protected path= auth={token}></Protected>
       </Switch>
+      */}
     </div>
   );
 }

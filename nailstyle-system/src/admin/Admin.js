@@ -1,26 +1,25 @@
 import Navbar from "./components/Navbar/Navbar";
 import "./Admin.css";
 import { useState } from "react";
-import Booking from "./components/Booking/Booking"
-import Customer from "./components/Customer/Customer"
-import Analytic from "./components/Analytic/Analytic"
-import Employee from "./components/Employee/Employee"
-
-
+import Booking from "./components/Booking/Booking";
+import Customer from "./components/Customer/Customer";
+import Analytic from "./components/Analytic/Analytic";
+import Employee from "./components/Employee/Employee";
+import { withRouter } from "react-router-dom";
 
 function Display(props) {
   const display = props.display;
-  if(display.bookings) {
+  if (display.bookings) {
     return <Booking></Booking>;
   }
-  if(display.customers){
-    return <Customer></Customer>
+  if (display.customers) {
+    return <Customer></Customer>;
   }
-  if(display.analytics){
-    return <Analytic></Analytic>
+  if (display.analytics) {
+    return <Analytic></Analytic>;
   }
-  if(display.employee){
-    return <Employee></Employee>
+  if (display.employee) {
+    return <Employee></Employee>;
   }
 }
 
@@ -35,8 +34,8 @@ function Admin() {
     <div className="container">
       <div className="navbar-container">
         <Navbar
-          links = {tabState}
-          checkState = {{bookings, customers, analytics, employee}}
+          links={tabState}
+          checkState={{ bookings, customers, analytics, employee }}
           actBooking={(bookings) => setBookings(bookings)}
           actCustomer={(customers) => setCustomers(customers)}
           actAnalytic={(analytics) => setAnalytics(analytics)}
@@ -44,10 +43,10 @@ function Admin() {
         ></Navbar>
       </div>
       <div className="content-container">
-        <Display display={{bookings, customers, analytics, employee}} />
+        <Display display={{ bookings, customers, analytics, employee }} />
       </div>
     </div>
   );
 }
 
-export default Admin;
+export default withRouter(Admin);

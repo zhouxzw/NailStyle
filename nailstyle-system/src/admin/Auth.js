@@ -1,12 +1,9 @@
 import { useState } from "react";
 import axios from "axios";
-import {
-  BrowserRouter as Switch,
-  Redirect,
-  Route,
-  useHistory,
-} from "react-router-dom";
-import Protected from "../admin/Protected";
+import { BrowserRouter as Switch, useHistory } from "react-router-dom";
+//import Protected from "../admin/Protected";
+
+import "./Auth.css";
 
 function Auth(props) {
   const [username, setUsername] = useState("");
@@ -50,23 +47,22 @@ function Auth(props) {
 
   return (
     <div>
-      <div>
-        <h1>Username</h1>
-        <input
-          placeholder="username"
-          onChange={(e) => setUsername(e.target.value)}
-        />
-        <input
-          placeholder="password"
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <button onClick={login}>Login</button>
+      <div className="admin-login-body">
+        <div className="login-card">
+          <h2>NailStyle</h2>
+          <input
+            placeholder="Username"
+            onChange={(e) => setUsername(e.target.value)}
+          />
+          <input
+            placeholder="Password"
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <button className="login-button" onClick={login}>
+            Login
+          </button>
+        </div>
       </div>
-      {/*
-            <Switch>
-        <Protected path= auth={token}></Protected>
-      </Switch>
-      */}
     </div>
   );
 }

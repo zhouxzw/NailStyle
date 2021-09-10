@@ -1,0 +1,49 @@
+body {
+  background-color: rgb(255, 255, 255);
+}
+
+.admin-login-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-card {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  background-color: #f0c8d3;
+  height: 45vh;
+  width: 40%;
+  border-radius: 20px;
+}
+
+.login-card > h2 {
+  font-family: "Aladin", cursive;
+  font-size: 4em;
+}
+
+input {
+  padding: 10px;
+  margin: 10px;
+  width: 40%;
+  border: 2px solid white;
+  outline: none;
+}
+input:focus {
+  border: 2px solid rgb(0, 0, 0);
+}
+
+.login-button {
+  background-color: white;
+  border: none;
+  margin: 15px;
+  padding: 10px 30px;
+  border-radius: 6px;
+}
+
+.login-button:hover {
+  border: 1px solid black;
+}

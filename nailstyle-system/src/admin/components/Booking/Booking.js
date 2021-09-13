@@ -1,23 +1,29 @@
 import React, { useState } from "react";
 import Calendar from "react-calendar";
-import "react-calendar/dist/Calendar.css";
+
 import "./Booking.css";
 
 const Booking = () => {
   const [date, onChange] = useState(new Date());
+  let dateUS;
+
+  //format date (MM/DD/YYYY)
+  const formatDate = (date) => {
+    dateUS = date.toLocaleDateString("en-US");
+  };
 
   return (
     <div className="booking-container">
       <Calendar
-        className={"calender"}
         minDate={new Date()}
         prev2Label={null}
         next2Label={null}
         showFixedNumberOfWeeks={true}
         onChange={onChange}
         value={date}
+        onClick={formatDate(date)}
       />
-      {console.log("Date ", date)}
+      {console.log(dateUS)}
     </div>
   );
 };

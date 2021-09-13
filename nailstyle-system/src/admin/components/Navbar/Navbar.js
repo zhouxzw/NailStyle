@@ -71,7 +71,7 @@ const Navbar = (props) => {
 
   return (
     <div className="navbar-container">
-      <div className="logo">NAIL</div>
+      <div className="logo">NailStyle</div>
       <div className="categories">
         <ul className="links">
           <li>

@@ -1,0 +1,136 @@
+
+:root {
+    --primary-pink: #DE7E98;
+    --primary-font-color: #303030;
+}
+
+.parent-container {
+    background: white;
+    padding: 0.75em 1.5em;
+}
+
+.home-navbar-container {
+    display: flex;
+    place-content: space-between;
+    align-items: center;
+}
+
+
+.home-logo {
+    height: auto;
+    width: 25%;
+}
+
+nav.menu-btn {
+    display: block;
+}
+
+nav {
+    display: none;
+    padding: 0.85em;
+    width: 60%;
+    position: fixed;
+    z-index: 999;
+    right: 0;
+    top: 0;
+    background: var(--primary-pink);
+    height: 100vh;
+}
+
+.mobile-menu {
+    display: block;
+    cursor: pointer;
+    font-size: 2em;
+    margin-top: -0.25em;
+    
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.home-categories {
+    margin-top: 4em;
+}
+
+.home-categories a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 0.6em 1em;
+    font-size: 0.75em;
+    text-align: right;
+}
+
+
+.mobile-menu-exit {
+    color: white;
+    float: right;
+    cursor: pointer;
+    margin-top: 0.25em;
+    margin-right: 0.5em;
+}
+
+
+@media only screen and (min-width: 768px) {
+
+    .parent-container {
+        background: white;
+        padding: 0.75em 1.5em;
+    }
+
+    .mobile-menu, .mobile-menu-exit {
+        display: none;
+    }
+
+    .home-logo {
+        height: auto;
+        width: 11em;
+    }
+
+    .home-navbar-container {
+        display: grid;
+        grid-template-columns: 200px auto;
+    }
+    
+    nav {
+        display: flex;
+        justify-content: space-between;
+        background: none;
+        position: unset;
+        height: auto;
+        width: 100%;
+        padding: 0;
+    }
+
+    nav ul {
+        display: flex;
+        position: relative;
+    }
+
+    
+    .home-categories a {
+        color: var(--primary-font-color);
+        font-size: calc(0.5em + 0.4vw);
+        padding: 0.1em 1.75em; 
+    }
+
+    ul.home-categories {
+        margin: 0;
+    }
+
+    li.current a {
+        font-weight: bold;
+    }
+
+    li.nav-book-btn a {
+        background-color: var(--primary-pink);
+        color: white;
+        border: 4px solid var(--primary-pink);
+        margin: -0.6em 0 0 2em;
+        padding: 0.25em 1.5em;
+    }
+
+}

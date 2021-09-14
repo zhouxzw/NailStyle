@@ -1,8 +1,7 @@
-body {
-  background-color: rgb(255, 255, 255);
-}
+
 
 .admin-login-body {
+  background-color: rgb(255, 255, 255);
   display: flex;
   justify-content: center;
   align-items: center;

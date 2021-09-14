@@ -7,10 +7,10 @@ function Navbar() {
 
     
   return (
-    <div className="parent-container">
-        <div className="home-navbar-container">
+    <div className="home-parent-ctn">
+        <div className="home-navbar-ctn">
 
-            <div className="logo-container">
+            <div className="logo-ctn">
                 <a href="#">
                     <img className="home-logo" src={NailStyleLogo} alt="NailStyle"/>
                 </a>
@@ -32,7 +32,7 @@ function Navbar() {
             <nav>
                 <BsX id="mobile-exit" className="mobile-menu-exit" alt="Close Navigation"></BsX>
 
-                <ul className="home-categories">
+                <ul className="home-ctgs">
                     <li className="home-link current"><a href="#">HOME</a></li>
                     <li className="home-link"><a href="#">ABOUT</a></li>
                     <li className="home-link"><a href="#">SERVICES</a></li>

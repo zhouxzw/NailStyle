@@ -6,6 +6,7 @@ import Protected from "../admin/Protected";
 import Admin from "../admin/Admin";
 import { useState } from "react";
 import Navbar from "./components/Navbar/Navbar"
+import Hero from "./components/Hero/Hero"
 
 function NailStyle() {
   const [token, setToken] = useState(false);
@@ -16,6 +17,7 @@ function NailStyle() {
       <Switch>
         <Route path="/" exact>
           <Navbar></Navbar>
+          <Hero></Hero>
         </Route>
         <Route path="/adminlogin">
           <Auth authenticate={(token) => setToken(token)}></Auth>

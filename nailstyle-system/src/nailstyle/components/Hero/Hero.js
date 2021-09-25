@@ -12,9 +12,9 @@ function Hero() {
                 <p className="hero-caption">
                     With captivating services from Peace River
                 </p>
-                <p className="hero-btn">
+                <div className="hero-btn">
                     <a href="#">Book an Appointment</a>
-                </p>
+                </div>
             </div>
         </div>
     );

@@ -4,9 +4,10 @@ import { Switch } from "react-router-dom";
 import Auth from "../admin/Auth";
 import Protected from "../admin/Protected";
 import Admin from "../admin/Admin";
-import { useState } from "react";
-import Navbar from "./components/Navbar/Navbar"
-import Hero from "./components/Hero/Hero"
+import React, { useState } from "react";
+import Navbar from "./components/Navbar/Navbar";
+import Hero from "./components/Hero/Hero";
+import Services from "./components/Services/Services";
 
 function NailStyle() {
   const [token, setToken] = useState(false);
@@ -18,6 +19,7 @@ function NailStyle() {
         <Route path="/" exact>
           <Navbar></Navbar>
           <Hero></Hero>
+          <Services></Services>
         </Route>
         <Route path="/adminlogin">
           <Auth authenticate={(token) => setToken(token)}></Auth>

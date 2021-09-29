@@ -108,6 +108,7 @@ function Services() {
       <div className="srvc-parent-ctn">
         <div className="srvc-header-ctn">
           <span>SERVICES</span>
+          <hr className="line1"></hr>
           <p>Our premium manicure and pedicure nail care services...</p>
         </div>
 
@@ -130,7 +131,7 @@ function Services() {
             ))}
           </div>
 
-          <div className="line1"></div>
+          <hr className="line2"></hr>
 
           <div className="srvc-display">
             <ServiceDisplay servicesState={servicesState} />

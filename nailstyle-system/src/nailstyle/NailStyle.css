@@ -1,5 +1,6 @@
 :root {
   --primary-pink: #de7e98;
+  --secondary-pink: #d7598b;
   --primary-font-color: #303030;
 }
 
@@ -7,4 +8,7 @@ body {
   margin: 0;
   background: #e5e5e5;
   font-family: "Catamaran", sans-serif;
+}
+
+.ns-container {
 }

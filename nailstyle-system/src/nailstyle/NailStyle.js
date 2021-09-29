@@ -17,9 +17,11 @@ function NailStyle() {
     <Router>
       <Switch>
         <Route path="/" exact>
-          <Navbar></Navbar>
-          <Hero></Hero>
-          <Services></Services>
+          <div className="ns-container">
+            <Navbar></Navbar>
+            <Hero></Hero>
+            <Services></Services>
+          </div>
         </Route>
         <Route path="/adminlogin">
           <Auth authenticate={(token) => setToken(token)}></Auth>

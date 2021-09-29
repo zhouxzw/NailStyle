@@ -1,78 +1,77 @@
-
 .hero-parent-ctn {
-    background: url(./herobg.jpg) no-repeat;
-    margin-top: 0.75em;
-    padding: 0.5em;
-    background-size: cover;
-    height: 300px;
+  background: url(./herobg.jpg) no-repeat;
+  margin-top: 0.75em;
+  padding: 0.5em;
+  background-size: cover;
+  height: 300px;
 }
 
 .hero-text-ctn {
-    text-align: center;
-    padding: 1.5em;
+  text-align: center;
+  padding: 1.5em;
 }
 
 .hero-text-ctn p {
-    font-family: 'Caladea', serif;
-    color: white;
+  font-family: "Caladea", serif;
+  color: white;
 }
 
 .hero-header {
-    font-style: italic;
-    font-size: 1.6em;
-    padding-top: 2em;
-    margin: 0;
+  font-style: italic;
+  font-size: calc(1.35em + 0.5vw);
+  padding-top: 2em;
+  margin: 0;
 }
 
 .hero-header span {
-    color: var(--primary-pink)
+  color: var(--primary-pink);
 }
 
 .hero-caption {
-    font-size: 0.95em;
-    padding: 1em 0;
-    margin: 0 0 1.5em 0;
+  font-size: calc(0.75em + 0.5vw);
+  padding: 1em 0;
+  margin: 0 0 1.5em 0;
 }
 
 .hero-text-ctn a {
-    text-decoration: none;
-    font-family: 'Caladea', serif;
-    font-size: 0.75em;
-    color: white;
-
+  text-decoration: none;
+  font-family: "Caladea", serif;
+  font-size: 0.75em;
+  color: white;
 }
 
 .hero-btn a {
-    display: inline;
-    border: 2px solid white;
-    padding: 1em 1.25em;
+  display: inline;
+  border: 2px solid white;
+  padding: 1em 1.25em;
 }
 
-
-
 @media only screen and (min-width: 768px) {
+  .hero-parent-ctn {
+    height: calc(15em + 5vw + 5vh);
+  }
 
-    .hero-parent-ctn {
-        height: calc(15em + 5vw + 5vh);
-    }
+  .hero-text-ctn {
+    padding: 2.75em 11.5vw;
+  }
 
-    .hero-text-ctn {
-        text-align: left;
-        padding: 2.75em 3.5em;
-    }
+  .hero-header {
+    font-size: calc(2em + 0.5vw);
+    padding-top: 1em;
+  }
 
-    .hero-header {
-        font-size: calc(2em + 0.5vw);
-        padding-top: 1em;
-    }
+  .hero-caption {
+    font-size: calc(1em + 0.35vw);
+  }
 
-    .hero-caption {
-        font-size: calc(1em + 0.35vw);
-    }
+  .hero-btn a {
+    font-size: calc(0.75em + 0.25vw);
+    padding: 1em 1.25em;
+  }
+}
 
-    .hero-btn a {
-        font-size: calc(.75em + 0.25vw);
-        padding: 1em 1.25em;
-    }
-
+@media only screen and (min-width: 1200px) {
+  .hero-text-ctn {
+    padding: 2.75em 4.5em;
+  }
 }

@@ -1,138 +1,149 @@
-
-
 .home-parent-ctn {
-    background: white;
-    padding: 0.75em 1.25em 0.15em 1.25em;
+  background: white;
+  padding: 1.25em 1.5em 0.75em 1.5em;
 }
 
 .home-navbar-ctn {
-    display: flex;
-    place-content: space-between;
-    align-items: center;
+  display: flex;
+  place-content: space-between;
+  align-items: center;
 }
 
-
 .home-logo {
-    height: auto;
-    width: 30%;
+  height: auto;
+  width: calc(100% - 17.5vw);
+  max-width: 128px;
+}
+
+.logo-ctn {
+  width: 60%;
 }
 
 nav.menu-btn {
-    display: block;
+  display: block;
 }
 
-
 nav {
-    display: none;
-    padding: 0.85em;
-    width: 60%;
-    position: fixed;
-    z-index: 999;
-    right: 0;
-    top: 0;
-    background: var(--primary-pink);
-    height: 100vh;
+  display: none;
+  padding: 0.85em;
+  width: 60%;
+  position: fixed;
+  z-index: 999;
+  right: 0;
+  top: 0;
+  background: var(--primary-pink);
+  height: 100vh;
 }
 
 .mobile-menu {
-    display: block;
-    cursor: pointer;
-    font-size: 2.5em;
-    margin-top: -0.25em;
-    
+  display: block;
+  cursor: pointer;
+  font-size: calc(1.25em + 2vw);
+  margin-top: -0.25em;
 }
 
 ul {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
 }
 
 .home-ctgs {
-    margin-top: 4em;
+  margin-top: 4em;
 }
 
 .home-ctgs a {
-    color: white;
-    text-decoration: none;
-    display: block;
-    padding: 0.6em 1em;
-    font-size: 0.75em;
-    text-align: right;
+  color: white;
+  text-decoration: none;
+  display: block;
+  padding: 0.6em 1em;
+  font-size: 0.75em;
+  text-align: right;
 }
-
 
 .mobile-menu-exit {
-    color: white;
-    float: right;
-    cursor: pointer;
-    margin-top: 0.25em;
-    margin-right: 0.5em;
+  color: white;
+  float: right;
+  cursor: pointer;
+  margin-top: 0.25em;
+  margin-right: 0.5em;
 }
 
-
 @media only screen and (min-width: 768px) {
+  .home-parent-ctn {
+    background: white;
+    padding: 1.25em 0em 0.75em 0em;
+  }
 
-    .home-parent-ctn {
-        background: white;
-        padding: 1.25em 2em 0.75em 2em;
-    }
+  .mobile-menu,
+  .mobile-menu-exit {
+    display: none;
+  }
 
-    .mobile-menu, .mobile-menu-exit {
-        display: none;
-    }
+  .home-logo {
+    height: auto;
+    width: calc(8em + 2vw);
+    max-width: 500px;
+    padding-left: 1.25em;
+  }
 
-    .home-logo {
-        height: auto;
-        width: 11em;
-    }
+  .home-navbar-ctn {
+    display: grid;
+    grid-template-columns: 235px auto;
+    justify-content: space-around;
+    width: auto;
+    max-width: 950px;
+    margin: auto;
+  }
 
-    .home-navbar-ctn {
-        display: grid;
-        grid-template-columns: 200px auto;
-    }
-    
-    nav {
-        display: flex;
-        justify-content: space-between;
-        background: none;
-        position: unset;
-        height: auto;
-        width: 100%;
-        padding: 0;
-    }
+  nav {
+    display: flex;
+    justify-content: space-between;
+    background: none;
+    position: unset;
+    height: auto;
+    width: 100%;
+    padding: 0;
+  }
 
-    nav ul {
-        display: flex;
-        position: relative;
-    }
+  nav ul {
+    display: flex;
+    position: relative;
+  }
 
-    
-    .home-ctgs a {
-        color: var(--primary-font-color);
-        font-size: calc(0.5em + 0.4vw);
-        padding: 0.1em 1.75em; 
-    }
+  .home-ctgs {
+    padding-right: 1.25em;
+  }
 
-    ul.home-ctgs {
-        margin: 0;
-    }
+  .home-ctgs a {
+    color: var(--primary-font-color);
+    font-size: calc(0.7em + 0.15vw);
+    padding: 0.1em 1.35em;
+  }
 
-    li.current a {
-        font-weight: bold;
-    }
+  ul.home-ctgs {
+    margin: 0;
+  }
 
-    li.nav-book-btn a {
-        background-color: var(--primary-pink);
-        color: white;
-        border: 4px solid var(--primary-pink);
-        margin: -0.6em 0 0 2em;
-        padding: 0.25em 1.5em;
-    }
+  li.current a {
+    font-weight: bold;
+  }
 
-    .nav-book-btn a:hover {
-        background-color: #D7598B;
-        border: 4px solid #D7598B;
-    }
+  li.nav-book-btn a {
+    background-color: var(--primary-pink);
+    color: white;
+    border: 4px solid var(--primary-pink);
+    margin: -0.6em 0 0 1.25em;
+    padding: 0.25em 1.25em;
+  }
 
+  .nav-book-btn a:hover {
+    background-color: #d7598b;
+    border: #d7598b 4px solid;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .home-parent-ctn {
+  }
 }

@@ -48,5 +48,5 @@ mongoose.connect(
 
 //Server
 app.listen(4000, () => {
-  console.log("server running");
+  console.log("Server Running");
 });

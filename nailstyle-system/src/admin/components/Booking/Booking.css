@@ -1,8 +1,34 @@
 .booking-container {
   display: flex;
-  justify-content: center;
   align-items: center;
   width: 100vw;
+  flex-direction: column;
+}
+
+.react-calendar {
+  max-width: 100%;
+  background: white;
+  width: 55vw;
+  font-family: "Catamaran", sans-serif;
+  border: none;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  margin-bottom: 3rem;
+  margin-top: 3rem;
+}
+
+.booking-slots {
+  display: flex;
+  flex-direction: column;
+}
+
+.booking-card {
+  display: flex;
+  justify-content: center;
+  width: 100px;
+  height: 50px;
+  background: chartreuse;
+  border: black solid 1px;
 }
 
 .react-calendar__navigation__label {
@@ -10,16 +36,6 @@
 }
 .react-calendar__navigation__label__labelText {
   font-size: 2.3em;
-}
-.react-calendar {
-  max-width: 100%;
-  background: white;
-  line-height: 1.125em;
-  width: 55vw;
-  font-family: "Catamaran", sans-serif;
-  border: none;
-  border-radius: 20px;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .react-calendar__navigation__arrow {

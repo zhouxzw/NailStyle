@@ -100,7 +100,6 @@ router.get("/bookings", async (req, res) => {
 router.get("/bookings", async (req, res) => {
   try {
     const bookings = await Booking.find({ date: req.query.date });
-
     console.log("Data", bookings);
     res.json(bookings);
   } catch (error) {

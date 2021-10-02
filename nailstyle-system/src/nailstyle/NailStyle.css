@@ -10,5 +10,8 @@ body {
   font-family: "Catamaran", sans-serif;
 }
 
-.ns-container {
+.header {
+  font-family: "Caladea", serif;
+  font-size: 2em;
+  color: var(--secondary-pink);
 }

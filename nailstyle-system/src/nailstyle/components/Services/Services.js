@@ -82,8 +82,6 @@ const listOfServices = [
   },
 ];
 
-const desc = [];
-
 function Services() {
   const [servicesState, setService] = useState(() => {
     return listOfServices;
@@ -91,7 +89,7 @@ function Services() {
   const style = { background: null };
 
   //https://stackoverflow.com/questions/62918710/how-to-update-state-with-usestate-in-an-array-of-objects
-  function toggle(i) {
+  function toggleServices(i) {
     let newList = servicesState.map((src) => {
       src.toggled = false;
       if (src.id === i) {
@@ -107,9 +105,12 @@ function Services() {
     <>
       <div className="srvc-parent-ctn">
         <div className="srvc-header-ctn">
-          <span>SERVICES</span>
+          <span className="header">SERVICES</span>
           <hr className="line1"></hr>
-          <p>Our premium manicure and pedicure nail care services...</p>
+          <p>
+            Our premium manicure and pedicure nail care services will leave you
+            feeling refreshed and confident once more.
+          </p>
         </div>
 
         <div className="srvc-panel-ctn">
@@ -117,7 +118,7 @@ function Services() {
             {picListServices.map((src, i) => (
               <>
                 <div
-                  onClick={() => toggle(i)}
+                  onClick={() => toggleServices(i)}
                   className="srvc-ctgs"
                   style={
                     servicesState[i].toggled

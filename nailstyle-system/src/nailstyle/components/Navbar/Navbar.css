@@ -1,6 +1,6 @@
 .home-parent-ctn {
   background: white;
-  padding: 1.25em 1.5em 0.75em 1.5em;
+  padding: 1em 1.5em 0.5em 1.5em;
 }
 
 .home-navbar-ctn {
@@ -89,7 +89,7 @@ ul {
 
   .home-navbar-ctn {
     display: grid;
-    grid-template-columns: 235px auto;
+    grid-template-columns: 230px auto;
     justify-content: space-around;
     width: auto;
     max-width: 950px;
@@ -112,13 +112,13 @@ ul {
   }
 
   .home-ctgs {
-    padding-right: 1.25em;
+    padding-right: 1.75em;
   }
 
   .home-ctgs a {
     color: var(--primary-font-color);
     font-size: calc(0.7em + 0.15vw);
-    padding: 0.1em 1.35em;
+    padding: 0.1em 1.3em;
   }
 
   ul.home-ctgs {

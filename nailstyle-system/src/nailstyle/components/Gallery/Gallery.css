@@ -1,0 +1,142 @@
+.gallery-parent-ctn {
+  margin: 0 auto;
+}
+
+.gallery-header-ctn {
+  text-align: center;
+  padding: 4em 0.5em 1.5em 0.5em;
+}
+
+.gallery-display-ctn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.gallery-passage-ctn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 3px solid var(--primary-pink);
+  background-color: rgba(222, 126, 152, 0.1);
+  margin-bottom: 3vh;
+  width: 82%;
+  height: auto;
+  max-width: 325px;
+}
+
+.gallery-passage-ctn p {
+  margin: 0 auto;
+  padding: 2.75em;
+  font-size: 0.85em;
+}
+
+.gallery-picture-ctn {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.picture-bg-fill {
+  background-color: var(--primary-pink);
+  width: 280px;
+  height: 360px;
+  z-index: 1;
+  position: absolute;
+  margin-left: 2.4em;
+}
+
+.picture-bg-border {
+  border: 3px solid #707070;
+  width: 277px;
+  height: 357px;
+  z-index: 2;
+  position: absolute;
+  margin-top: 1.25em;
+}
+
+.display-ctn {
+  margin-right: 2.5em;
+  margin-top: 2.5em;
+}
+
+.display-picture {
+  width: 280px;
+  height: 360px;
+  z-index: 3;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: relative;
+}
+
+.gallery-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: auto;
+  height: 75px;
+}
+
+.navbar-picture {
+  width: 67px;
+  height: 67px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  cursor: pointer;
+}
+
+.navbar-picture:hover {
+  opacity: 0.8;
+}
+
+@media only screen and (min-width: 900px) {
+  .gallery-display-ctn {
+    flex-direction: row;
+    max-width: 800px;
+    width: 87%;
+  }
+
+  .gallery-passage-ctn {
+    height: 380px;
+    width: 280px;
+    margin-bottom: 4.75em;
+    margin-right: 1.25em;
+  }
+
+  .gallery-passage-ctn p {
+    font-size: 0.8em;
+    padding: 2.75em;
+  }
+
+  .gallery-picture-ctn {
+    margin-left: 1.25em;
+  }
+
+  .picture-bg-border {
+    height: 357px;
+    width: 257px;
+  }
+
+  .picture-bg-fill,
+  .display-picture {
+    height: 360px;
+    width: 260px;
+  }
+
+  .display-ctn {
+  }
+
+  .gallery-navbar {
+    height: 72px;
+  }
+
+  .navbar-picture {
+    height: 62px;
+    width: 62px;
+  }
+}

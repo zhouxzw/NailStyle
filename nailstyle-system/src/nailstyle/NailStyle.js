@@ -8,6 +8,7 @@ import React, { useState } from "react";
 import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
 import Services from "./components/Services/Services";
+import Gallery from "./components/Gallery/Gallery";
 
 function NailStyle() {
   const [token, setToken] = useState(false);
@@ -21,6 +22,7 @@ function NailStyle() {
             <Navbar></Navbar>
             <Hero></Hero>
             <Services></Services>
+            <Gallery></Gallery>
           </div>
         </Route>
         <Route path="/adminlogin">

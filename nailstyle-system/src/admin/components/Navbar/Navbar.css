@@ -1,59 +1,51 @@
-
 .navbar-container {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .logo {
-    font-family: 'Aladin', cursive;
-    font-size: 4em;
-    color: white;
+  font-family: "Aladin", cursive;
+  font-size: 4em;
+  color: white;
 }
-
-
 
 .categories {
-    font-family: 'Catamaran', sans-serif;
-    font-size: 2em;
-    color: white;
-    margin-top: 10vh;
+  font-family: "Catamaran", sans-serif;
+  font-size: 2em;
+  color: white;
+  margin-top: 10vh;
 }
 
-.links{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    list-style-type: none;
-    padding: 0;
+.links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style-type: none;
+  padding: 0;
 }
 
 .links > li {
-    padding: 10px 0px 0px 0px;
-
-
+  padding: 10px 0px 0px 0px;
 }
 
-.icon{
-    margin-right: 1rem;
-    font-size: larger;
+.icon {
+  margin-right: 1rem;
+  font-size: larger;
 }
 
-.link{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 13px 25px 13px 25px;
-    border: 3px solid transparent;
-    transition: 0.4s ease-out;
-    border-radius: 9px;
-
-
-
+.link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 13px 25px 13px 25px;
+  border: 3px solid transparent;
+  transition: 0.4s ease-out;
+  border-radius: 9px;
 }
 
-.link:hover{
-    transition: 0.3s ease-in;
-    background-color: rgba(255, 255, 255, 0.4);
-    box-shadow: 0 0 15px rgba(33,33,33,.4);
-
+.link:hover {
+  transition: 0.3s ease-in;
+  background-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 15px rgba(33, 33, 33, 0.4);
+  cursor: pointer;
 }

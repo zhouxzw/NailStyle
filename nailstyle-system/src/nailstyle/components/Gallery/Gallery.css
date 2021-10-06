@@ -13,6 +13,7 @@
   justify-content: center;
   align-items: center;
   margin: 0 auto;
+  width: 100vw;
 }
 
 .gallery-passage-ctn {
@@ -22,10 +23,9 @@
   text-align: center;
   border: 3px solid var(--primary-pink);
   background-color: rgba(222, 126, 152, 0.1);
-  margin-bottom: 3vh;
-  width: 82%;
-  height: auto;
+
   max-width: 325px;
+  min-height: 375px;
 }
 
 .gallery-passage-ctn p {
@@ -37,35 +37,12 @@
 .gallery-picture-ctn {
   display: flex;
   justify-content: center;
-  position: relative;
-}
-
-.picture-bg-fill {
-  background-color: var(--primary-pink);
-  width: 280px;
-  height: 360px;
-  z-index: 1;
-  position: absolute;
-  margin-left: 2.4em;
-}
-
-.picture-bg-border {
-  border: 3px solid #707070;
-  width: 277px;
-  height: 357px;
-  z-index: 2;
-  position: absolute;
-  margin-top: 1.25em;
-}
-
-.display-ctn {
-  margin-right: 2.5em;
-  margin-top: 2.5em;
+  width: 80%;
 }
 
 .display-picture {
-  width: 280px;
-  height: 360px;
+  width: 17em;
+  height: 25em;
   z-index: 3;
   background-size: cover;
   background-repeat: no-repeat;
@@ -78,12 +55,12 @@
   align-items: center;
   justify-content: space-between;
   width: auto;
-  height: 75px;
+  height: 4.25em;
 }
 
 .navbar-picture {
-  width: 67px;
-  height: 67px;
+  width: 3.75em;
+  height: 3.75em;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -94,7 +71,7 @@
   opacity: 0.8;
 }
 
-@media only screen and (min-width: 900px) {
+@media only screen and (min-width: 768px) {
   .gallery-display-ctn {
     flex-direction: row;
     max-width: 800px;
@@ -102,10 +79,9 @@
   }
 
   .gallery-passage-ctn {
-    height: 380px;
-    width: 280px;
-    margin-bottom: 4.75em;
-    margin-right: 1.25em;
+    height: auto;
+    width: 500px;
+    margin-bottom: 4.55em;
   }
 
   .gallery-passage-ctn p {
@@ -114,7 +90,6 @@
   }
 
   .gallery-picture-ctn {
-    margin-left: 1.25em;
   }
 
   .picture-bg-border {

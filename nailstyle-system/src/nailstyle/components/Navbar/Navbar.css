@@ -1,12 +1,14 @@
 .home-parent-ctn {
+  width: 100%;
   background: white;
-  padding: 1em 1.5em 0.5em 1.5em;
+  padding: 1em 0 0.5em 0;
 }
 
 .home-navbar-ctn {
   display: flex;
   place-content: space-between;
   align-items: center;
+  margin: 0 2em;
 }
 
 .home-logo {

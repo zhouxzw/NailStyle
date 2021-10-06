@@ -38,6 +38,7 @@ export default function Gallery() {
       <div className="gallery-header-ctn">
         <span className="header">GALLERY</span>
         <hr className="line1"></hr>
+        <p className="header-paragraph"></p>
       </div>
       <div className="gallery-display-ctn">
         <div className="gallery-passage-ctn">
@@ -53,8 +54,6 @@ export default function Gallery() {
           </p>
         </div>
         <div className="gallery-picture-ctn">
-          <div className="picture-bg-fill"></div>
-          <div className="picture-bg-border"></div>
           <div className="display-ctn">
             <GalleryDisplay galleryState={galleryState} />
             <div className="gallery-navbar">

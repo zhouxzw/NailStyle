@@ -7,28 +7,13 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 100vw;
   margin: 0 auto;
 }
 
 .srvc-header-ctn {
   text-align: center;
   padding: 4em 0.5em 1.5em 0.5em;
-}
-
-.line1 {
-  margin: 0.75em auto;
-  width: 75px;
-  height: 1px;
-  background-color: var(--secondary-pink);
-  border: none;
-}
-
-.srvc-header-ctn p {
-  font-size: 0.85em;
-  margin: 0 auto;
-  width: 95%;
-  max-width: 350px;
 }
 
 ::-webkit-scrollbar {
@@ -70,10 +55,11 @@
   font-weight: bold;
 }
 
-.srvc-display {
-  position: relative;
+.srvc-display-ctn {
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
   background: url(./pics/bg.jpg) no-repeat;
   background-size: cover;
   background-position: center center;
@@ -82,9 +68,14 @@
   color: white;
 }
 
+.srvc-display {
+  width: 80%;
+  height: auto;
+}
+
 .line3 {
   margin: 1vh auto;
-  width: 80%;
+  width: 100%;
   height: 1px;
   background-color: white;
 }
@@ -92,13 +83,13 @@
 .srvc-display-title {
   font-size: 1.35em;
   font-weight: bold;
-  padding: 7vh 10vw 0 10vw;
+  padding-top: 7vh;
 }
 
 .srvc-display-list {
   display: flex;
   justify-content: space-between;
-  padding: 2vh 10vw 0vh 10vw;
+  padding-top: 2vh;
   font-size: 0.8em;
   font-weight: 200;
 }
@@ -112,18 +103,18 @@ ul.srvc-price li {
 }
 
 .srvc-display-desc {
-  border: 3px solid var(--primary-pink);
-  background-color: rgba(222, 126, 152, 0.1);
-  margin: 10vh auto 6vh auto;
-  padding: 3vh 8vw;
-  width: 65%;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  height: auto;
+  width: 100%;
+  margin-top: 10vh;
   font-size: 0.75em;
   font-weight: 200;
-  overflow: auto;
+}
+
+.srvc-display-desc p {
+  border: 3px solid var(--primary-pink);
+  background-color: rgba(222, 126, 152, 0.1);
+  padding: 2em 2em;
+  margin: 0 auto;
 }
 
 .display-srvc span {
@@ -137,11 +128,12 @@ ul.srvc-price li {
   }
 
   .srvc-header-ctn p {
-    padding: 0 10em;
+    padding: 0 5em;
+    font-size: 0.95em;
   }
 
-  .srvc-display {
-    height: calc(10em + 25vh + 15vw);
+  .srvc-display-ctn {
+    height: 38em;
   }
 
   .srvc-ctgs {
@@ -150,21 +142,16 @@ ul.srvc-price li {
 
   .srvc-display-title {
     font-size: 1.75em;
-    padding: 7vh 3.15em 0vh 3.15em;
-  }
-
-  .line3 {
-    width: 78%;
+    padding-top: 7vh;
   }
 
   .srvc-display-list {
     font-size: 0.95em;
-    padding: 2em 5.75em 0 5.75em;
+    padding-top: 2em;
   }
 
   .srvc-display-desc {
-    width: 69%;
-    padding: 2.5em 2.5em;
+    padding: 2.5em 0;
     font-size: 0.85em;
   }
 }

@@ -105,9 +105,10 @@ function Services() {
     <>
       <div className="srvc-parent-ctn">
         <div className="srvc-header-ctn">
-          <span className="header">SERVICES</span>
           <hr className="line1"></hr>
-          <p>
+          <span className="header">SERVICES</span>
+
+          <p class="header-paragraph">
             Our premium manicure and pedicure nail care services will leave you
             feeling refreshed and confident once more.
           </p>
@@ -134,8 +135,10 @@ function Services() {
 
           <hr className="line2"></hr>
 
-          <div className="srvc-display">
-            <ServiceDisplay servicesState={servicesState} />
+          <div className="srvc-display-ctn">
+            <div className="srvc-display">
+              <ServiceDisplay servicesState={servicesState} />
+            </div>
           </div>
         </div>
       </div>

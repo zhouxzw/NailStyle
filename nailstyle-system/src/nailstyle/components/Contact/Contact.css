@@ -1,0 +1,58 @@
+.contact-parent-ctn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 3em;
+}
+
+.contact-child-ctn {
+  width: 80%;
+}
+
+.contact-header-ctn {
+  text-align: center;
+}
+
+.contact-map-ctn {
+  background-color: gray;
+  width: 350px;
+  height: 350px;
+  margin-bottom: 3em;
+}
+
+.contact-hrs-location {
+  font-weight: bold;
+}
+
+.contact-address,
+.contact-hours,
+.contact-phone-email,
+.contact-social-media {
+  padding: 0.75em 0;
+}
+
+.contact-address p {
+  margin: 0 auto;
+}
+
+.contact-hours {
+  display: flex;
+}
+
+.contact-day {
+  margin-right: 1em;
+}
+
+.contact-phone-email p {
+  margin: 0 auto;
+}
+
+.contact-social-media {
+  margin-bottom: 2em;
+}
+
+.social {
+  font-size: 24px;
+}

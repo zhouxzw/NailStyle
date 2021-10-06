@@ -9,6 +9,8 @@ import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
 import Services from "./components/Services/Services";
 import Gallery from "./components/Gallery/Gallery";
+import Contact from "./components/Contact/Contact";
+import Footer from "./components/Footer/Footer";
 
 function NailStyle() {
   const [token, setToken] = useState(false);
@@ -23,6 +25,8 @@ function NailStyle() {
             <Hero></Hero>
             <Services></Services>
             <Gallery></Gallery>
+            <Contact></Contact>
+            <Footer></Footer>
           </div>
         </Route>
         <Route path="/adminlogin">

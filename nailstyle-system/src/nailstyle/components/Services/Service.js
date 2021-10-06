@@ -24,7 +24,9 @@ export default function Service(props) {
           ))}
         </ul>
       </div>
-      <div className="srvc-display-desc">{description}</div>
+      <div className="srvc-display-desc">
+        <p>{description}</p>
+      </div>
     </>
   );
 }

@@ -1,9 +1,9 @@
 .hero-parent-ctn {
   background: url(./herobg.jpg) no-repeat;
   margin-top: 0.75em;
-  padding: 0.5em;
   background-size: cover;
   height: 300px;
+  width: 100vw;
 }
 
 .hero-text-ctn {
@@ -17,8 +17,8 @@
 }
 
 .hero-header {
-  font-style: italic;
-  font-size: calc(1.35em + 0.5vw);
+  font-weight: bold;
+  font-size: calc(1.25em + 0.5vw);
   padding-top: 2em;
   margin: 0;
 }
@@ -35,7 +35,6 @@
 
 .hero-text-ctn a {
   text-decoration: none;
-  font-family: "Caladea", serif;
   font-size: 0.75em;
   color: white;
 }
@@ -43,35 +42,39 @@
 .hero-btn a {
   display: inline;
   border: 2px solid white;
-  padding: 1em 1.25em;
+  padding: 0.75em 1em;
 }
 
 @media only screen and (min-width: 768px) {
   .hero-parent-ctn {
-    height: calc(15em + 5vw + 5vh);
+    height: calc(12em + 5vw + 5vh);
   }
 
   .hero-text-ctn {
-    padding: 2.75em 11.5vw;
+    padding: 2.75em 3.5em;
   }
 
   .hero-header {
-    font-size: calc(2em + 0.5vw);
     padding-top: 1em;
   }
 
   .hero-caption {
-    font-size: calc(1em + 0.35vw);
+    font-size: calc(0.85em + 0.35vw);
   }
 
   .hero-btn a {
     font-size: calc(0.75em + 0.25vw);
     padding: 1em 1.25em;
+    border: 3px solid white;
   }
 }
 
 @media only screen and (min-width: 1200px) {
   .hero-text-ctn {
     padding: 2.75em 4.5em;
+  }
+
+  .hero-btn a {
+    border: 3px solid white;
   }
 }

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Calendar from "react-calendar";
 import axios from "axios";
 import "./Booking.css";
+import { BsX, BsChevronRight } from "react-icons/bs";
 
 const Booking = () => {
   const [clickedDate, setClickedDate] = useState(() => {
@@ -50,7 +51,23 @@ const Booking = () => {
         {bookings &&
           bookings.map((item, i) => (
             <div className="booking-card" key={i}>
-              {item.name}
+              <div className="card-head">
+                <div>Time</div>
+                <BsX className="cancel-button"></BsX>
+              </div>
+              <div className="card-body">
+                <div className="body-left-content">
+                  <div>Name: {item.name}</div>
+                  <div>Service: {item.service}</div>
+                  <div>Technician: {item.technician}</div>
+                </div>
+                <div className="body-right-content">
+                  <div className="payment-button">
+                    <div>continue to payment</div>
+                    <BsChevronRight></BsChevronRight>
+                  </div>
+                </div>
+              </div>
             </div>
           ))}
       </div>

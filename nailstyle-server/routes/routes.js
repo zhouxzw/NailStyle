@@ -68,13 +68,14 @@ router.post("/confirmappointment", async (req, res) => {
   }
 });
 
-router.post("/book", async (req, res) => {
+router.post("/admin/book", async (req, res) => {
   const booking = new Booking({
     name: req.body.name,
     date: req.body.date,
     service: req.body.service,
     technician: req.body.technician,
     phone: req.body.phone,
+    time: req.body.time,
   });
   try {
     const saveBooking = await booking.save();

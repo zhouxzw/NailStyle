@@ -53,16 +53,30 @@ router.post("/login", (req, res, next) => {
   })(req, res, next);
 });
 
-//route that checks if a customer is in the database...
-router.post("/confirmappointment", async (req, res) => {
+//route (update and insert) that checks finds a customer by phone number and updates their appointments
+//if the customer doesn't exist add her to the collection
+router.patch("/processappointment", async (req, res) => {
   try {
-    const customer = await Customer.find({ phone: req.body.phone });
-    if (customer.length != 0) {
-      console.log("Found customer");
-      res.json(customer);
-    } else {
-      //create new customer
-    }
+    const appendVisit = await Customer.updateOne(
+      { phone: req.body.phone },
+      {
+        name: req.body.name,
+        $push: {
+          visits: [
+            {
+              appointment: {
+                date: req.body.visits[0].appointment.date,
+                service: req.body.visits[0].appointment.service,
+                technician: req.body.visits[0].appointment.technician,
+                price: req.body.visits[0].appointment.price,
+              },
+            },
+          ],
+        },
+      },
+      { upsert: true }
+    );
+    res.json(appendVisit);
   } catch (error) {
     res.json({ message: error });
   }

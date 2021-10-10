@@ -9,8 +9,10 @@ const Booking = () => {
     let initDate = new Date();
     return initDate.toLocaleDateString("en-US").replaceAll("/", "-");
   });
-  const [date, setDate] = useState(new Date());
   const [bookings, setBookings] = useState();
+
+  const [paymentButton, setPaymentButton] = useState();
+  const [showInput, setShowInput] = useState(false);
 
   //format clicked date to (MM/DD/YYYY)
   function onDateChange(newDate) {
@@ -18,6 +20,17 @@ const Booking = () => {
     let selectedDate = newDate.toLocaleDateString("en-US").replaceAll("/", "-");
     setClickedDate(selectedDate);
   }
+
+  //process payment once a customer has finished their service
+  //store client info for future visits
+  function processAppt(item, key) {
+    setPaymentButton(key);
+    setShowInput(true);
+  }
+
+  const paymentAni = {
+    background: "red",
+  };
 
   //Make api request to get all bookings for the 'clicked' date
   useEffect(() => {
@@ -29,6 +42,12 @@ const Booking = () => {
           date: clickedDate,
         },
       });
+      request.data.sort(function (a, b) {
+        return (
+          new Date("2021/12/12 " + a.time) - new Date("2021/12/12 " + b.time)
+        );
+      });
+
       setBookings(request.data);
       console.log("Next Current Bookings:", request.data);
     }
@@ -43,7 +62,6 @@ const Booking = () => {
         next2Label={null}
         showFixedNumberOfWeeks={true}
         onChange={onDateChange}
-        value={date}
         locale={"en-US"}
       />
 
@@ -52,7 +70,7 @@ const Booking = () => {
           bookings.map((item, i) => (
             <div className="booking-card" key={i}>
               <div className="card-head">
-                <div>Time</div>
+                <div>{item.time}</div>
                 <BsX className="cancel-button"></BsX>
               </div>
               <div className="card-body">
@@ -62,9 +80,14 @@ const Booking = () => {
                   <div>Technician: {item.technician}</div>
                 </div>
                 <div className="body-right-content">
-                  <div className="payment-button">
-                    <div>continue to payment</div>
-                    <BsChevronRight></BsChevronRight>
+                  <div
+                    className="payment-button"
+                    buttonKey={i}
+                    onClick={() => processAppt(item, i)}
+                    style={paymentButton === i ? paymentAni : null}
+                  >
+                    {showInput ? null : <div>continue to payment</div>}
+                    {showInput ? null : <BsChevronRight></BsChevronRight>}
                   </div>
                 </div>
               </div>

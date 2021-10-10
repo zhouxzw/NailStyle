@@ -45,7 +45,7 @@
   display: flex;
   flex-direction: column;
   background: #ffffff;
-  height: 17vh;
+  height: 18vh;
   align-items: start;
   font-size: 1.2em;
 }
@@ -80,7 +80,7 @@
   align-items: center;
   transition: ease 0.2s;
   border: 1px solid transparent;
-  border-radius: 5px;
+  border-radius: 3px;
 }
 
 .payment-button:hover {
@@ -88,9 +88,9 @@
 }
 
 .payment-button > div {
-  margin-right: 0.2rem;
+  margin-right: 0.3rem;
   font-weight: bold;
-  padding-left: 0.2rem;
+  padding-left: 0.3rem;
   cursor: pointer;
 }
 

@@ -22,6 +22,10 @@
   flex-direction: column;
 }
 
+.price-input {
+  background: #ececec;
+}
+
 .booking-card {
   display: flex;
   justify-content: center;
@@ -45,7 +49,7 @@
   display: flex;
   flex-direction: column;
   background: #ffffff;
-  height: 18vh;
+  height: 20vh;
   align-items: start;
   font-size: 1.2em;
 }
@@ -71,8 +75,15 @@
 }
 
 .body-right-content {
-  align-self: flex-end;
-  margin-right: 1rem;
+  align-self: center;
+  margin-right: 3.5rem;
+}
+
+.right-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 55vw;
 }
 
 .payment-button {

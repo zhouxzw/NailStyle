@@ -11,8 +11,7 @@ const Booking = () => {
   });
   const [bookings, setBookings] = useState();
 
-  const [paymentButton, setPaymentButton] = useState();
-  const [showInput, setShowInput] = useState(false);
+  const [serivcePrice, setServicePrice] = useState(0.0);
 
   //format clicked date to (MM/DD/YYYY)
   function onDateChange(newDate) {
@@ -21,21 +20,49 @@ const Booking = () => {
     setClickedDate(selectedDate);
   }
 
-  //process payment once a customer has finished their service
-  //store client info for future visits
-  function processAppt(item, key) {
-    setPaymentButton(key);
-    setShowInput(true);
+  //function to make a delete request
+  async function deleteBooking(phone, index) {
+    //after processing remove the card
+    const filterBookings = bookings.filter((item, i) => {
+      return i !== index;
+    });
+    //update state of bookings
+    setBookings(filterBookings);
+
+    const delResponse = await axios.delete("/deletebooking", {
+      params: {
+        phone: phone,
+      },
+    });
   }
 
-  const paymentAni = {
-    background: "red",
-  };
+  //process payment once a customer has finished their service
+  //store client info for future visits
+
+  async function processAppt(client, index) {
+    const response = await axios.patch("/processappointment", {
+      name: client.name,
+      phone: client.phone,
+      visits: [
+        {
+          appointment: {
+            date: client.date,
+            service: client.service,
+            technician: client.technician,
+            price: serivcePrice,
+          },
+        },
+      ],
+    });
+
+    //Remove the processed booking from database
+    deleteBooking(client.phone, index);
+  }
 
   //Make api request to get all bookings for the 'clicked' date
   useEffect(() => {
     async function fetchNextDate(clickedDate) {
-      console.log(clickedDate);
+      //console.log(clickedDate);
 
       const request = await axios.get("/bookings", {
         params: {
@@ -49,7 +76,7 @@ const Booking = () => {
       });
 
       setBookings(request.data);
-      console.log("Next Current Bookings:", request.data);
+      //console.log("Next Current Bookings:", request.data);
     }
     fetchNextDate(clickedDate);
   }, [clickedDate]);
@@ -67,27 +94,42 @@ const Booking = () => {
 
       <div className="booking-slots">
         {bookings &&
-          bookings.map((item, i) => (
-            <div className="booking-card" key={i}>
+          bookings.map((client, i) => (
+            <div className="booking-card" cardid={i} key={i}>
               <div className="card-head">
-                <div>{item.time}</div>
-                <BsX className="cancel-button"></BsX>
+                <div>{client.time}</div>
+                <BsX
+                  className="cancel-button"
+                  onClick={() => deleteBooking(client.phone, i)}
+                ></BsX>
               </div>
               <div className="card-body">
                 <div className="body-left-content">
-                  <div>Name: {item.name}</div>
-                  <div>Service: {item.service}</div>
-                  <div>Technician: {item.technician}</div>
-                </div>
-                <div className="body-right-content">
-                  <div
-                    className="payment-button"
-                    buttonKey={i}
-                    onClick={() => processAppt(item, i)}
-                    style={paymentButton === i ? paymentAni : null}
-                  >
-                    {showInput ? null : <div>continue to payment</div>}
-                    {showInput ? null : <BsChevronRight></BsChevronRight>}
+                  <div>Name: {client.name}</div>
+                  <div>Service: {client.service}</div>
+                  <div>Technician: {client.technician}</div>
+                  <div className="right-flex">
+                    <div>
+                      <label>Price</label>
+                      <input
+                        className="price-input"
+                        placeholder="$CAD"
+                        type="text"
+                        maxLength="6"
+                        onChange={(event) =>
+                          setServicePrice(event.target.value)
+                        }
+                      ></input>
+                    </div>
+                    <div className="body-right-content">
+                      <div
+                        className="payment-button"
+                        onClick={() => processAppt(client, i)}
+                      >
+                        <div>process payment</div>
+                        <BsChevronRight></BsChevronRight>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>

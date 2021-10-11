@@ -122,4 +122,15 @@ router.get("/bookings", async (req, res) => {
   }
 });
 
+//delete a booking
+//using query here because of axios params in front end
+router.delete("/deletebooking", async (req, res) => {
+  try {
+    const removeBook = await Booking.deleteOne({ phone: req.query.phone });
+    res.json(removeBook);
+  } catch (error) {
+    res.json({ message: error });
+  }
+});
+
 module.exports = router;

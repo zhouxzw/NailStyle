@@ -111,6 +111,16 @@ router.get("/bookings", async (req, res) => {
 });
 */
 
+//route to get all customers
+router.get("/customers", async (req, res) => {
+  try {
+    const customers = await Customer.find();
+    res.json(customers);
+  } catch (error) {
+    res.json({ message: error });
+  }
+});
+
 //get bookings based on date
 router.get("/bookings", async (req, res) => {
   try {

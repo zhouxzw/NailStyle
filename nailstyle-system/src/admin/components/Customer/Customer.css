@@ -1,0 +1,89 @@
+.customer-container {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+}
+
+.search-container {
+  display: flex;
+  align-self: start;
+  align-items: center;
+  background: #fff;
+  height: 6vh;
+  margin-top: 4rem;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.search-bar[type="text"] {
+  width: 50vw;
+  border: none;
+  font-size: 1.2rem;
+}
+
+.search-icon {
+  background-color: hsla(336, 59%, 39%, 0.637);
+  color: white;
+  height: 100%;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  border-radius: 10px 0px 0px 10px;
+}
+
+.card-container {
+  margin-top: 10%;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-legend {
+  height: 6vh;
+  background: hsla(336, 59%, 39%, 0.637);
+  display: flex;
+  align-items: center;
+  color: white;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 4px;
+}
+
+.customer-card {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background: #ffe4f7;
+  border: 0px solid black;
+  margin-top: 4px;
+  height: 6vh;
+  cursor: pointer;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 4px;
+}
+
+.card-legend > ul,
+.customer-card > ul,
+.extended-card > ul {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  font-size: larger;
+}
+
+.extended-card > ul {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.card-legend > ul > li,
+.customer-card > ul > li,
+.extended-card > ul > li {
+  width: 30%;
+  margin-left: 2rem;
+}
+
+.extended-card {
+  background-color: white;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 4px;
+}

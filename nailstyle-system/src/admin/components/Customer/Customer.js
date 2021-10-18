@@ -86,10 +86,9 @@ const Customer = () => {
                 }
               })
               .map((customer, i) => (
-                <div>
+                <div key={i}>
                   <div
                     className="customer-card"
-                    key={i}
                     onClick={() => showDetail(customer)}
                   >
                     <ul>

@@ -1,0 +1,15 @@
+.chart-container {
+  display: flex;
+  align-self: center;
+}
+
+.line-chart {
+  background-color: white;
+  width: 65vw;
+  height: 65vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  flex-direction: column;
+}

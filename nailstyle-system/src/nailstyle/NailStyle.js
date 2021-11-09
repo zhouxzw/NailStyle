@@ -6,6 +6,7 @@ import Admin from "../admin/Admin";
 import React, { useState, useContext } from "react";
 import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
+import About from "./components/About/About";
 import Services from "./components/Services/Services";
 import Gallery from "./components/Gallery/Gallery";
 import Contact from "./components/Contact/Contact";
@@ -22,6 +23,7 @@ function NailStyle() {
           <div className="ns-container">
             <Navbar></Navbar>
             <Hero></Hero>
+            <About></About>
             <Services></Services>
             <Gallery></Gallery>
             <Contact></Contact>

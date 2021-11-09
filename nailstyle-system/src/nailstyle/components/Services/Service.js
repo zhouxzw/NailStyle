@@ -8,7 +8,6 @@ export default function Service(props) {
   return (
     <>
       <div className="srvc-display-title">{name}</div>
-      <hr className="line3"></hr>
 
       <div className="srvc-display-list">
         <ul className="srvc-type">

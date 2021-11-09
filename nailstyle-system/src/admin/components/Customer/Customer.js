@@ -62,66 +62,64 @@ const Customer = () => {
           onChange={(event) => setSearch(event.target.value)}
         ></input>
       </div>
-      {
-        <div className="card-container">
-          <div className="card-legend">
-            <ul>
-              <li>Name</li>
-              <li>Phone</li>
-              <li>Visits</li>
-              <li>Total Spent</li>
-            </ul>
-          </div>
-          {customers &&
-            customers
-              .filter((customer) => {
-                if (search === "") {
-                  return customer;
-                } else if (
-                  customer.name.toLowerCase().includes(search.toLowerCase())
-                ) {
-                  return customer;
-                } else if (customer.phone.includes(search)) {
-                  return customer;
-                }
-              })
-              .map((customer, i) => (
-                <div key={i}>
-                  <div
-                    className="customer-card"
-                    onClick={() => showDetail(customer)}
-                  >
-                    <ul>
-                      <li>{customer.name}</li>
-                      <li>{customer.phone}</li>
-                      <li>{customer.visits.length}</li>
-                      <li>${customer.total}</li>
-                    </ul>
-                  </div>
-                  {customer.toggle ? (
-                    <div className="extended-card">
-                      {customer.visits.map((obj) => (
-                        <ul>
-                          <li>
-                            <b>Date:</b> {obj.appointment.date}
-                          </li>
-                          <li>
-                            <b>Service:</b> {obj.appointment.service}
-                          </li>
-                          <li>
-                            <b>Tech:</b> {obj.appointment.technician}
-                          </li>
-                          <li>
-                            <b>Price:</b> ${obj.appointment.price}
-                          </li>
-                        </ul>
-                      ))}
-                    </div>
-                  ) : null}
-                </div>
-              ))}
+      <div className="card-container">
+        <div className="card-legend">
+          <ul>
+            <li>Name</li>
+            <li>Phone</li>
+            <li>Visits</li>
+            <li>Total Spent</li>
+          </ul>
         </div>
-      }
+        {customers &&
+          customers
+            .filter((customer) => {
+              if (search === "") {
+                return customer;
+              } else if (
+                customer.name.toLowerCase().includes(search.toLowerCase())
+              ) {
+                return customer;
+              } else if (customer.phone.includes(search)) {
+                return customer;
+              }
+            })
+            .map((customer, i) => (
+              <div key={i}>
+                <div
+                  className="customer-card"
+                  onClick={() => showDetail(customer)}
+                >
+                  <ul>
+                    <li>{customer.name}</li>
+                    <li>{customer.phone}</li>
+                    <li>{customer.visits.length}</li>
+                    <li>${customer.total}</li>
+                  </ul>
+                </div>
+                {customer.toggle ? (
+                  <div className="extended-card">
+                    {customer.visits.map((obj) => (
+                      <ul>
+                        <li>
+                          <b>Date:</b> {obj.appointment.date}
+                        </li>
+                        <li>
+                          <b>Service:</b> {obj.appointment.service}
+                        </li>
+                        <li>
+                          <b>Tech:</b> {obj.appointment.technician}
+                        </li>
+                        <li>
+                          <b>Price:</b> ${obj.appointment.price}
+                        </li>
+                      </ul>
+                    ))}
+                  </div>
+                ) : null}
+              </div>
+            ))}
+      </div>
     </div>
   );
 };

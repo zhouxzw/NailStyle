@@ -49,7 +49,7 @@
   border: none;
 }
 
-.category-title {
+.service-title {
   color: white;
   font-size: 0.8em;
   font-weight: bold;
@@ -58,7 +58,6 @@
 .srvc-display-ctn {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
   background: url(./pics/bg.jpg) no-repeat;
   background-size: cover;
@@ -105,7 +104,7 @@ ul.srvc-price li {
 .srvc-display-desc {
   height: auto;
   width: 100%;
-  margin-top: 10vh;
+  margin-top: 5em;
   font-size: 0.75em;
   font-weight: 200;
 }
@@ -121,14 +120,14 @@ ul.srvc-price li {
   font-size: 1em;
 }
 
-@media only screen and (min-width: 900px) {
+@media only screen and (min-width: 768px) {
   .srvc-panel-ctn {
     width: 90%;
-    max-width: 800px;
+    max-width: 785px;
+    min-width: 785px;
   }
 
   .srvc-header-ctn p {
-    padding: 0 5em;
     font-size: 0.95em;
   }
 

@@ -105,7 +105,6 @@ function Services() {
     <>
       <div className="srvc-parent-ctn">
         <div className="srvc-header-ctn">
-          <hr className="line1"></hr>
           <span className="header">SERVICES</span>
 
           <p class="header-paragraph">
@@ -127,7 +126,7 @@ function Services() {
                       : { backgroundImage: `url(${src})` }
                   }
                 >
-                  <div className="category-title">{servicesState[i].name}</div>
+                  <div className="service-title">{servicesState[i].name}</div>
                 </div>
               </>
             ))}

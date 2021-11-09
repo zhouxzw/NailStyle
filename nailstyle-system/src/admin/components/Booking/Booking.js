@@ -63,7 +63,7 @@ const Booking = () => {
   useEffect(() => {
     async function fetchNextDate(clickedDate) {
       //console.log(clickedDate);
-
+      
       const request = await axios.get("/bookings", {
         params: {
           date: clickedDate,

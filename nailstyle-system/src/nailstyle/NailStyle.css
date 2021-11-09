@@ -18,34 +18,34 @@ body {
 }
 
 .header {
+  text-align: center;
   display: inline-block;
   padding: 0.25em 0;
-  font-size: 1.15em;
-  font-weight: bold;
-  color: var(--primary-font-color);
+  font-size: 1.05em;
+  font-weight: 400;
+
+  color: var(--primary-pink);
 }
 
 .header-paragraph {
   font-size: 0.85em;
   margin: 0 auto;
-  width: 95%;
+  width: 85%;
   max-width: 450px;
 }
 
 .line1 {
-  margin: 0 auto 0.6em auto;
-  width: auto;
-  height: 3px;
-  background-color: #cccccc;
+  padding: 0;
+  margin: 0 auto 0.75em auto;
+  width: 60px;
   border: none;
+  border-top: medium double #333;
+  color: #333;
+  text-align: center;
 }
 
 @media only screen and (min-width: 768px) {
   .header {
     font-size: 1.45em;
-  }
-
-  .line1 {
-    width: 800px;
   }
 }

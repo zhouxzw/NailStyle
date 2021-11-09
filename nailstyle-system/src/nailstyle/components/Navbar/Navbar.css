@@ -129,6 +129,7 @@ ul {
 
   li.current a {
     font-weight: bold;
+    color: var(--secondary-pink);
   }
 
   li.nav-book-btn a {

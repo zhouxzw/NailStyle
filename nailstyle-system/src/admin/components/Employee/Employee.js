@@ -1,6 +1,9 @@
 const Employee = () => {
-    return (<div>Employee Page</div>);
-  };
-  
-  export default Employee;
-  
+  return (
+    <div className="employee-container">
+      <div className="card-container"></div>
+    </div>
+  );
+};
+
+export default Employee;

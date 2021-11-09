@@ -1,23 +1,36 @@
-.container {
-  display: flex;
-  flex-direction: row;
+.page-container {
   height: 100vh;
 }
 
-.navbar-container {
+.navbar-top-container {
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  height: 12%;
+  background-color: #842349;
+}
+
+.content-container {
+  display: grid;
+  grid-template-columns: 225px auto;
+}
+
+.navbar-left-container {
   display: flex;
   flex-direction: column;
-  width: 23%;
-  height: 100vh;
+  min-width: 225px;
+  max-width: 225px;
+  height: auto;
   background-color: #9f2958;
   justify-content: start;
   align-items: center;
 }
 
-.content-container {
+.state-container {
   display: flex;
-  width: 77%;
-  background-color: #f0c8d3;
-  overflow-y: auto;
+  align-items: center;
   justify-content: center;
+  width: 100%;
+  background-color: #ece5e7;
+  overflow-y: auto;
 }

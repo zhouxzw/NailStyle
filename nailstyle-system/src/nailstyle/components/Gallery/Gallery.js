@@ -37,35 +37,37 @@ export default function Gallery() {
     <div className="gallery-parent-ctn">
       <div className="gallery-header-ctn">
         <span className="header">GALLERY</span>
-        <hr className="line1"></hr>
+
         <p className="header-paragraph"></p>
       </div>
       <div className="gallery-display-ctn">
-        <div className="gallery-passage-ctn">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-            ultricies et quam ipsum sagittis. Integer sit semper magna eu
-            commodo. Id eget iaculis dolor, euismod cras consequat, mi sit
-            consequat. Lacus, lectus leo fames nec turpis. Turpis orci,
-            pellentesque faucibus ac sagittis varius maecenas bibendum tellus.
-            Dui viverra blandit sit morbi. Lacus, lectus leo fames nec turpis.
-            Turpis orci, pellentesque faucibus ac sagittis varius maecenas
-            bibendum tellus. Dui viverra blandit sit morbi.
-          </p>
-        </div>
-        <div className="gallery-picture-ctn">
-          <div className="display-ctn">
-            <GalleryDisplay galleryState={galleryState} />
-            <div className="gallery-navbar">
-              {galleryPics.map((src, i) => {
-                return (
-                  <div
-                    onClick={() => toggleGallery(i)}
-                    className="navbar-picture"
-                    style={{ backgroundImage: `url(${src.img})` }}
-                  />
-                );
-              })}
+        <div className="gallery-display-child">
+          <div className="gallery-passage-ctn">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+              ultricies et quam ipsum sagittis. Integer sit semper magna eu
+              commodo. Id eget iaculis dolor, euismod cras consequat, mi sit
+              consequat. Lacus, lectus leo fames nec turpis. Turpis orci,
+              pellentesque faucibus ac sagittis varius maecenas bibendum tellus.
+              Dui viverra blandit sit morbi. Lacus, lectus leo fames nec turpis.
+              Turpis orci, pellentesque faucibus ac sagittis varius maecenas
+              bibendum tellus. Dui viverra blandit sit morbi.
+            </p>
+          </div>
+          <div className="gallery-picture-ctn">
+            <div className="display-ctn">
+              <GalleryDisplay galleryState={galleryState} />
+              <div className="gallery-navbar">
+                {galleryPics.map((src, i) => {
+                  return (
+                    <div
+                      onClick={() => toggleGallery(i)}
+                      className="navbar-picture"
+                      style={{ backgroundImage: `url(${src.img})` }}
+                    />
+                  );
+                })}
+              </div>
             </div>
           </div>
         </div>

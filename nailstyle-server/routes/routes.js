@@ -7,6 +7,7 @@ const Customer = require("../models/Customer");
 const Booking = require("../models/Bookings");
 const bcrypt = require("bcrypt");
 require("dotenv/config");
+const Employee = require("../models/Employee");
 
 /*
 
@@ -159,6 +160,19 @@ router.post("/admin/book", async (req, res) => {
   }
 });
 
+// add new employee
+router.post("/employees", async (req, res) => {
+  const employee = new Employee({
+    name: req.body.name,|
+  });
+  try {
+    const saveEmployee = await employee.save();
+    res.json(saveEmployee);
+  } catch (e) {
+    res.json({ message: e });
+  }
+});
+
 //get all bookings
 /*
 router.get("/bookings", async (req, res) => {
@@ -201,6 +215,16 @@ router.delete("/deletebooking", verify, async (req, res) => {
     res.json(removeBook);
   } catch (error) {
     res.json({ message: error });
+  }
+});
+
+// get all employees
+router.get("/employees", async (req, res) => {
+  try {
+    const employees = await Employee.find();
+    res.json(employees);
+  } catch (e) {
+    res.json({ message: e });
   }
 });
 

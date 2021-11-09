@@ -1,51 +1,23 @@
-.navbar-container {
-  display: flex;
-  flex-direction: column;
+.top-parent-container {
+  display: grid;
+  grid-template-columns: 225px auto;
 }
 
 .logo {
+  position: relative;
+  float: left;
+
   font-family: "Aladin", cursive;
-  font-size: 4em;
+  font-size: 3em;
   color: white;
 }
 
-.categories {
-  font-family: "Catamaran", sans-serif;
-  font-size: 2em;
+.settings {
+  position: relative;
+  float: right;
+
+  top: 1.25em;
   color: white;
-  margin-top: 10vh;
-}
-
-.links {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  list-style-type: none;
-  padding: 0;
-}
-
-.links > li {
-  padding: 10px 0px 0px 0px;
-}
-
-.icon {
-  margin-right: 1rem;
-  font-size: larger;
-}
-
-.link {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 13px 25px 13px 25px;
-  border: 3px solid transparent;
-  transition: 0.4s ease-out;
-  border-radius: 9px;
-}
-
-.link:hover {
-  transition: 0.3s ease-in;
-  background-color: rgba(255, 255, 255, 0.4);
-  box-shadow: 0 0 15px rgba(33, 33, 33, 0.4);
-  cursor: pointer;
+  font-size: 0.85em;
+  font-weight: bold;
 }

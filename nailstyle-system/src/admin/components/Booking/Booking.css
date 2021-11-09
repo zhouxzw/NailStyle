@@ -1,14 +1,12 @@
 .booking-container {
-  display: flex;
-  align-items: center;
-  width: 100vw;
-  flex-direction: column;
+  position: relative;
+  float: right;
 }
 
 .react-calendar {
-  max-width: 100%;
+  max-width: 800px;
   background: white;
-  width: 55vw;
+
   font-family: "Catamaran", sans-serif;
   border: none;
   border-radius: 15px;
@@ -134,7 +132,7 @@
   cursor: pointer;
 }
 .react-calendar__navigation {
-  margin: 2rem;
+  padding: 2em;
 }
 .react-calendar__navigation button {
   min-width: 44px;

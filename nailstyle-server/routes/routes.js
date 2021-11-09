@@ -1,11 +1,12 @@
 const express = require("express");
 const router = express.Router();
 const Admin = require("../models/Admin");
-const bcrypt = require("bcryptjs");
-const passport = require("passport");
+const jwt = require("jsonwebtoken");
 const cors = require("cors");
 const Customer = require("../models/Customer");
 const Booking = require("../models/Bookings");
+const bcrypt = require("bcrypt");
+require("dotenv/config");
 
 /*
 
@@ -21,13 +22,23 @@ app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
 });*/
 
-/*
+//clears the cookie
+router.get("/logout", (req, res) => {
+  res
+    .cookie("token", "", {
+      httpOnly: true,
+      expires: new Date(0),
+    })
+    .send();
+});
+
 router.post("/register", (req, res) => {
   Admin.findOne({ username: req.body.username }, async (err, doc) => {
     if (err) throw err;
     if (doc) res.send("User Already Exists");
     if (!doc) {
-      const hashPassword = await bcrypt.hash(req.body.password, 10);
+      const salt = await bcrypt.genSalt();
+      const hashPassword = await bcrypt.hash(req.body.password, salt);
       const newAdmin = new Admin({
         username: req.body.username,
         password: hashPassword,
@@ -37,25 +48,74 @@ router.post("/register", (req, res) => {
     }
   });
 });
-*/
 
-router.post("/login", (req, res, next) => {
-  passport.authenticate("local", (err, user, info) => {
-    if (err) throw err;
-    if (!user) res.send("No User Exists");
-    else {
-      req.logIn(user, (err) => {
-        if (err) throw err;
-        res.send("true");
-        console.log("data", req.user);
-      });
+router.post("/login", async (req, res) => {
+  try {
+    const user = await Admin.find({
+      username: req.body.username,
+    });
+
+    console.log("*user", user);
+
+    //compare password with hashed password
+    if (user) {
+      const correctPassword = await bcrypt.compare(
+        req.body.password,
+        user[0].password
+      );
+
+      if (!correctPassword) {
+        return res.status(401).json({ error: "Wrong Email or Password!" });
+      }
+      //sign a token
+      const token = jwt.sign({ id: user[0]._id }, process.env.KEY);
+
+      res
+        .cookie("token", token, {
+          httpOnly: true,
+        })
+        .send();
     }
-  })(req, res, next);
+  } catch (error) {
+    res.json(error);
+  }
+});
+
+//verify middleware to protect our api routes
+const verify = (req, res, next) => {
+  try {
+    const token = req.cookies.token;
+    if (!token) {
+      return res.status(401).json({ error: "Unauthorized" });
+    } else {
+      const verifiedAdmin = jwt.verify(token, process.env.KEY);
+
+      //add user into request obj
+      req.user = verifiedAdmin.id;
+      next();
+    }
+  } catch (error) {
+    return res.status(401).json({ error: "Unauthorized" });
+  }
+};
+
+router.get("/loggedIn", (req, res) => {
+  try {
+    const token = req.cookies.token;
+    if (!token) {
+      return res.json(false);
+    } else {
+      jwt.verify(token, process.env.KEY);
+      res.send(true);
+    }
+  } catch (error) {
+    return res.json(false);
+  }
 });
 
 //route (update and insert) that checks finds a customer by phone number and updates their appointments
 //if the customer doesn't exist add her to the collection
-router.patch("/processappointment", async (req, res) => {
+router.patch("/processappointment", verify, async (req, res) => {
   try {
     const appendVisit = await Customer.updateOne(
       { phone: req.body.phone },
@@ -112,7 +172,7 @@ router.get("/bookings", async (req, res) => {
 */
 
 //route to get all customers
-router.get("/customers", async (req, res) => {
+router.get("/customers", verify, async (req, res) => {
   try {
     const customers = await Customer.find();
     res.json(customers);
@@ -122,19 +182,20 @@ router.get("/customers", async (req, res) => {
 });
 
 //get bookings based on date
-router.get("/bookings", async (req, res) => {
+router.get("/bookings", verify, async (req, res) => {
   try {
     const bookings = await Booking.find({ date: req.query.date });
     console.log("Data", bookings);
     res.json(bookings);
   } catch (error) {
-    res.json({ message: error });
+    //res.json({ message: error });
+    res.status(403).json("You are not allowed get bookings");
   }
 });
 
 //delete a booking
 //using query here because of axios params in front end
-router.delete("/deletebooking", async (req, res) => {
+router.delete("/deletebooking", verify, async (req, res) => {
   try {
     const removeBook = await Booking.deleteOne({ phone: req.query.phone });
     res.json(removeBook);

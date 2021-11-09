@@ -40,7 +40,8 @@
 
 .card-legend {
   height: 6vh;
-  background: hsla(336, 59%, 39%, 0.637);
+  background-color: hsla(336, 59%, 39%, 0.637);
+
   display: flex;
   align-items: center;
   color: white;

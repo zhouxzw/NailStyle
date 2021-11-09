@@ -2,19 +2,18 @@ import "./NailStyle.css";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Switch } from "react-router-dom";
 import Auth from "../admin/Auth";
-import Protected from "../admin/Protected";
 import Admin from "../admin/Admin";
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
 import Services from "./components/Services/Services";
 import Gallery from "./components/Gallery/Gallery";
 import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
+import AuthContext, { AuthContextProvider } from "../context/AuthContext";
 
 function NailStyle() {
-  const [token, setToken] = useState(false);
-  console.log("TOKEN ", token);
+  const { loggedIn } = useContext(AuthContext);
 
   return (
     <Router>
@@ -29,10 +28,10 @@ function NailStyle() {
             <Footer></Footer>
           </div>
         </Route>
-        <Route path="/adminlogin">
-          <Auth authenticate={(token) => setToken(token)}></Auth>
+
+        <Route path="/admin">
+          {loggedIn === false ? <Auth></Auth> : <Admin></Admin>}
         </Route>
-        <Protected path="/admin" auth={token} component={Admin}></Protected>
       </Switch>
     </Router>
   );

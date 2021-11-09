@@ -1,16 +1,12 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import axios from "axios";
-import { BrowserRouter as Switch, useHistory } from "react-router-dom";
-//import Protected from "../admin/Protected";
-
 import "./Auth.css";
+import AuthContext from "../context/AuthContext";
 
 function Auth(props) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [checkAdminState, setCheckAdminState] = useState(false);
-  //const [token, setToken] = useState(false);
-  const history = useHistory();
+  const { getLoggedIn } = useContext(AuthContext);
 
   const login = () => {
     axios({
@@ -19,15 +15,10 @@ function Auth(props) {
         username: username,
         password: password,
       },
-      withCredentials: true,
       url: "http://localhost:4000/login",
+      withCredentials: true,
     }).then((res) => {
-      props.authenticate(res.data);
-      if (res.data === true) {
-        history.push("/admin");
-      } else {
-        history.push("/adminlogin");
-      }
+      getLoggedIn();
     });
   };
 

@@ -163,7 +163,7 @@ router.post("/admin/book", async (req, res) => {
 // add new employee
 router.post("/employees", async (req, res) => {
   const employee = new Employee({
-    name: req.body.name,|
+    name: req.body.name,
   });
   try {
     const saveEmployee = await employee.save();

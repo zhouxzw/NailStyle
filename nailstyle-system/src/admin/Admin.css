@@ -1,3 +1,9 @@
+:root {
+  --primary-pink: #de7e98;
+  --secondary-pink: #d7598b;
+  --primary-font-color: #303030;
+}
+
 .page-container {
   height: 100vh;
 }
@@ -5,7 +11,7 @@
 .navbar-top-container {
   display: flex;
   align-items: center;
-  width: 100vw;
+  width: 100%;
   height: 12%;
   background-color: #842349;
 }
@@ -13,6 +19,7 @@
 .content-container {
   display: grid;
   grid-template-columns: 225px auto;
+  height: 100%;
 }
 
 .navbar-left-container {
@@ -28,7 +35,7 @@
 
 .state-container {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   width: 100%;
   background-color: #ece5e7;

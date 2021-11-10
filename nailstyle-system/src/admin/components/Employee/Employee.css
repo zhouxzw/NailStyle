@@ -1,0 +1,76 @@
+.employee-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: 900px;
+  margin: 4vh 1em;
+}
+
+.filter-bar {
+  margin: 0;
+  padding: 0 2em;
+  width: 95%;
+  height: 30px;
+  border-radius: 25px;
+  border: none;
+  background-color: #d0d0d0;
+  font-size: 0.75em;
+}
+
+.filter-bar[type="text"]:focus {
+  background-color: #c0c0c0;
+  border: none;
+}
+
+.employee-header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 1.75em 0;
+}
+
+.employee-header-container h1 {
+  font-size: 1.25em;
+  font-weight: bold;
+}
+
+.employee-add-btn {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  padding: 0.75em 0.5em;
+  cursor: pointer;
+}
+
+.employee-add-btn span {
+  font-size: 0.85em;
+  margin-right: 0.25em;
+}
+
+.add-icon {
+  font-size: 1.25em;
+  margin-right: 0.25em;
+}
+
+.employee-list-container {
+  width: 100%;
+}
+
+.employee-column-title {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 7em;
+}
+
+.employee-column-title span {
+  font-size: 0.85em;
+  font-weight: bold;
+}
+
+.line-employee {
+  margin: 0.5em 0;
+  border: 1px solid #cccccc;
+}

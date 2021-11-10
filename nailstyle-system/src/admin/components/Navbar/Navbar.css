@@ -1,23 +1,47 @@
 .top-parent-container {
   display: grid;
   grid-template-columns: 225px auto;
+  width: 100%;
 }
 
 .logo {
-  position: relative;
-  float: left;
-
+  display: flex;
+  justify-content: center;
   font-family: "Aladin", cursive;
   font-size: 3em;
   color: white;
 }
 
-.settings {
-  position: relative;
-  float: right;
-
-  top: 1.25em;
+.settings-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: white;
   font-size: 0.85em;
   font-weight: bold;
+}
+
+.settings {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  max-width: 900px;
+}
+
+.settings-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5em 0;
+  border: none;
+  border-radius: 25px;
+  background-color: #842349;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.setting-dropdown {
+  font-size: 1.5em;
+  margin-left: 0.25em;
 }

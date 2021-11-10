@@ -28,11 +28,14 @@
   max-width: 900px;
 }
 
+.settings-btn-container {
+  position: relative;
+}
+
 .settings-btn {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 0.5em 0;
+  padding: 0.5em 0.75em;
   border: none;
   border-radius: 25px;
   background-color: #842349;
@@ -41,7 +44,40 @@
   cursor: pointer;
 }
 
-.setting-dropdown {
+.settings-icon {
   font-size: 1.5em;
   margin-left: 0.25em;
+}
+
+.dropdown-menu {
+  position: absolute;
+  left: 0;
+  width: 101px;
+  opacity: 0;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+  visibility: hidden;
+  transform: translateY(-7px);
+  transition: opacity 0.1s ease, transform 0.1s ease, visibility 0.1s;
+  background-color: #9f2958;
+  z-index: 100;
+}
+
+.dropdown-menu.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown-menu li a {
+  text-decoration: none;
+  font-size: 0.85em;
+  color: white;
+  padding: 0.6em 0.75em;
+  display: block;
 }

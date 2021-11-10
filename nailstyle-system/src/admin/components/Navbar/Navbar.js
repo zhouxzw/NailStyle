@@ -1,17 +1,55 @@
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "./Navbar.css";
-import { MdArrowDropDown } from "react-icons/md";
+import { MdArrowDropDown, MdDragHandle } from "react-icons/md";
 
 export default function Navbar() {
+  const dropDown = useRef(null);
+  const [isActive, setActive] = useState(false);
+  const onClick = () => setActive(!isActive);
+
+  // check for clicks on the page
+  useEffect(() => {
+    // if the dropdown is active, and where we click isn't inside the drop down
+    const pageClickEvent = (e) => {
+      if (dropDown.current !== null && !dropDown.current.contains(e.target))
+        setActive(!isActive); // activate
+    };
+
+    // while dropdown is active, listen for clicks
+    if (isActive) {
+      window.addEventListener("click", pageClickEvent);
+    }
+
+    // remove immediately
+    return () => {
+      window.removeEventListener("click", pageClickEvent);
+    };
+  }, [isActive]);
+
   return (
     <div className="top-parent-container">
       <div className="logo">NS</div>
       <div className="settings-container">
         <div className="settings">
-          <button className="settings-btn">
-            Settings
-            <MdArrowDropDown className="setting-dropdown"></MdArrowDropDown>
-          </button>
+          <div className="settings-btn-container">
+            <button className="settings-btn" onClick={onClick}>
+              Settings
+              <MdArrowDropDown className="settings-icon"></MdArrowDropDown>
+            </button>
+            <div
+              className={`dropdown-menu ${isActive ? "active" : "inactive"}`}
+              ref={dropDown}
+            >
+              <ul>
+                <li>
+                  <a href="#">Log Out</a>
+                </li>
+                <li>
+                  <a href="#">Accessibility</a>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>

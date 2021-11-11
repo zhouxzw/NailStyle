@@ -1,9 +1,9 @@
 import { useContext, useState } from "react";
 import axios from "axios";
-import "./Auth.css";
+import "./Login.css";
 import AuthContext from "../context/AuthContext";
 
-function Auth(props) {
+function Login(props) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const { getLoggedIn } = useContext(AuthContext);
@@ -58,4 +58,4 @@ function Auth(props) {
   );
 }
 
-export default Auth;
+export default Login;

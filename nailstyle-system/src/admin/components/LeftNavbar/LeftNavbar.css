@@ -1,10 +1,10 @@
 .left-parent-container {
-  margin-top: 7vh;
+  margin-top: 10vh;
 }
 
 .categories {
   font-family: "Catamaran", sans-serif;
-  font-size: 1.15em;
+  font-size: 1.25em;
   text-transform: capitalize;
   color: white;
 }
@@ -43,7 +43,7 @@
 }
 
 .category-title {
-  font-size: 0.75em;
+  font-size: 0.9em;
   font-weight: bold;
   display: none;
 }

@@ -18,15 +18,14 @@
 
 .content-container {
   display: grid;
-  grid-template-columns: 225px auto;
-  height: 100%;
+  grid-template-columns: 250px auto;
+  height: 88vh;
 }
 
 .navbar-left-container {
   display: flex;
   flex-direction: column;
-  min-width: 225px;
-  max-width: 225px;
+  width: auto;
   height: auto;
   background-color: #9f2958;
   justify-content: start;

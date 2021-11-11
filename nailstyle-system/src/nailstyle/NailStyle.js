@@ -1,7 +1,7 @@
 import "./NailStyle.css";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Switch } from "react-router-dom";
-import Auth from "../admin/Auth";
+import Login from "../admin/Login";
 import Admin from "../admin/Admin";
 import React, { useState, useContext } from "react";
 import Navbar from "./components/Navbar/Navbar";
@@ -15,13 +15,17 @@ import AuthContext, { AuthContextProvider } from "../context/AuthContext";
 
 function NailStyle() {
   const { loggedIn } = useContext(AuthContext);
+  const [blur, setBlur] = useState(false);
 
   return (
     <Router>
       <Switch>
         <Route path="/" exact>
-          <div className="ns-container">
-            <Navbar></Navbar>
+          <div
+            className="ns-container"
+            style={blur ? { backgroundColor: "red" } : null}
+          >
+            <Navbar blurBg={(blur) => setBlur(blur)}></Navbar>
             <Hero></Hero>
             <About></About>
             <Services></Services>
@@ -32,7 +36,7 @@ function NailStyle() {
         </Route>
 
         <Route path="/admin">
-          {loggedIn === false ? <Auth></Auth> : <Admin></Admin>}
+          {loggedIn === false ? <Login></Login> : <Admin></Admin>}
         </Route>
       </Switch>
     </Router>

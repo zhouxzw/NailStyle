@@ -1,6 +1,6 @@
 .top-parent-container {
   display: grid;
-  grid-template-columns: 225px auto;
+  grid-template-columns: 250px auto;
   width: 100%;
 }
 
@@ -54,8 +54,8 @@
   left: 0;
   width: 101px;
   opacity: 0;
-  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
   visibility: hidden;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
   transform: translateY(-7px);
   transition: opacity 0.1s ease, transform 0.1s ease, visibility 0.1s;
   background-color: #9f2958;

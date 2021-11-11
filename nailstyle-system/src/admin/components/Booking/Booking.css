@@ -1,6 +1,7 @@
 .booking-container {
-  position: relative;
-  float: right;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .react-calendar {

@@ -1,11 +1,23 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useContext } from "react";
 import "./Navbar.css";
 import { MdArrowDropDown, MdDragHandle } from "react-icons/md";
+import AuthContext from "../../../context/AuthContext";
+import { useHistory } from "react-router-dom";
+import axios from "axios";
 
 export default function Navbar() {
   const dropDown = useRef(null);
   const [isActive, setActive] = useState(false);
   const onClick = () => setActive(!isActive);
+
+  const { getLoggedIn } = useContext(AuthContext);
+  const history = useHistory();
+
+  async function logOut() {
+    await axios.get("/logout");
+    await getLoggedIn();
+    history.push("/admin");
+  }
 
   // check for clicks on the page
   useEffect(() => {
@@ -42,7 +54,9 @@ export default function Navbar() {
             >
               <ul>
                 <li>
-                  <a href="#">Log Out</a>
+                  <a onClick={logOut} href="#">
+                    Log Out
+                  </a>
                 </li>
                 <li>
                   <a href="#">Accessibility</a>

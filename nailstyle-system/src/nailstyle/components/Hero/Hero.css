@@ -1,10 +1,9 @@
 .hero-parent-ctn {
-  background: url(./herobg.jpg) no-repeat;
   margin-top: 0.75em;
   background-size: cover;
+  background-color: white;
   height: 225px;
   width: 100%;
-
   display: flex;
   justify-content: center;
 }
@@ -15,7 +14,7 @@
 
 .hero-text-ctn p {
   font-family: "Caladea", serif;
-  color: white;
+  color: var(--primary-font-color);
   margin: 0 auto;
 }
 
@@ -45,10 +44,11 @@
     max-width: 785px;
     min-width: 695px;
     width: 90%;
-    text-align: left;
   }
 
   .hero-header {
+    padding-top: 1.5em;
+    font-size: calc(3.5em + 0.5vw);
   }
 
   .hero-caption {

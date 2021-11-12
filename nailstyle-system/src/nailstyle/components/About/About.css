@@ -1,10 +1,12 @@
 .about-parent-ctn {
+  background: url(./herobg.jpg) no-repeat;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-  padding: 4em 0.5em 1.5em 0.5em;
+  padding: 6em 0.5em 1.5em 0.5em;
+  height: auto;
 }
 
 .about-ctn {
@@ -13,12 +15,12 @@
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-  padding: 1.5em 0;
+  padding: 4em 0;
 }
 
 .about-ctn span {
   margin-bottom: 0.5em;
-  color: var(--primary-font-color);
+  color: white;
 }
 
 .about-desc {
@@ -30,12 +32,12 @@
   width: 90vw;
   height: 1px;
   border: none;
-  background-color: var(--primary-font-color);
+  background-color: white;
   text-align: center;
 }
 
 .hero-btn-ctn {
-  margin-top: 1.5em;
+  margin: 3em 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -69,6 +71,7 @@
 
   .about-desc p {
     font-size: 0.95em;
+    color: white;
   }
 
   .header-paragraph {

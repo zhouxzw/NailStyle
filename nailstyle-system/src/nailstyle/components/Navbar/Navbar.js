@@ -5,7 +5,7 @@ import { BsList, BsX } from "react-icons/bs";
 import { HashLink } from "react-router-hash-link";
 
 function Navbar(props) {
-  const sidebar = useRef(null);
+  const navbar = useRef(null);
   const [isActive, setActive] = useState(false);
   const onClick = () => {
     setActive(!isActive);
@@ -14,7 +14,7 @@ function Navbar(props) {
 
   useEffect(() => {
     const pageClickEvent = (e) => {
-      if (sidebar.current !== null && !sidebar.current.contains(e.target)) {
+      if (navbar.current !== null && !navbar.current.contains(e.target)) {
         setActive(!isActive); // activate)
         props.blurBg(!isActive);
       }
@@ -59,19 +59,19 @@ function Navbar(props) {
             alt="Open Navigation"
             onClick={onClick}
           ></BsList>
-          <div className="sidebar-menu-container">
+          <div className="navbar-menu-container">
             <div
-              className={`sidebar-menu ${isActive ? "active" : "inactive"}`}
-              ref={sidebar}
+              className={`navbar-menu ${isActive ? "active" : "inactive"}`}
+              ref={navbar}
             >
-              <div className="test">
+              <div className="home-categories-container">
                 <BsX
                   id="mobile-exit"
                   className="mobile-menu-exit"
                   alt="Close Navigation"
                   onClick={onClick}
                 ></BsX>
-                <ul className="home-ctgs">
+                <ul className="home-categories">
                   <li className="home-link current">
                     <HashLink className="hash-link" smooth to="/#home">
                       HOME

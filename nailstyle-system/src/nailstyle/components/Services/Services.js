@@ -103,7 +103,7 @@ function Services() {
 
   return (
     <>
-      <div className="srvc-parent-ctn">
+      <div className="srvc-parent-ctn4" id="services">
         <div className="srvc-header-ctn">
           <span className="header">SERVICES</span>
 

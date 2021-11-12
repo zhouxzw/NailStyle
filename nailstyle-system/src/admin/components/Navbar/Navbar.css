@@ -81,3 +81,7 @@
   padding: 0.6em 0.75em;
   display: block;
 }
+
+.dropdown-menu a:hover {
+  background-color: #9e2a58;
+}

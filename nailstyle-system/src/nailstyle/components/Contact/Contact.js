@@ -5,7 +5,7 @@ import { FaInstagram } from "react-icons/fa";
 
 export default function Contact() {
   return (
-    <div className="contact-parent-ctn">
+    <div className="contact-parent-ctn" id="contact">
       <div className="contact-child-ctn">
         <div className="contact-header-ctn">
           <span className="header">CONTACT US</span>

@@ -34,7 +34,7 @@ export default function Gallery() {
   function hover() {}
 
   return (
-    <div className="gallery-parent-ctn">
+    <div className="gallery-parent-ctn" id="gallery">
       <div className="gallery-header-ctn">
         <span className="header">GALLERY</span>
 

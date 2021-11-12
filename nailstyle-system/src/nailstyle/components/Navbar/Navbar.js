@@ -2,17 +2,22 @@ import React, { useState, useEffect, useRef } from "react";
 import "./Navbar.css";
 import NailStyleLogo from "./logo.svg";
 import { BsList, BsX } from "react-icons/bs";
+import { HashLink } from "react-router-hash-link";
 
 function Navbar(props) {
   const sidebar = useRef(null);
   const [isActive, setActive] = useState(false);
-  const onClick = () => setActive(!isActive);
+  const onClick = () => {
+    setActive(!isActive);
+    props.blurBg(!isActive);
+  };
 
   useEffect(() => {
     const pageClickEvent = (e) => {
-      if (sidebar.current !== null && !sidebar.current.contains(e.target))
+      if (sidebar.current !== null && !sidebar.current.contains(e.target)) {
         setActive(!isActive); // activate)
-      props.blurBg(!isActive);
+        props.blurBg(!isActive);
+      }
     };
 
     if (isActive) {
@@ -66,25 +71,37 @@ function Navbar(props) {
                   alt="Close Navigation"
                   onClick={onClick}
                 ></BsX>
-                <ul>
+                <ul className="home-ctgs">
                   <li className="home-link current">
-                    <a href="#">HOME</a>
+                    <HashLink className="hash-link" smooth to="/#home">
+                      HOME
+                    </HashLink>
                   </li>
                   <li className="home-link">
-                    <a href="#">ABOUT</a>
+                    <HashLink className="hash-link" smooth to="/#about">
+                      ABOUT
+                    </HashLink>
                   </li>
                   <li className="home-link">
-                    <a href="#">SERVICES</a>
+                    <HashLink className="hash-link" smooth to="/#services">
+                      SERVICES
+                    </HashLink>
                   </li>
                   <li className="home-link">
-                    <a href="#">GALLERY</a>
+                    <HashLink className="hash-link" smooth to="/#gallery">
+                      GALLERY
+                    </HashLink>
                   </li>
                   <li className="home-link">
-                    <a href="#">CONTACT</a>
+                    <HashLink className="hash-link" smooth to="/#contact">
+                      CONTACT
+                    </HashLink>
                   </li>
 
                   <li className="nav-book-btn">
-                    <a href="#">BOOK NOW</a>
+                    <HashLink className="hash-link" smooth to="/bookings">
+                      BOOK NOW
+                    </HashLink>
                   </li>
                 </ul>
               </div>

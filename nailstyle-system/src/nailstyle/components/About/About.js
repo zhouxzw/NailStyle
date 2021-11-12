@@ -3,7 +3,7 @@ import React from "react";
 
 export default function About() {
   return (
-    <div className="about-parent-ctn">
+    <div className="about-parent-ctn" id="about">
       <hr className="line" />
       <div className="about-ctn">
         <span className="header">Nails cut in comfort and harmony</span>

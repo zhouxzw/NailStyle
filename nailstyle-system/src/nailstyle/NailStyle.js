@@ -12,31 +12,39 @@ import Gallery from "./components/Gallery/Gallery";
 import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
 import AuthContext, { AuthContextProvider } from "../context/AuthContext";
+import Booking from "./BookingPage/BookingPage";
 
 function NailStyle() {
   const { loggedIn } = useContext(AuthContext);
   const [blur, setBlur] = useState(false);
 
+  const blurBackground = {
+    filter: "blur(0.8rem)",
+  };
+
   return (
     <Router>
       <Switch>
         <Route path="/" exact>
-          <div
-            className="ns-container"
-            style={blur ? { backgroundColor: "red" } : null}
-          >
+          <div className="ns-container">
             <Navbar blurBg={(blur) => setBlur(blur)}></Navbar>
-            <Hero></Hero>
-            <About></About>
-            <Services></Services>
-            <Gallery></Gallery>
-            <Contact></Contact>
-            <Footer></Footer>
+            <div className="blur-effect" style={blur ? blurBackground : null}>
+              <Hero></Hero>
+              <About></About>
+              <Services></Services>
+              <Gallery></Gallery>
+              <Contact></Contact>
+              <Footer></Footer>
+            </div>
           </div>
         </Route>
 
         <Route path="/admin">
           {loggedIn === false ? <Login></Login> : <Admin></Admin>}
+        </Route>
+
+        <Route path="/bookings">
+          <Booking></Booking>
         </Route>
       </Switch>
     </Router>

@@ -1,4 +1,37 @@
 .booking-page-container {
   width: 100vw;
-  background-color: red;
+  height: 100vh;
+  background-color: rgb(153, 153, 153);
+  display: flex;
+  flex-direction: column;
+}
+
+.booking-navbar {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  background-color: white;
+}
+
+.home-symbol {
+  width: 45%;
+  display: flex;
+  justify-content: center;
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
+}
+
+@media only screen and (max-width: 768px) {
+  .calender-container {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+  }
+  .calender {
+    width: 92%;
+  }
+
+  .booking-page-container {
+    background-color: cadetblue;
+  }
 }

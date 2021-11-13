@@ -99,8 +99,8 @@ const Customer = () => {
                 </div>
                 {customer.toggle ? (
                   <div className="extended-card">
-                    {customer.visits.map((obj) => (
-                      <ul>
+                    {customer.visits.map((obj, k) => (
+                      <ul key={"ul-key" + k}>
                         <li>
                           <b>Date:</b> {obj.appointment.date}
                         </li>

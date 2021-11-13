@@ -1,0 +1,12 @@
+.service-selection-container {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+}
+
+.service-menu {
+  width: 92%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+}

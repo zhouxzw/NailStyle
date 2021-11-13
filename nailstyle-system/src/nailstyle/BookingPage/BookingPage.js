@@ -1,20 +1,26 @@
 import React from "react";
 import "./BookingPage.css";
-import Calendar from "react-calendar";
-
+import NailStyleLogo from "../components/Navbar/logo.svg";
+import { useHistory } from "react-router-dom";
+import Calendar from "./components/Calendar/Calendar";
+import Services from "./components/Services/Services";
 function BookingPage() {
+  const history = useHistory();
+
   return (
     <div className="booking-page-container">
-      Booking Page
-      <div className="calender">
-        <Calendar
-          minDate={new Date()}
-          prev2Label={null}
-          next2Label={null}
-          showFixedNumberOfWeeks={true}
-          locale={"en-US"}
-        ></Calendar>
+      <div className="booking-navbar">
+        <img
+          className="home-symbol"
+          src={NailStyleLogo}
+          alt="NailStyle"
+          onClick={() => {
+            history.push("/");
+          }}
+        />
       </div>
+      <Calendar></Calendar>
+      <Services></Services>
     </div>
   );
 }

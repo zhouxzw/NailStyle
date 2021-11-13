@@ -73,33 +73,63 @@ function Navbar(props) {
                 ></BsX>
                 <ul className="home-categories">
                   <li className="home-link current">
-                    <HashLink className="hash-link" smooth to="/#home">
+                    <HashLink
+                      className="hash-link"
+                      smooth
+                      to="/#home"
+                      onClick={onClick}
+                    >
                       HOME
                     </HashLink>
                   </li>
                   <li className="home-link">
-                    <HashLink className="hash-link" smooth to="/#about">
+                    <HashLink
+                      className="hash-link"
+                      smooth
+                      to="/#about"
+                      onClick={onClick}
+                    >
                       ABOUT
                     </HashLink>
                   </li>
                   <li className="home-link">
-                    <HashLink className="hash-link" smooth to="/#services">
+                    <HashLink
+                      className="hash-link"
+                      smooth
+                      to="/#services"
+                      onClick={onClick}
+                    >
                       SERVICES
                     </HashLink>
                   </li>
                   <li className="home-link">
-                    <HashLink className="hash-link" smooth to="/#gallery">
+                    <HashLink
+                      className="hash-link"
+                      smooth
+                      to="/#gallery"
+                      onClick={onClick}
+                    >
                       GALLERY
                     </HashLink>
                   </li>
                   <li className="home-link">
-                    <HashLink className="hash-link" smooth to="/#contact">
+                    <HashLink
+                      className="hash-link"
+                      smooth
+                      to="/#contact"
+                      onClick={onClick}
+                    >
                       CONTACT
                     </HashLink>
                   </li>
 
                   <li className="nav-book-btn">
-                    <HashLink className="hash-link" smooth to="/bookings">
+                    <HashLink
+                      className="hash-link"
+                      smooth
+                      to="/bookings"
+                      onClick={onClick}
+                    >
                       BOOK NOW
                     </HashLink>
                   </li>
@@ -109,17 +139,6 @@ function Navbar(props) {
           </div>
         </div>
       </div>
-
-      {/*
-        <div className="home-landing-container">
-        <div className="landing-bg">
-            <div className="home-slogan">Let Your Nails Glow</div>
-            <div className="home-sub-slogan">With Captivating Services from Peace River</div>
-            <div className="home-book-btn">Book an Appointment</div>
-        </div>
-        
-        </div>
-        */}
     </div>
   );
 }

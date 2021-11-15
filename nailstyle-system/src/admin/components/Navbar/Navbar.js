@@ -40,7 +40,14 @@ export default function Navbar() {
 
   return (
     <div className="top-parent-container">
-      <div className="logo">NailStyle</div>
+      <div
+        className="logo"
+        onClick={() => {
+          history.push("/");
+        }}
+      >
+        NailStyle
+      </div>
       <div className="settings-container">
         <div className="settings">
           <div className="settings-btn-container">

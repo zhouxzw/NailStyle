@@ -4,12 +4,12 @@ import pic2 from "./pics/2.jpg";
 import pic3 from "./pics/3.jpg";
 import pic4 from "./pics/4.jpg";
 import pic5 from "./pics/5.jpg";
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import ServiceDisplay from "./ServiceDisplay";
 
-const picListServices = [pic1, pic2, pic3, pic4, pic5];
+export const picListServices = [pic1, pic2, pic3, pic4, pic5];
 
-const listOfServices = [
+export const listOfServices = [
   {
     id: 0,
     name: "MANICURE",

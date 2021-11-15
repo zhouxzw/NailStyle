@@ -1,7 +1,8 @@
 .service-selection-container {
   display: flex;
-  justify-content: center;
   width: 100vw;
+  flex-direction: column;
+  background-color: white;
 }
 
 .service-menu {
@@ -9,4 +10,55 @@
   background-color: white;
   display: flex;
   justify-content: center;
+}
+
+.srvc-nav-booking {
+  display: flex;
+  overflow: scroll;
+  width: 100vw;
+  scrollbar-width: none;
+  cursor: pointer;
+  flex-direction: column;
+  align-items: center;
+}
+
+.srvc-nav-booking > h3 {
+  align-self: flex-start;
+  margin-left: 4%;
+}
+
+.service-selection {
+  flex-shrink: 0;
+  width: 92%;
+  height: calc(1em + 3.7vh);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-option-list {
+  margin-left: 4%;
+  margin-right: 4%;
+}
+
+.service-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: 1px solid #c4c4c4;
+  height: 6vh;
+  align-items: center;
+  margin: -1px;
+  background-color: white;
+}
+
+.service-info:hover {
+}
+
+.service-info > li {
+  margin-left: 7%;
+  margin-right: 7%;
 }

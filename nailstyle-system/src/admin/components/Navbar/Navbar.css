@@ -12,6 +12,10 @@
   color: white;
 }
 
+.logo:hover {
+  cursor: pointer;
+}
+
 .settings-container {
   display: flex;
   justify-content: center;

@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import "./BookingPage.css";
 import NailStyleLogo from "../components/Navbar/logo.svg";
 import { useHistory } from "react-router-dom";
 import Calendar from "./components/Calendar/Calendar";
 import Services from "./components/Services/Services";
+
 function BookingPage() {
   const history = useHistory();
+  const [service, setService] = useState("");
+  const [name, setName] = useState("");
+  const [technician, setTechnician] = useState("");
+  const [date, setDate] = useState("");
 
   return (
     <div className="booking-page-container">
@@ -19,8 +24,8 @@ function BookingPage() {
           }}
         />
       </div>
-      <Calendar></Calendar>
-      <Services></Services>
+      <Calendar getDate={(date) => setDate(date)}></Calendar>
+      <Services getService={(service) => setService(service)}></Services>
     </div>
   );
 }

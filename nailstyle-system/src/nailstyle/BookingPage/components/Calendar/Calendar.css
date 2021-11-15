@@ -15,6 +15,8 @@
     border-radius: 2px;
     margin-bottom: 1rem;
     margin-top: 1rem;
+    border: 1px solid #c4c4c4;
+    box-shadow: none;
   }
 
   .react-calendar,
@@ -95,4 +97,8 @@
   .react-calendar__tile--active:enabled:focus {
     background: var(--calender-pink);
   }
+}
+
+.calender-container {
+  background-color: white;
 }

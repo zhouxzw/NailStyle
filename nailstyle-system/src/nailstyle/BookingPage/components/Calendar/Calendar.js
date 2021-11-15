@@ -15,6 +15,13 @@ function Calender(props) {
 
   let maxDate = new Date(addMonths(new Date(), 2).toString());
 
+  //format clicked date to (MM/DD/YYYY)
+  function onDateChange(newDate) {
+    //setDate(newDate);
+    let selectedDate = newDate.toLocaleDateString("en-US").replaceAll("/", "-");
+    props.getDate(selectedDate);
+  }
+
   return (
     <div className="calender-container">
       <div className="calender">
@@ -25,6 +32,7 @@ function Calender(props) {
           next2Label={null}
           showFixedNumberOfWeeks={true}
           locale={"en-US"}
+          onChange={onDateChange}
         ></Calendar>
       </div>
     </div>

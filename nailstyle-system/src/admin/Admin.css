@@ -18,7 +18,7 @@
 
 .content-container {
   display: grid;
-  grid-template-columns: 250px auto;
+  grid-template-columns: 150px auto;
   height: 88vh;
 }
 
@@ -37,6 +37,12 @@
   align-items: flex-start;
   justify-content: center;
   width: 100%;
-  background-color: #ece5e7;
+  background-color: white;
   overflow-y: auto;
+}
+
+@media only screen and (min-width: 900px) {
+  .content-container {
+    grid-template-columns: 225px auto;
+  }
 }

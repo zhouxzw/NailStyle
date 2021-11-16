@@ -1,6 +1,6 @@
 .top-parent-container {
   display: grid;
-  grid-template-columns: 250px auto;
+  grid-template-columns: 150px auto;
   width: 100%;
 }
 
@@ -8,7 +8,7 @@
   display: flex;
   justify-content: center;
   font-family: "Aladin", cursive;
-  font-size: 3em;
+  font-size: 1.75em;
   color: white;
 }
 
@@ -88,4 +88,14 @@
 
 .dropdown-menu a:hover {
   background-color: #9e2a58;
+}
+
+@media only screen and (min-width: 900px) {
+  .top-parent-container {
+    grid-template-columns: 225px auto;
+  }
+
+  .logo {
+    font-size: 2.5em;
+  }
 }

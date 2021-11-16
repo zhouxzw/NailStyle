@@ -59,10 +59,15 @@
   width: 100%;
 }
 
+.column-layout {
+  display: grid;
+  grid-template-columns: 50px 180px 250px 200px 190px 50px auto;
+  align-items: center;
+  width: 100%;
+}
+
 .employee-column-title {
-  display: flex;
-  justify-content: space-between;
-  margin-right: 7em;
+  padding-bottom: 1em;
 }
 
 .employee-column-title span {
@@ -70,7 +75,26 @@
   font-weight: bold;
 }
 
+.employee-card {
+  padding: 1em 0;
+}
+
+.employee-card li {
+  color: #707070;
+  font-weight: bold;
+}
+
 .line-employee {
-  margin: 0.5em 0;
+  margin: 0;
   border: 1px solid #cccccc;
+}
+
+.employee-dropdown {
+  cursor: pointer;
+}
+
+.inactive {
+}
+
+.active {
 }

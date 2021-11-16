@@ -44,8 +44,10 @@ const Customer = () => {
     let copy = customers;
 
     for (let i = 0; i < copy.length; i++) {
+      console.log("copy: " + copy[i].phone + ". customer: " + customer.phone);
       if (copy[i].phone === customer.phone) {
         copy[i].toggle = toggler;
+        console.log(copy[i].toggle);
       }
     }
     setExtend(!extend);

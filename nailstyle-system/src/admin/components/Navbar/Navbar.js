@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect, useContext } from "react";
 import "./Navbar.css";
-import { MdArrowDropDown, MdDragHandle } from "react-icons/md";
+import { MdArrowDropDown } from "react-icons/md";
 import AuthContext from "../../../context/AuthContext";
 import { useHistory } from "react-router-dom";
 import axios from "axios";

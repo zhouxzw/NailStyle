@@ -164,6 +164,9 @@ router.post("/admin/book", async (req, res) => {
 router.post("/employees", async (req, res) => {
   const employee = new Employee({
     name: req.body.name,
+    email: req.body.email,
+    phone: req.body.phone,
+    dateofhire: req.body.dateofhire,
   });
   try {
     const saveEmployee = await employee.save();

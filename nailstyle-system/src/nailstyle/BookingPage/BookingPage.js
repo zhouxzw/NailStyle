@@ -4,6 +4,7 @@ import NailStyleLogo from "../components/Navbar/logo.svg";
 import { useHistory } from "react-router-dom";
 import Calendar from "./components/Calendar/Calendar";
 import Services from "./components/Services/Services";
+import Info from "./components/Info/Info";
 
 function BookingPage() {
   const history = useHistory();
@@ -24,8 +25,10 @@ function BookingPage() {
           }}
         />
       </div>
+      {/*
       <Calendar getDate={(date) => setDate(date)}></Calendar>
-      <Services getService={(service) => setService(service)}></Services>
+      <Services getService={(service) => setService(service)}></Services>*/}
+      <Info></Info>
     </div>
   );
 }

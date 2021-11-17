@@ -42,12 +42,13 @@ const Employee = () => {
   function toggleCard(employee) {
     let copy = employees;
     console.log(employee);
-
+    /*
     for (let i = 0; i < copy.length; i++) {
       if (copy[i] === employee) {
         !employee.toggle;
       }
     }
+    */
   }
 
   return (

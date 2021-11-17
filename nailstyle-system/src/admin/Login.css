@@ -22,14 +22,14 @@
   font-size: 4em;
 }
 
-input {
+.login-input {
   padding: 10px;
   margin: 10px;
   width: 40%;
   border: 2px solid white;
   outline: none;
 }
-input:focus {
+.login-input:focus {
   border: 2px solid rgb(0, 0, 0);
 }
 

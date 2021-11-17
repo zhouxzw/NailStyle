@@ -42,10 +42,12 @@ function Login(props) {
         <div className="login-card">
           <h2>NailStyle</h2>
           <input
+            className="login-input"
             placeholder="Username"
             onChange={(e) => setUsername(e.target.value)}
           />
           <input
+            className="login-input"
             placeholder="Password"
             onChange={(e) => setPassword(e.target.value)}
           />

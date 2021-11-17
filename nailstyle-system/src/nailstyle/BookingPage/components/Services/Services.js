@@ -46,6 +46,7 @@ function Services(props) {
   return (
     <div className="service-selection-container">
       <div className="srvc-nav-booking">
+        <h4>Select Services and Technician</h4>
         <h3>SERVICES</h3>
         {picListServices.map((src, i) => (
           <div

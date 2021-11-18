@@ -29,6 +29,7 @@ function BookingPage() {
     <div className="booking-page-container">
       {date}
       {service}
+      {technician}
       <div className="booking-navbar">
         <img
           className="home-symbol"
@@ -44,7 +45,10 @@ function BookingPage() {
 
         {page === 1 && <Calendar getDate={(date) => setDate(date)}></Calendar>}
         {page === 2 && (
-          <Services getService={(service) => setService(service)}></Services>
+          <Services
+            getService={(service) => setService(service)}
+            getTech={(technician) => setTechnician(technician)}
+          ></Services>
         )}
         {page === 3 && <Info></Info>}
         {page === 4 && <Confirm></Confirm>}

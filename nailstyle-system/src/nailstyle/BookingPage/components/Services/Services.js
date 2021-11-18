@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import axios from "axios";
 import "./Services.css";
 import {
   picListServices,
@@ -44,6 +45,29 @@ function Services(props) {
     setService(newList);
   }
 
+  //function to toggle between the technicians
+  function toggleTech(index) {
+    //create a copy and set the toggle to false for all technicians
+    let techCopyList = technicians.map((tech) => {
+      tech.toggle = false;
+      return tech;
+    });
+    //user click will generate the index of the technician and we set that toggle to true
+    techCopyList[index].toggle = true;
+    //update state
+    setTechnicians(techCopyList);
+  }
+
+  useEffect(() => {
+    async function retrieveEmployees() {
+      const response = await axios.get("/employees");
+      console.log(response.data);
+      setTechnicians(response.data);
+    }
+
+    retrieveEmployees();
+  }, []);
+
   return (
     <div className="service-selection-container">
       <div className="srvc-nav-booking">
@@ -54,6 +78,7 @@ function Services(props) {
             <div
               onClick={() => toggleServices(i)}
               className="service-selection"
+              key={"srvc-sel" + i}
               style={
                 servicesState[i].toggled
                   ? { backgroundColor: "rgb(175, 101, 120)" }
@@ -100,7 +125,26 @@ function Services(props) {
       </div>
       <div className="technician-container">
         <h3>AVAILABLE TECHNICIANS</h3>
-        <div class="technician-options">{/* extract the employees here */}</div>
+        <ul class="technician-options">
+          {technicians &&
+            technicians.map((tech, i) => (
+              <div
+                className="tech-names"
+                key={"tech-name-" + i}
+                onClick={() => {
+                  toggleTech(i);
+                  props.getTech(tech.name);
+                }}
+                style={
+                  tech.toggle
+                    ? { backgroundColor: "#E1B0BD" }
+                    : { backgroundColor: null }
+                }
+              >
+                <li>{tech.name}</li>
+              </div>
+            ))}
+        </ul>
       </div>
     </div>
   );

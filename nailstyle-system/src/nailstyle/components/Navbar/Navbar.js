@@ -9,14 +9,14 @@ function Navbar(props) {
   const [isActive, setActive] = useState(false);
   const onClick = () => {
     setActive(!isActive);
-    props.blurBg(!isActive);
+    props.blurBg(false);
   };
 
   useEffect(() => {
     const pageClickEvent = (e) => {
       if (navbar.current !== null && !navbar.current.contains(e.target)) {
+        props.blurBg(false);
         setActive(!isActive); // activate)
-        props.blurBg(!isActive);
       }
     };
 
@@ -57,7 +57,10 @@ function Navbar(props) {
             id="mobile-cta"
             className="mobile-menu-icon"
             alt="Open Navigation"
-            onClick={onClick}
+            onClick={() => {
+              setActive(!isActive);
+              props.blurBg(true);
+            }}
           ></BsList>
           <div className="navbar-menu-container">
             <div

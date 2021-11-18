@@ -11,7 +11,19 @@ function Info(props) {
             <input className="info-input"></input>
           </div>
           <div className="input-container">
+            <label>PHONE</label>
+            <input className="info-input"></input>
+          </div>
+        </div>
+        <div className="field-container">
+          <div className="input-container">
             <label>EMAIL</label>
+            <input className="info-input"></input>
+          </div>
+        </div>
+        <div className="field-container">
+          <div className="input-container">
+            <label>ADDRESS</label>
             <input className="info-input"></input>
           </div>
         </div>

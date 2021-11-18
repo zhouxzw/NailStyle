@@ -1,0 +1,22 @@
+.multistep-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.circle {
+  position: relative;
+  width: 4vw;
+  height: 4vw;
+  background-color: #c4c4c4;
+  border-radius: 50%;
+}
+
+.bar {
+  width: 28%;
+  height: 1vw;
+  background-color: #c4c4c4;
+  border: none;
+  margin: 0;
+}

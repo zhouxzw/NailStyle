@@ -1,21 +1,37 @@
 import React, { useState } from "react";
+import "./Multistepper.css";
 
-function Multistepper() {
-  const [page, setPage] = useState(1);
-
-  function nextPage() {
-    if (page === 4) return;
-    setPage((p) => p + 1);
-  }
-
+function Multistepper(props) {
   return (
-    <div>
-      {/* <div className="progress-bar">bar</div>
-      {page === 1 && "i am page 1"}
-      {page === 2 && "i am page 2"}
-      {page === 3 && "i am page 3"}
-      {page === 4 && "i am page 4"}
-      <button onClick={() => nextPage()}>next</button> */}
+    <div className="multistep-container">
+      <div
+        className="circle"
+        style={{ backgroundColor: props.page >= 1 ? "#DE7E98" : "#C4C4C4" }}
+      ></div>
+      <hr
+        className="bar"
+        style={{ backgroundColor: props.page >= 2 ? "#DE7E98" : "#C4C4C4" }}
+      ></hr>
+      <div
+        className="circle"
+        style={{ backgroundColor: props.page >= 2 ? "#DE7E98" : "#C4C4C4" }}
+      ></div>
+      <hr
+        className="bar"
+        style={{ backgroundColor: props.page >= 3 ? "#DE7E98" : "#C4C4C4" }}
+      ></hr>
+      <div
+        className="circle"
+        style={{ backgroundColor: props.page >= 3 ? "#DE7E98" : "#C4C4C4" }}
+      ></div>
+      <hr
+        className="bar"
+        style={{ backgroundColor: props.page >= 4 ? "#DE7E98" : "#C4C4C4" }}
+      ></hr>
+      <div
+        className="circle"
+        style={{ backgroundColor: props.page >= 4 ? "#DE7E98" : "#C4C4C4" }}
+      ></div>
     </div>
   );
 }

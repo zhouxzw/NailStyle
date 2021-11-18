@@ -1,6 +1,8 @@
 .about-parent-ctn {
   background: url(./herobg.jpg) no-repeat;
+  background-size: cover;
   display: flex;
+  width: 100vw;
   flex-direction: column;
   justify-content: center;
   align-items: center;

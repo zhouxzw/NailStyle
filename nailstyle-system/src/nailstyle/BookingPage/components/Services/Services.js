@@ -9,6 +9,7 @@ function Services(props) {
   const [servicesState, setService] = useState(() => {
     return listOfServices;
   });
+  const [technicians, setTechnicians] = useState([]);
 
   const [update, setUpdate] = useState(false);
 

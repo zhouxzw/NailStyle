@@ -16,15 +16,14 @@
   display: flex;
   justify-content: center;
   background-color: white;
-  height: 13vh;
 }
 
 .home-symbol {
   width: 45%;
   display: flex;
   justify-content: center;
-  padding-top: 0.3em;
-  padding-bottom: 0.3em;
+  padding-top: 1em;
+  padding-bottom: 1em;
 }
 
 .home-symbol:hover {
@@ -51,14 +50,18 @@
   cursor: pointer;
 }
 
+.next-button:hover,
+.finish-button:hover {
+  background-color: #af6578;
+}
+
 .previous-button {
+  margin-right: 1em;
   background-color: #c4c4c4;
 }
 
-.next-button:hover,
-.previous-button,
-.finish-button:hover {
-  opacity: 0.9;
+.previous-button:hover {
+  background-color: #aaaaaa;
 }
 
 @media only screen and (max-width: 768px) {

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./BookingPage.css";
 import NailStyleLogo from "../components/Navbar/logo.svg";
 import { useHistory } from "react-router-dom";
@@ -27,6 +27,8 @@ function BookingPage() {
 
   return (
     <div className="booking-page-container">
+      {date}
+      {service}
       <div className="booking-navbar">
         <img
           className="home-symbol"
@@ -38,8 +40,7 @@ function BookingPage() {
         />
       </div>
       <div className="booking-step-container">
-        <Multistepper></Multistepper>
-        {page === 1 && "I am page 1"}
+        <Multistepper page={page}></Multistepper>
 
         {page === 1 && <Calendar getDate={(date) => setDate(date)}></Calendar>}
         {page === 2 && (

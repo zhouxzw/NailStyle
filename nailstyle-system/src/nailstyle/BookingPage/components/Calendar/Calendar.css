@@ -99,6 +99,8 @@
   }
 }
 
-.calender-container {
+.calender {
+  display: flex;
+  justify-content: center;
   background-color: white;
 }

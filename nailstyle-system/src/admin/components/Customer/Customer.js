@@ -5,7 +5,7 @@ import "./Customer.css";
 import { BsSearch } from "react-icons/bs";
 
 const Customer = () => {
-  const [customers, setCustomers] = useState();
+  const [customers, setCustomers] = useState([]);
   const [search, setSearch] = useState("");
 
   const [extend, setExtend] = useState(false);
@@ -40,17 +40,17 @@ const Customer = () => {
 
   function showDetail(customer) {
     //setExtend(!extend);
+
     let toggler = !customer.toggle;
     let copy = customers;
 
     for (let i = 0; i < copy.length; i++) {
-      console.log("copy: " + copy[i].phone + ". customer: " + customer.phone);
       if (copy[i].phone === customer.phone) {
         copy[i].toggle = toggler;
-        console.log(copy[i].toggle);
       }
     }
-    setExtend(!extend);
+    setCustomers(customers);
+    console.log(copy);
   }
 
   return (

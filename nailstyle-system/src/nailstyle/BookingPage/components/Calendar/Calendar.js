@@ -23,18 +23,16 @@ function Calender(props) {
   }
 
   return (
-    <div className="calender-container">
-      <div className="calender">
-        <Calendar
-          minDate={new Date()}
-          maxDate={maxDate}
-          prev2Label={null}
-          next2Label={null}
-          showFixedNumberOfWeeks={true}
-          locale={"en-US"}
-          onChange={onDateChange}
-        ></Calendar>
-      </div>
+    <div className="calender">
+      <Calendar
+        minDate={new Date()}
+        maxDate={maxDate}
+        prev2Label={null}
+        next2Label={null}
+        showFixedNumberOfWeeks={true}
+        locale={"en-US"}
+        onChange={onDateChange}
+      ></Calendar>
     </div>
   );
 }

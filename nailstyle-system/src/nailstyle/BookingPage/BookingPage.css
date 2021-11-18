@@ -1,8 +1,14 @@
 .booking-page-container {
   width: 100vw;
-
+  height: 100vh;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  background-color: white;
+}
+
+.booking-step-container {
+  width: 92%;
 }
 
 .booking-navbar {
@@ -25,14 +31,42 @@
   cursor: pointer;
 }
 
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  background-color: #f9f9f9;
+  margin-top: 2em;
+  margin-bottom: 5em;
+}
+
+.next-button,
+.previous-button,
+.finish-button {
+  padding: 0.75em 2em;
+  background-color: var(--primary-pink);
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.previous-button {
+  background-color: #c4c4c4;
+}
+
+.next-button:hover,
+.previous-button,
+.finish-button:hover {
+  opacity: 0.9;
+}
+
 @media only screen and (max-width: 768px) {
   .calender-container {
-    width: 100vw;
     display: flex;
     justify-content: center;
   }
   .calender {
-    width: 92%;
   }
 
   .booking-page-container {

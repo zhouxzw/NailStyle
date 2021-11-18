@@ -40,15 +40,17 @@ const Employee = () => {
   });
 
   function toggleCard(employee) {
-    let copy = employees;
-    console.log(employee);
-    /*
-    for (let i = 0; i < copy.length; i++) {
-      if (copy[i] === employee) {
-        !employee.toggle;
-      }
-    }
-    */
+    // employee.toggle = !employee.toggle;
+    // let copy = employees;
+    // console.log(employee);
+    // console.log("before: " + employee.toggle);
+    // for (let i = 0; i < copy.length; i++) {
+    //   if (copy[i] === employee) {
+    //     employee.toggle = !employee.toggle;
+    //     console.log("after: " + employee.toggle);
+    //   }
+    // }
+    // setActive(!isActive);
   }
 
   return (

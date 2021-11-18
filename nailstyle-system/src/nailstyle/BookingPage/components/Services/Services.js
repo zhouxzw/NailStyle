@@ -48,19 +48,21 @@ function Services(props) {
       <div className="srvc-nav-booking">
         <h4>Select Services and Technician</h4>
         <h3>SERVICES</h3>
-        {picListServices.map((src, i) => (
-          <div
-            onClick={() => toggleServices(i)}
-            className="service-selection"
-            style={
-              servicesState[i].toggled
-                ? { backgroundColor: "rgb(222, 126, 152, 1)" }
-                : { backgroundImage: `url(${src})` }
-            }
-          >
-            <div className="service-title">{servicesState[i].name}</div>
-          </div>
-        ))}
+        <div className="service-tabs">
+          {picListServices.map((src, i) => (
+            <div
+              onClick={() => toggleServices(i)}
+              className="service-selection"
+              style={
+                servicesState[i].toggled
+                  ? { backgroundColor: "rgb(175, 101, 120)" }
+                  : { backgroundImage: `url(${src})` }
+              }
+            >
+              <div className="service-title">{servicesState[i].name}</div>
+            </div>
+          ))}
+        </div>
       </div>
       <div className="service-options">
         <ul className="service-option-list">
@@ -94,6 +96,10 @@ function Services(props) {
               })
             )}
         </ul>
+      </div>
+      <div className="technician-container">
+        <h3>AVAILABLE TECHNICIANS</h3>
+        <div class="technician-options">{/* extract the employees here */}</div>
       </div>
     </div>
   );

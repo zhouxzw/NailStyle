@@ -36,6 +36,8 @@
   background-color: #f9f9f9;
   margin-top: 2em;
   margin-bottom: 5em;
+  bottom: 0;
+  right: 0;
 }
 
 .next-button,

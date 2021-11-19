@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect0 } from "react";
 import "./BookingPage.css";
 import NailStyleLogo from "../components/Navbar/logo.svg";
 import { useHistory } from "react-router-dom";
@@ -12,9 +12,14 @@ function BookingPage() {
   const history = useHistory();
   const [page, setPage] = useState(1);
   const [service, setService] = useState("");
-  const [name, setName] = useState("");
   const [technician, setTechnician] = useState("");
   const [date, setDate] = useState("");
+  const [personalDetails, setPersonalDetails] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    address: "",
+  });
 
   function nextPage() {
     if (page === 4) return;
@@ -50,9 +55,13 @@ function BookingPage() {
             getTech={(technician) => setTechnician(technician)}
           ></Services>
         )}
-        {page === 3 && <Info></Info>}
+        {page === 3 && (
+          <Info
+            getInfo={(personalDetails) => setPersonalDetails(personalDetails)}
+            personalDetails={personalDetails}
+          ></Info>
+        )}
         {page === 4 && <Confirm></Confirm>}
-
         <div className="button-container">
           <button className="previous-button" onClick={() => prevPage()}>
             Previous

@@ -7,6 +7,7 @@ import Calendar from "./components/Calendar/Calendar";
 import Services from "./components/Services/Services";
 import Info from "./components/Info/Info";
 import Confirm from "./components/Confirm/Confirm";
+import axios from "axios";
 
 function BookingPage() {
   const history = useHistory();
@@ -14,11 +15,12 @@ function BookingPage() {
   const [service, setService] = useState("");
   const [technician, setTechnician] = useState("");
   const [date, setDate] = useState("");
+  const [time, setTime] = useState("");
+
   const [personalDetails, setPersonalDetails] = useState({
     name: "",
     email: "",
     phone: "",
-    address: "",
   });
 
   function nextPage() {
@@ -29,6 +31,25 @@ function BookingPage() {
     if (page === 1) return;
     setPage((p) => p - 1);
   }
+
+  const submitForm = async () => {
+    await axios({
+      method: "POST",
+      data: {
+        name: personalDetails.name,
+        date: date,
+        service: service,
+        technician: technician,
+        phone: personalDetails.phone,
+        time: time,
+        email: personalDetails.email,
+      },
+      url: "http://localhost:4000/login",
+      withCredentials: true,
+    }).then((res) => {
+      console.log("res", res);
+    });
+  };
 
   return (
     <div className="booking-page-container">

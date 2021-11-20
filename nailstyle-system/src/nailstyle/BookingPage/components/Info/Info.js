@@ -47,17 +47,6 @@ function Info(props) {
             ></input>
           </div>
         </div>
-        <div className="field-container">
-          <div className="input-container">
-            <label>ADDRESS</label>
-            <input
-              className="info-input"
-              onChange={handleChange}
-              name="address"
-              value={props.personalDetails.address}
-            ></input>
-          </div>
-        </div>
       </form>
     </div>
   );

@@ -55,6 +55,7 @@ const Booking = () => {
     const response = await axios.patch("/processappointment", {
       name: client.name,
       phone: client.phone,
+      email: client.email,
       visits: [
         {
           appointment: {

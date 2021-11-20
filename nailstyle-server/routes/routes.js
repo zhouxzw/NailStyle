@@ -122,6 +122,7 @@ router.patch("/processappointment", verify, async (req, res) => {
       { phone: req.body.phone },
       {
         name: req.body.name,
+        email: req.body.email,
         $push: {
           visits: [
             {
@@ -151,6 +152,7 @@ router.post("/admin/book", async (req, res) => {
     technician: req.body.technician,
     phone: req.body.phone,
     time: req.body.time,
+    email: req.body.email,
   });
   try {
     const saveBooking = await booking.save();

@@ -8,8 +8,8 @@ function Login(props) {
   const [password, setPassword] = useState("");
   const { getLoggedIn } = useContext(AuthContext);
 
-  const login = () => {
-    axios({
+  const login = async () => {
+    await axios({
       method: "POST",
       data: {
         username: username,

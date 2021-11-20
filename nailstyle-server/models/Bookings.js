@@ -7,6 +7,7 @@ const BookingSchema = mongoose.Schema({
   technician: String,
   phone: String,
   time: String,
+  email: String,
 });
 
 module.exports = mongoose.model("Booking", BookingSchema);

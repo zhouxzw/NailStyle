@@ -13,6 +13,7 @@ const Appointments = mongoose.Schema({
 const CustomerSchema = mongoose.Schema({
   name: String,
   phone: String,
+  email: String,
   visits: [Appointments],
 });
 

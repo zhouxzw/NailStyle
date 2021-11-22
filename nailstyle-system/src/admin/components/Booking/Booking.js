@@ -4,6 +4,16 @@ import axios from "axios";
 import "./Booking.css";
 import { BsX, BsChevronRight } from "react-icons/bs";
 
+//function from https://stackoverflow.com/questions/2706125/javascript-function-to-add-x-months-to-a-date
+export function addMonths(date, months) {
+  let d = date.getDate();
+  date.setMonth(date.getMonth() + +months);
+  if (date.getDate() !== d) {
+    date.setDate(0);
+  }
+  return date;
+}
+
 const Booking = () => {
   const [clickedDate, setClickedDate] = useState(() => {
     let initDate = new Date();
@@ -12,16 +22,6 @@ const Booking = () => {
   const [bookings, setBookings] = useState();
 
   const [serivcePrice, setServicePrice] = useState(0.0);
-
-  //function from https://stackoverflow.com/questions/2706125/javascript-function-to-add-x-months-to-a-date
-  function addMonths(date, months) {
-    let d = date.getDate();
-    date.setMonth(date.getMonth() + +months);
-    if (date.getDate() !== d) {
-      date.setDate(0);
-    }
-    return date;
-  }
 
   let maxDate = new Date(addMonths(new Date(), 2).toString());
 

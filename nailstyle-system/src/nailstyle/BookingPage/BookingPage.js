@@ -17,6 +17,10 @@ function BookingPage() {
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
 
+  const newdate = new Date();
+  const month = newdate.toLocaleString("default", { month: "long" });
+  console.log(newdate);
+
   const [personalDetails, setPersonalDetails] = useState({
     name: "",
     email: "",

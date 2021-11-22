@@ -23,6 +23,15 @@ app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
 });*/
 
+function addMonths(date, months) {
+  let d = date.getDate();
+  date.setMonth(date.getMonth() + +months);
+  if (date.getDate() !== d) {
+    date.setDate(0);
+  }
+  return date;
+}
+
 //clears the cookie
 router.get("/logout", (req, res) => {
   res
@@ -162,14 +171,81 @@ router.post("/admin/book", async (req, res) => {
   }
 });
 
+//https://stackoverflow.com/questions/4413590/javascript-get-array-of-dates-between-2-dates
+function getDays(currentDay, lastDay) {
+  for (
+    var arr = [], dt = new Date(currentDay);
+    dt <= lastDay;
+    dt.setDate(dt.getDate() + 1)
+  ) {
+    let newDate = new Date(dt);
+    arr.push({ date: newDate });
+  }
+  return arr;
+}
+
+function getSchedule() {
+  //today
+  const currentDay = new Date();
+  //current day + one month
+  const dayOneMonthFromNow = new Date(addMonths(new Date(), 1));
+  //last day of current month
+  const lastDayOfCurrentMonth = new Date(
+    currentDay.getFullYear(),
+    currentDay.getMonth() + 1,
+    0
+  );
+
+  //current month
+  const currentMonth = currentDay.toLocaleString("default", { month: "long" });
+  //next month
+  const nextMonth = dayOneMonthFromNow.toLocaleString("default", {
+    month: "long",
+  });
+
+  let days = [];
+  days = getDays(currentDay, dayOneMonthFromNow);
+
+  const indexToSplit = days.findIndex(
+    (obj) =>
+      obj.date.toLocaleDateString() ===
+      lastDayOfCurrentMonth.toLocaleDateString()
+  );
+
+  //list of the days in the current month
+  let currentMonthList = days.slice(0, indexToSplit + 1);
+  //list of the days in the next month
+  let nextMonthList = days.slice(indexToSplit + 1, days.length);
+
+  currentMonthList = currentMonthList.map((obj) => {
+    //replaceAll() is not supported by node yet
+    let date = obj.date.toLocaleDateString("en-US").replace(/\//gi, "-");
+    return { date };
+  });
+
+  nextMonthList = nextMonthList.map((obj) => {
+    let date = obj.date.toLocaleDateString("en-US").replace(/\//gi, "-");
+    return { date };
+  });
+
+  return [
+    { month: String(currentMonth), days: currentMonthList },
+    { month: String(nextMonth), days: nextMonthList },
+  ];
+}
+
 // add new employee
 router.post("/employees", async (req, res) => {
+  let availability = getSchedule();
+
   const employee = new Employee({
     name: req.body.name,
     email: req.body.email,
     phone: req.body.phone,
     dateofhire: req.body.dateofhire,
+    availability: availability,
   });
+
   try {
     const saveEmployee = await employee.save();
     res.json(saveEmployee);
@@ -232,5 +308,7 @@ router.get("/employees", async (req, res) => {
     res.json({ message: e });
   }
 });
+
+router.post("/timeslots", async (req, res) => {});
 
 module.exports = router;

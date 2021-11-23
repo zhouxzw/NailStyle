@@ -2,18 +2,16 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  margin: 7.5rem 0;
 }
 
 .react-calendar {
   max-width: 800px;
   background: white;
-
   font-family: "Catamaran", sans-serif;
   border: none;
   border-radius: 2px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  margin-bottom: 3rem;
-  margin-top: 3rem;
 }
 
 .booking-slots {

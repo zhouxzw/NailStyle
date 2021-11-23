@@ -29,7 +29,6 @@ function NailStyle() {
           <div className="ns-container">
             <Navbar blurBg={(blur) => setBlur(blur)}></Navbar>
             <div className="blur-effect" style={blur ? blurBackground : null}>
-              <Hero></Hero>
               <About></About>
               <Services></Services>
               <Gallery></Gallery>

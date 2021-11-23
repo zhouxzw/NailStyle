@@ -47,7 +47,12 @@ function Calender(props) {
       </div>
 
       <div className="time-slots-container">
-        <h3>TIME</h3>
+        <h4>TIME</h4>
+        <Timeslots
+          clickedDate={props.clickedDate}
+          timeSlots={props.timeSlots}
+          getTime={props.getTime}
+        ></Timeslots>
       </div>
     </div>
   );

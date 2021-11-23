@@ -1,4 +1,4 @@
-import React, { useState, useEffect0 } from "react";
+import React, { useState, useEffect } from "react";
 import "./BookingPage.css";
 import NailStyleLogo from "../components/Navbar/logo.svg";
 import { useHistory } from "react-router-dom";
@@ -14,18 +14,18 @@ function BookingPage() {
   const [page, setPage] = useState(1);
   const [service, setService] = useState("");
   const [technician, setTechnician] = useState("");
-  const [date, setDate] = useState("");
+  const [date, setDate] = useState(
+    new Date().toLocaleDateString("en-US").replaceAll("/", "-")
+  );
   const [time, setTime] = useState("");
-
-  const newdate = new Date();
-  const month = newdate.toLocaleString("default", { month: "long" });
-  console.log(newdate);
 
   const [personalDetails, setPersonalDetails] = useState({
     name: "",
     email: "",
     phone: "",
   });
+
+  const [timeSlots, setTimeSlots] = useState();
 
   function nextPage() {
     if (page === 4) return;
@@ -54,6 +54,21 @@ function BookingPage() {
       console.log("res", res);
     });
   };
+
+  useEffect(() => {
+    async function getEmployeeTimes() {
+      const request = await axios.get("/employee/times", {
+        params: {
+          name: technician,
+        },
+      });
+
+      console.log(request.data);
+      setTimeSlots(request.data);
+    }
+
+    getEmployeeTimes();
+  }, [technician]);
 
   return (
     <div className="booking-page-container">

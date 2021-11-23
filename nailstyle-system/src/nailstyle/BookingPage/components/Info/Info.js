@@ -1,6 +1,6 @@
 import React from "react";
 import "./Info.css";
-import CurrentBooking from "../Calendar/CurrentBooking/CurrentBooking";
+import CurrentBooking from "../CurrentBooking/CurrentBooking";
 import { useState } from "react";
 
 function Info(props) {

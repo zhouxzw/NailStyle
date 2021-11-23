@@ -1,6 +1,6 @@
 import React from "react";
 import "./Confirm.css";
-import CurrentBooking from "../Calendar/CurrentBooking/CurrentBooking";
+import CurrentBooking from "../CurrentBooking/CurrentBooking";
 
 function Confirm(props) {
   return (

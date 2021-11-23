@@ -153,7 +153,7 @@ router.patch("/processappointment", verify, async (req, res) => {
   }
 });
 
-router.post("/admin/book", async (req, res) => {
+router.post("/book", async (req, res) => {
   const booking = new Booking({
     name: req.body.name,
     date: req.body.date,
@@ -315,6 +315,7 @@ router.get("/employee/times", async (req, res) => {
       {
         name: req.query.name,
       },
+      //find employee by name and only include the fields name and availability and exclude id
       {
         name: 1,
         availability: 1,

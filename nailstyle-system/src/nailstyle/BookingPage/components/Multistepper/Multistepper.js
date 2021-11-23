@@ -22,10 +22,6 @@ function Multistepper(props) {
         style = { backgroundColor: props.page >= 4 ? "#DE7E98" : "#C4C4C4" };
         break;
     }
-    console.log(style);
-    console.log("page: " + page);
-    console.log("props.page: " + props.page);
-
     return style;
   }
 

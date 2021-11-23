@@ -12,6 +12,7 @@ import axios from "axios";
 function BookingPage() {
   const history = useHistory();
   const [page, setPage] = useState(1);
+
   const [service, setService] = useState("");
   const [technician, setTechnician] = useState("");
   const [date, setDate] = useState(
@@ -48,7 +49,7 @@ function BookingPage() {
         time: time,
         email: personalDetails.email,
       },
-      url: "http://localhost:4000/login",
+      url: "/book",
       withCredentials: true,
     }).then((res) => {
       console.log("res", res);
@@ -93,7 +94,12 @@ function BookingPage() {
             ></Services>
           )}
           {page === 2 && (
-            <Calendar getDate={(date) => setDate(date)}></Calendar>
+            <Calendar
+              timeSlots={timeSlots}
+              getDate={(date) => setDate(date)}
+              clickedDate={date}
+              getTime={(time) => setTime(time)}
+            ></Calendar>
           )}
           {page === 3 && (
             <Info

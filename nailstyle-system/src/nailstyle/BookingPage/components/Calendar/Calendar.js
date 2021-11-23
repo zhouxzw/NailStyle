@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import Calendar from "react-calendar";
 import "./Calendar.css";
 import { addMonths } from "../../../../admin/components/Booking/Booking";
+import Timeslots from "../Timeslots/Timeslots";
 
 function Calender(props) {
   let maxDate = new Date(addMonths(new Date(), 1).toString());
@@ -24,6 +25,11 @@ function Calender(props) {
         locale={"en-US"}
         onChange={onDateChange}
       ></Calendar>
+      <Timeslots
+        clickedDate={props.clickedDate}
+        timeSlots={props.timeSlots}
+        getTime={props.getTime}
+      ></Timeslots>
     </div>
   );
 }

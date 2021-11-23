@@ -3,6 +3,7 @@ import Calendar from "react-calendar";
 import "./Calendar.css";
 import { addMonths } from "../../../../admin/components/Booking/Booking";
 import CurrentBooking from "./CurrentBooking/CurrentBooking";
+import Timeslots from "../Timeslots/Timeslots";
 
 function Calender(props) {
   let maxDate = new Date(addMonths(new Date(), 1).toString());
@@ -41,7 +42,12 @@ function Calender(props) {
       </div>
 
       <div className="time-slots-container">
-        <h3>TIME</h3>
+        <h4>TIME</h4>
+        <Timeslots
+          clickedDate={props.clickedDate}
+          timeSlots={props.timeSlots}
+          getTime={props.getTime}
+        ></Timeslots>
       </div>
     </div>
   );

@@ -23,7 +23,7 @@ h5 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: white;
+  background-color: white;
   min-height: 100vh;
 }
 
@@ -39,7 +39,7 @@ h5 {
 }
 
 .booking-navbar {
-  width: 100vw;
+  width: 100%;
   display: flex;
   justify-content: center;
   background-color: white;
@@ -77,28 +77,35 @@ h5 {
   cursor: pointer;
 }
 
-.next-button:hover,
-.finish-button:hover {
-  background-color: #af6578;
+.next-button:hover {
+  background-color: #fc8fac;
 }
 
 .previous-button {
   margin-right: 1em;
-  background-color: #c4c4c4;
-}
-
-.previous-button:hover {
   background-color: #aaaaaa;
 }
 
-@media only screen and (max-width: 768px) {
-  .calender-container {
-    display: flex;
-    justify-content: center;
-  }
-  .calender {
+.previous-button:hover {
+  background-color: #999999;
+}
+
+.finish-button {
+  background-color: var(--secondary-pink);
+}
+
+.finish-button:hover {
+  background-color: #f75c9a;
+}
+
+@media only screen and (min-width: 1024px) {
+  .booking-step-container {
+    width: 80%;
+    max-width: 900px;
   }
 
-  .booking-page-container {
+  .home-symbol {
+    width: 25%;
+    max-width: 300px;
   }
 }

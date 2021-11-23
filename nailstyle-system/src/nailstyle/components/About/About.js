@@ -4,12 +4,13 @@ import React from "react";
 export default function About() {
   return (
     <div className="about-parent-ctn" id="about">
-      <hr className="line" />
       <div className="about-ctn">
-        <span className="header">Nails cut in comfort and harmony</span>
+        <h1 className="about-header">
+          Let Your Nails <span>Glow</span>
+        </h1>
 
         <div className="about-desc">
-          <p className="header-paragraph">
+          <p className="about-paragraph">
             At NailStyle, we pride ourselves in providing a memorable experience
             inside our salon to make you feel more confident outside. With our
             technical expertise, dedicated staff and comforting environment,
@@ -17,7 +18,6 @@ export default function About() {
           </p>
         </div>
       </div>
-      <hr className="line" />
       <div className="hero-btn-ctn">
         <button href="#" className="hero-btn">
           Book Now

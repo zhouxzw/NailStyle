@@ -20,3 +20,15 @@
   border: none;
   margin: 0;
 }
+
+@media only screen and (min-width: 1024px) {
+  .circle {
+    width: 2vw;
+    height: 2vw;
+  }
+
+  .bar {
+    width: 33%;
+    height: 0.75vw;
+  }
+}

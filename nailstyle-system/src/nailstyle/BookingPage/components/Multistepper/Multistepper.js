@@ -8,7 +8,7 @@ function Multistepper(props) {
         className="circle"
         style={{
           backgroundColor: props.page >= 1 ? "#DE7E98" : "#C4C4C4",
-          border: props.page === 1 ? "3px solid #EFBFCC" : "none",
+          border: props.page === 1 ? "1vw solid #EFBFCC" : "none",
         }}
       ></div>
       <hr
@@ -19,7 +19,7 @@ function Multistepper(props) {
         className="circle"
         style={{
           backgroundColor: props.page >= 2 ? "#DE7E98" : "#C4C4C4",
-          border: props.page === 2 ? "3px solid #EFBFCC" : "none",
+          border: props.page === 2 ? "1vw solid #EFBFCC" : "none",
         }}
       ></div>
       <hr
@@ -30,7 +30,7 @@ function Multistepper(props) {
         className="circle"
         style={{
           backgroundColor: props.page >= 3 ? "#DE7E98" : "#C4C4C4",
-          border: props.page === 3 ? "3px solid #EFBFCC" : "none",
+          border: props.page === 3 ? "1vw solid #EFBFCC" : "none",
         }}
       ></div>
       <hr
@@ -41,7 +41,7 @@ function Multistepper(props) {
         className="circle"
         style={{
           backgroundColor: props.page >= 4 ? "#DE7E98" : "#C4C4C4",
-          border: props.page === 4 ? "3px solid #EFBFCC" : "none",
+          border: props.page === 4 ? "1vw solid #EFBFCC" : "none",
         }}
       ></div>
     </div>

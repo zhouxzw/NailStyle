@@ -3,7 +3,10 @@ import "./Multistepper.css";
 
 function Multistepper(props) {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
   function toggleColor(page) {
     let style = null;
     switch (page) {
@@ -24,40 +27,29 @@ function Multistepper(props) {
         style = { backgroundColor: props.page >= 4 ? "#DE7E98" : "#C4C4C4" };
         break;
     }
+<<<<<<< Updated upstream
+    return style;
+  }
+
+>>>>>>> Stashed changes
+=======
+    console.log(style);
+    console.log("page: " + page);
+    console.log("props.page: " + props.page);
+
     return style;
   }
 
 >>>>>>> Stashed changes
   return (
     <div className="multistep-container">
-      <div
-        className="circle"
-        style={{ backgroundColor: props.page >= 1 ? "#DE7E98" : "#C4C4C4" }}
-      ></div>
-      <hr
-        className="bar"
-        style={{ backgroundColor: props.page >= 2 ? "#DE7E98" : "#C4C4C4" }}
-      ></hr>
-      <div
-        className="circle"
-        style={{ backgroundColor: props.page >= 2 ? "#DE7E98" : "#C4C4C4" }}
-      ></div>
-      <hr
-        className="bar"
-        style={{ backgroundColor: props.page >= 3 ? "#DE7E98" : "#C4C4C4" }}
-      ></hr>
-      <div
-        className="circle"
-        style={{ backgroundColor: props.page >= 3 ? "#DE7E98" : "#C4C4C4" }}
-      ></div>
-      <hr
-        className="bar"
-        style={{ backgroundColor: props.page >= 4 ? "#DE7E98" : "#C4C4C4" }}
-      ></hr>
-      <div
-        className="circle"
-        style={{ backgroundColor: props.page >= 4 ? "#DE7E98" : "#C4C4C4" }}
-      ></div>
+      <div className="circle" style={toggleColor(1)}></div>
+      <hr className="bar" style={toggleColor(2)}></hr>
+      <div className="circle" style={toggleColor(2)}></div>
+      <hr className="bar" style={toggleColor(3)}></hr>
+      <div className="circle" style={toggleColor(3)}></div>
+      <hr className="bar" style={toggleColor(4)}></hr>
+      <div className="circle" style={toggleColor(4)}></div>
     </div>
   );
 }

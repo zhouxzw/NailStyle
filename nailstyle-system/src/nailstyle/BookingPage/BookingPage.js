@@ -72,9 +72,6 @@ function BookingPage() {
 
   return (
     <div className="booking-page-container">
-      {date}
-      {service}
-      {technician}
       <div className="booking-navbar">
         <img
           className="home-symbol"
@@ -86,31 +83,43 @@ function BookingPage() {
         />
       </div>
       <div className="booking-step-container">
-        <Multistepper page={page}></Multistepper>
+        <div className="booking-float-container">
+          <Multistepper page={page}></Multistepper>
 
-        {page === 1 && <Calendar getDate={(date) => setDate(date)}></Calendar>}
-        {page === 2 && (
-          <Services
-            getService={(service) => setService(service)}
-            getTech={(technician) => setTechnician(technician)}
-          ></Services>
-        )}
-        {page === 3 && (
-          <Info
-            getInfo={(personalDetails) => setPersonalDetails(personalDetails)}
-            personalDetails={personalDetails}
-          ></Info>
-        )}
-        {page === 4 && <Confirm></Confirm>}
+          {page === 1 && (
+            <Services
+              getService={(service) => setService(service)}
+              getTech={(technician) => setTechnician(technician)}
+            ></Services>
+          )}
+          {page === 2 && (
+            <Calendar getDate={(date) => setDate(date)}></Calendar>
+          )}
+          {page === 3 && (
+            <Info
+              getInfo={(personalDetails) => setPersonalDetails(personalDetails)}
+              personalDetails={personalDetails}
+            ></Info>
+          )}
+          {page === 4 && <Confirm></Confirm>}
+        </div>
+
         <div className="button-container">
-          <button className="previous-button" onClick={() => prevPage()}>
-            Previous
-          </button>
-          {
+          {page !== 1 && (
+            <button className="previous-button" onClick={() => prevPage()}>
+              Previous
+            </button>
+          )}
+          {page === 4 && (
+            <button className="next-button" onClick={() => nextPage()}>
+              Finish
+            </button>
+          )}
+          {page !== 4 && (
             <button className="next-button" onClick={() => nextPage()}>
               Next
             </button>
-          }
+          )}
         </div>
       </div>
     </div>

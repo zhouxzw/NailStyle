@@ -6,25 +6,11 @@
   background-color: white;
 }
 
-.srvc-nav-booking {
+.service-nav-container {
   display: flex;
-  overflow: scroll;
-  width: 100%;
   flex-direction: column;
   align-items: center;
-  align-self: center;
-}
-
-.srvc-nav-booking > h3,
-.srvc-nav-booking > h4,
-.technician-container > h3 {
-  align-self: flex-start;
-  font-size: 0.9em;
-}
-
-.srvc-nav-booking > h4 {
   width: 100%;
-  border-bottom: 1px solid #c4c4c4;
 }
 
 .service-tabs {

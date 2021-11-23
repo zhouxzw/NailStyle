@@ -1,0 +1,28 @@
+.current-booking-container {
+  width: 100%;
+  margin: 1em 0;
+}
+
+.current-booking-box {
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid #c4c4c4;
+  padding: 1em;
+}
+
+.current-booking-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.current-booking-col > h3,
+.current-booking-col > h4,
+.current-booking-col > p,
+.current-booking-box > span {
+  margin: 0;
+  color: #707070;
+}
+
+.left {
+  align-items: flex-end;
+}

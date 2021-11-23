@@ -1,0 +1,18 @@
+.customer-details-container {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  color: #303030;
+  font-weight: bold;
+  margin: 1em 0;
+}
+
+.confirm-line {
+  margin: 1.5em 0;
+  border: 1px solid #c4c4c4;
+}
+
+.customer-details-container > p,
+.customer-details-container > h3 {
+  margin: 0;
+}

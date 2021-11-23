@@ -13,13 +13,21 @@ function BookingPage() {
   const history = useHistory();
   const [page, setPage] = useState(1);
   const [service, setService] = useState("");
+  const [price, setPrice] = useState("-");
   const [technician, setTechnician] = useState("");
+  const [time, setTime] = useState("");
   const [date, setDate] = useState(
     new Date().toLocaleDateString("en-US").replaceAll("/", "-")
   );
-  const [time, setTime] = useState("");
+  const bookingInfo = {
+    service: service,
+    price: price,
+    technician: technician,
+    time: time,
+    date: date,
+  };
 
-  const [personalDetails, setPersonalDetails] = useState({
+  const [personalInfo, setPersonalDetails] = useState({
     name: "",
     email: "",
     phone: "",
@@ -40,13 +48,13 @@ function BookingPage() {
     await axios({
       method: "POST",
       data: {
-        name: personalDetails.name,
+        name: personalInfo.name,
         date: date,
         service: service,
         technician: technician,
-        phone: personalDetails.phone,
+        phone: personalInfo.phone,
         time: time,
-        email: personalDetails.email,
+        email: personalInfo.email,
       },
       url: "http://localhost:4000/login",
       withCredentials: true,
@@ -89,19 +97,30 @@ function BookingPage() {
           {page === 1 && (
             <Services
               getService={(service) => setService(service)}
+              getPrice={(price) => setPrice(price)}
               getTech={(technician) => setTechnician(technician)}
             ></Services>
           )}
           {page === 2 && (
-            <Calendar getDate={(date) => setDate(date)}></Calendar>
+            <Calendar
+              bookingInfo={bookingInfo}
+              personalInfo={personalInfo}
+              getDate={(date) => setDate(date)}
+            ></Calendar>
           )}
           {page === 3 && (
             <Info
-              getInfo={(personalDetails) => setPersonalDetails(personalDetails)}
-              personalDetails={personalDetails}
+              bookingInfo={bookingInfo}
+              getInfo={(personalInfo) => setPersonalDetails(personalInfo)}
+              personalInfo={personalInfo}
             ></Info>
           )}
-          {page === 4 && <Confirm></Confirm>}
+          {page === 4 && (
+            <Confirm
+              bookingInfo={bookingInfo}
+              personalInfo={personalInfo}
+            ></Confirm>
+          )}
         </div>
 
         <div className="button-container">
@@ -111,7 +130,7 @@ function BookingPage() {
             </button>
           )}
           {page === 4 && (
-            <button className="next-button" onClick={() => nextPage()}>
+            <button className="finish-button" onClick={() => nextPage()}>
               Finish
             </button>
           )}

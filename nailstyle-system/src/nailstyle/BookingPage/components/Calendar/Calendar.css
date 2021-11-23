@@ -103,4 +103,5 @@
   display: flex;
   justify-content: center;
   background-color: white;
+  flex-direction: column;
 }

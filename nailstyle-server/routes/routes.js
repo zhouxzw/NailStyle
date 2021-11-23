@@ -309,6 +309,25 @@ router.get("/employees", async (req, res) => {
   }
 });
 
+router.get("/employee/times", async (req, res) => {
+  try {
+    const employee = await Employee.findOne(
+      {
+        name: req.query.name,
+      },
+      {
+        name: 1,
+        availability: 1,
+        _id: 0,
+      }
+    );
+
+    res.json(employee);
+  } catch (error) {
+    res.json({ message: error });
+  }
+});
+
 router.post("/timeslots", async (req, res) => {});
 
 module.exports = router;

@@ -61,7 +61,7 @@ function Services(props) {
   useEffect(() => {
     async function retrieveEmployees() {
       const response = await axios.get("/employees");
-      console.log(response.data);
+
       setTechnicians(response.data);
     }
 

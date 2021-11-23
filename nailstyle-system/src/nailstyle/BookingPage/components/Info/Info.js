@@ -1,6 +1,6 @@
 import React from "react";
 import "./Info.css";
-
+import CurrentBooking from "../Calendar/CurrentBooking/CurrentBooking";
 import { useState } from "react";
 
 function Info(props) {
@@ -15,7 +15,16 @@ function Info(props) {
   return (
     <div className="info-container">
       <form className="info-forms">
-        <h4>Enter Personal Information</h4>
+        <CurrentBooking
+          service={props.bookingInfo.service}
+          technician={props.bookingInfo.technician}
+          price={props.bookingInfo.price}
+          date={props.bookingInfo.date}
+          time={props.bookingInfo.time}
+        />
+        <div className="info-nav-container nav">
+          <h5>Enter Personal Information</h5>
+        </div>
         <div className="field-container">
           <div className="input-container input-name">
             <label>FULL NAME</label>
@@ -23,7 +32,7 @@ function Info(props) {
               className="info-input"
               onChange={handleChange}
               name="name"
-              value={props.personalDetails.name}
+              value={props.personalInfo.name}
             ></input>
           </div>
           <div className="input-container">
@@ -31,8 +40,11 @@ function Info(props) {
             <input
               className="info-input"
               onChange={handleChange}
+              value={props.personalInfo.phone}
               name="phone"
-              value={props.personalDetails.phone}
+              type="tel"
+              pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+              required
             ></input>
           </div>
         </div>
@@ -43,7 +55,7 @@ function Info(props) {
               className="info-input"
               onChange={handleChange}
               name="email"
-              value={props.personalDetails.email}
+              value={props.personalInfo.email}
             ></input>
           </div>
         </div>

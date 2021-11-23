@@ -13,10 +13,9 @@
   .react-calendar {
     border: none;
     border-radius: 2px;
-    margin-bottom: 1rem;
-    margin-top: 1rem;
     border: 1px solid #c4c4c4;
     box-shadow: none;
+    margin: 0 auto;
   }
 
   .react-calendar,
@@ -99,7 +98,15 @@
   }
 }
 
-.calender {
+.schedule-selection-container {
+}
+
+.schedule-nav-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.calendar {
   display: flex;
   justify-content: center;
   background-color: white;

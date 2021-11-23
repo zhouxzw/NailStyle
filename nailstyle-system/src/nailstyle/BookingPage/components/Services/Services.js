@@ -70,25 +70,25 @@ function Services(props) {
 
   return (
     <div className="service-selection-container">
-      <div className="srvc-nav-booking">
-        <h4>Select Services and Technician</h4>
-        <h3>SERVICES</h3>
-        <div className="service-tabs">
-          {picListServices.map((src, i) => (
-            <div
-              onClick={() => toggleServices(i)}
-              className="service-selection"
-              key={"srvc-sel" + i}
-              style={
-                servicesState[i].toggled
-                  ? { backgroundColor: "rgb(175, 101, 120)" }
-                  : { backgroundImage: `url(${src})` }
-              }
-            >
-              <div className="service-title">{servicesState[i].name}</div>
-            </div>
-          ))}
-        </div>
+      <div className="service-nav-container nav">
+        <h5>Select Services and Technician</h5>
+        <h4>SERVICES</h4>
+      </div>
+      <div className="service-tabs">
+        {picListServices.map((src, i) => (
+          <div
+            onClick={() => toggleServices(i)}
+            className="service-selection"
+            key={"srvc-sel" + i}
+            style={
+              servicesState[i].toggled
+                ? { backgroundColor: "rgb(175, 101, 120)" }
+                : { backgroundImage: `url(${src})` }
+            }
+          >
+            <div className="service-title">{servicesState[i].name}</div>
+          </div>
+        ))}
       </div>
       <div className="service-options">
         <ul className="service-option-list">
@@ -113,6 +113,7 @@ function Services(props) {
                     onClick={() => {
                       toggleSelection(i);
                       props.getService(selection.desc);
+                      props.getPrice(selection.price);
                     }}
                   >
                     <li>{selection.desc}</li>

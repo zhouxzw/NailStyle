@@ -39,11 +39,6 @@ function Calender(props) {
           locale={"en-US"}
           onChange={onDateChange}
         ></Calendar>
-        <Timeslots
-          clickedDate={props.clickedDate}
-          timeSlots={props.timeSlots}
-          getTime={props.getTime}
-        ></Timeslots>
       </div>
 
       <div className="time-slots-container">

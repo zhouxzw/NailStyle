@@ -299,6 +299,45 @@ router.delete("/deletebooking", verify, async (req, res) => {
   }
 });
 
+router.post("/updatetimeslot", async (req, res) => {
+  try {
+    //find employee with given name
+    let employee = await Employee.find({ name: req.body.name });
+
+    const availabilityList = employee[0].availability;
+    let indexOne, indexTwo;
+    //loop through the employee to find the time slots on the selected date
+    for (let i = 0; i < availabilityList.length; i++) {
+      for (let j = 0; j < availabilityList[i].days.length; j++) {
+        if (availabilityList[i].days[j].date === req.body.date) {
+          indexOne = i;
+          indexTwo = j;
+          break;
+        }
+      }
+    }
+
+    //remove the time slot
+    const filterTime = employee[0].availability[indexOne].days[
+      indexTwo
+    ].timeSlots.filter((time) => {
+      return time !== req.body.time;
+    });
+    //replace the old time slot with new time slot
+    employee[0].availability[indexOne].days[indexTwo].timeSlots = filterTime;
+
+    /*
+      Add condition when all time slots are booked
+    */
+
+    //update and save!
+    const updateTime = await employee[0].save();
+    res.json(updateTime);
+  } catch (error) {
+    res.json({ message: error });
+  }
+});
+
 // get all employees
 router.get("/employees", async (req, res) => {
   try {

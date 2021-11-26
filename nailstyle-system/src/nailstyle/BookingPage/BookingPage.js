@@ -45,6 +45,19 @@ function BookingPage() {
     setPage((p) => p - 1);
   }
 
+  //https://www.tutorialspoint.com/converting-12-hour-format-time-to-24-hour-format-in-javascript
+  const convertTime = (timeStr) => {
+    const [time, modifier] = timeStr.split(" ");
+    let [hours, minutes] = time.split(":");
+    if (hours === "12") {
+      hours = "00";
+    }
+    if (modifier === "PM") {
+      hours = parseInt(hours, 10) + 12;
+    }
+    return `${hours}:${minutes}`;
+  };
+
   const submitForm = async () => {
     await axios({
       method: "POST",
@@ -59,9 +72,22 @@ function BookingPage() {
       },
       url: "/book",
       withCredentials: true,
-    }).then((res) => {
-      console.log("res", res);
-    });
+    }).then((res) => {});
+  };
+
+  const submitTime = async () => {
+    const twentyFourHourTime = convertTime(time);
+
+    await axios({
+      method: "POST",
+      data: {
+        name: technician,
+        date: date,
+        time: twentyFourHourTime,
+      },
+      url: "/updatetimeslot",
+      withCredentials: true,
+    }).then((res) => {});
   };
 
   useEffect(() => {
@@ -72,7 +98,7 @@ function BookingPage() {
         },
       });
 
-      console.log(request.data);
+      //console.log(request.data);
       setTimeSlots(request.data);
     }
 
@@ -133,7 +159,13 @@ function BookingPage() {
             </button>
           )}
           {page === 4 && (
-            <button className="finish-button" onClick={() => nextPage()}>
+            <button
+              className="finish-button"
+              onClick={() => {
+                submitForm();
+                submitTime();
+              }}
+            >
               Finish
             </button>
           )}

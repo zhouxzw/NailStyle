@@ -6,14 +6,37 @@ function Timeslots(props) {
   const clickedDate = props.clickedDate;
   const [employeeSlot, setEmployeeSlot] = useState();
 
+  function toggleTime(index) {
+    let timeSlotCopy = employeeSlot.map((time) => {
+      time.toggle = false;
+      return time;
+    });
+    timeSlotCopy[index].toggle = true;
+    setEmployeeSlot(timeSlotCopy);
+  }
+
+  //https://stackoverflow.com/questions/13898423/javascript-convert-24-hour-time-of-day-string-to-12-hour-time-with-am-pm-and-no
+  function formatTime(time) {
+    const formattedTime = new Date(
+      "2021-01-01T" + time + "Z"
+    ).toLocaleTimeString("en-US", {
+      timeZone: "UTC",
+      hour12: true,
+      hour: "numeric",
+      minute: "numeric",
+    });
+    props.getTime(formattedTime);
+  }
+
   useEffect(() => {
     props.timeSlots.availability.forEach((month) => {
       month.days.some((days) => {
         if (days.date === clickedDate) {
-          //console.log("clicked date", clickedDate);
-          //console.log("days.date", days.date);
-
-          setEmployeeSlot(days);
+          //needed to map the array into an object array so the object can have a toggle property
+          let copy = days.timeSlots.map((time) => {
+            return { time: time, toggle: false };
+          });
+          setEmployeeSlot(copy);
         }
       });
     });
@@ -22,15 +45,17 @@ function Timeslots(props) {
   return (
     <div className="time-slot-container">
       {employeeSlot &&
-        employeeSlot.timeSlots.map((times, i) => (
+        employeeSlot.map((times, i) => (
           <div
             className="slot"
             key={"slot" + i}
+            style={times.toggle ? { backgroundColor: "#E1B0BD" } : null}
             onClick={() => {
-              props.getTime(times);
+              toggleTime(i);
+              formatTime(times.time);
             }}
           >
-            {times}
+            {times.time}
           </div>
         ))}
     </div>

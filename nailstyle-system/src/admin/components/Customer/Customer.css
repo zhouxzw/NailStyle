@@ -19,6 +19,11 @@
   width: 50vw;
   border: none;
   font-size: 1.2rem;
+  margin-left: 1vw;
+}
+
+.search-bar:focus {
+  outline: none;
 }
 
 .search-icon {

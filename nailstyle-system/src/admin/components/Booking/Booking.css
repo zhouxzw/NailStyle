@@ -3,6 +3,7 @@
   align-items: center;
   flex-direction: column;
   margin: 7.5rem 0;
+  width: 65%;
 }
 
 .react-calendar {
@@ -16,16 +17,21 @@
 .booking-slots {
   display: flex;
   flex-direction: column;
+  margin-top: 10vh;
+  width: 100%;
 }
 
 .price-input {
   background: #ececec;
 }
 
+.price-container > label {
+  margin-right: 0.6vw;
+}
+
 .booking-card {
   display: flex;
   justify-content: center;
-  width: 55vw;
   flex-direction: column;
   border-radius: 20px;
   margin-bottom: 2rem;
@@ -49,6 +55,7 @@
   height: 22vh;
   align-items: start;
   font-size: 1.2em;
+  justify-content: space-evenly;
 }
 
 .card-head > div,

@@ -6,6 +6,7 @@ import Booking from "./components/Booking/Booking";
 import Customer from "./components/Customer/Customer";
 import Analytic from "./components/Analytic/Analytic";
 import Employee from "./components/Employee/Employee";
+import Popup from "./components/Popup/Popup";
 import { withRouter } from "react-router-dom";
 
 function Display(props) {
@@ -30,6 +31,7 @@ function Admin() {
   const [customers, setCustomers] = useState(false);
   const [analytics, setAnalytics] = useState(false);
   const [employee, setEmployee] = useState(false);
+  const [dateChange, setDateChange] = useState(false);
 
   return (
     <div className="page-container">
@@ -46,11 +48,20 @@ function Admin() {
             actCustomer={(customers) => setCustomers(customers)}
             actAnalytic={(analytics) => setAnalytics(analytics)}
             actEmployee={(employee) => setEmployee(employee)}
+            getDateChange={(dateChange) => setDateChange(dateChange)}
+            changeDate={dateChange}
           ></LeftNavbar>
         </div>
+
         <div className="state-container">
-          <Display display={{ bookings, customers, analytics, employee }} />
+          {dateChange ? null : (
+            <Display display={{ bookings, customers, analytics, employee }} />
+          )}
         </div>
+
+        {dateChange ? (
+          <Popup cancel={(dateChange) => setDateChange(dateChange)}></Popup>
+        ) : null}
       </div>
     </div>
   );

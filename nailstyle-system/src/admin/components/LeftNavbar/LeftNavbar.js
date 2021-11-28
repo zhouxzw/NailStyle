@@ -4,6 +4,7 @@ import {
   BsPeopleFill,
   BsGraphUp,
   BsFillPersonLinesFill,
+  BsFillCloudFill,
 } from "react-icons/bs";
 
 const Navbar = (props) => {
@@ -112,6 +113,20 @@ const Navbar = (props) => {
             >
               <BsFillPersonLinesFill className="icon"></BsFillPersonLinesFill>
               <div className="category-title">Employee</div>
+            </div>
+          </li>
+          <li>
+            <div className="link">
+              <BsFillCloudFill className="icon"></BsFillCloudFill>
+              <div
+                className="category-title"
+                onClick={() => {
+                  props.getDateChange(!props.changeDate);
+                  console.log(props.changeDate);
+                }}
+              >
+                Date Change
+              </div>
             </div>
           </li>
         </ul>

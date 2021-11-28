@@ -1,7 +1,10 @@
 import "./About.css";
 import React from "react";
+import { useHistory } from "react-router";
 
 export default function About() {
+  const history = useHistory();
+
   return (
     <div className="about-parent-ctn" id="about">
       <div className="about-ctn">
@@ -19,7 +22,12 @@ export default function About() {
         </div>
       </div>
       <div className="hero-btn-ctn">
-        <button href="#" className="hero-btn">
+        <button
+          className="hero-btn"
+          onClick={() => {
+            history.push("/bookings");
+          }}
+        >
           Book Now
         </button>
         <button href="#" className="hero-btn">

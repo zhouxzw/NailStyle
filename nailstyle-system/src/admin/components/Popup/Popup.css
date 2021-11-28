@@ -1,0 +1,36 @@
+.popup-container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f7f7f7;
+  width: 25vw;
+  height: 30vh;
+  border: 1px solid black;
+  border-radius: 4px;
+}
+
+.date-title {
+  display: flex;
+  justify-content: center;
+  text-decoration: underline;
+}
+
+.date-box,
+.confirm-container {
+  margin-left: 2em;
+}
+
+.confirm-container > label {
+  margin-right: 1em;
+}
+
+.confirm-input {
+  width: 10%;
+}
+
+.popup-buttons {
+  display: flex;
+  justify-content: end;
+  margin-right: 2em;
+}

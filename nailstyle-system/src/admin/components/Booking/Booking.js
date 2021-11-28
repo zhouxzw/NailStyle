@@ -96,7 +96,7 @@ const Booking = () => {
 
   return (
     <div className="booking-container">
-      <div className="calender-size" style={{ width: "50vw" }}>
+      <div className="calender-size">
         <Calendar
           minDate={new Date()}
           maxDate={maxDate}
@@ -125,7 +125,7 @@ const Booking = () => {
                   <div>Service: {client.service}</div>
                   <div>Technician: {client.technician}</div>
                   <div className="right-flex">
-                    <div>
+                    <div className="price-container">
                       <label>Price</label>
                       <input
                         className="price-input"

@@ -97,6 +97,7 @@ const Booking = () => {
   return (
     <div className="booking-container">
       <Calendar
+        className="admin-booking-calendar"
         minDate={new Date()}
         maxDate={maxDate}
         prev2Label={null}

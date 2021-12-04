@@ -26,33 +26,31 @@ function Calender(props) {
       ></CurrentBooking>
       <div className="schedule-nav-container nav">
         <h5>Select Date and Time</h5>
-        <h4>DATE</h4>
       </div>
+      <div className="schedule-desktop-container">
+        <div className="calendar-container">
+          <h4>DATE</h4>
+          <div className="calendar">
+            <Calendar
+              minDate={new Date()}
+              maxDate={maxDate}
+              prev2Label={null}
+              next2Label={null}
+              showFixedNumberOfWeeks={true}
+              locale={"en-US"}
+              onChange={onDateChange}
+            ></Calendar>
+          </div>
+        </div>
 
-      <div className="calendar">
-        <Calendar
-          minDate={new Date()}
-          maxDate={maxDate}
-          prev2Label={null}
-          next2Label={null}
-          showFixedNumberOfWeeks={true}
-          locale={"en-US"}
-          onChange={onDateChange}
-        ></Calendar>
-        <Timeslots
-          clickedDate={props.clickedDate}
-          timeSlots={props.timeSlots}
-          getTime={props.getTime}
-        ></Timeslots>
-      </div>
-
-      <div className="time-slots-container">
-        <h4>TIME</h4>
-        <Timeslots
-          clickedDate={props.clickedDate}
-          timeSlots={props.timeSlots}
-          getTime={props.getTime}
-        ></Timeslots>
+        <div className="time-slots-container">
+          <h4>TIME</h4>
+          <Timeslots
+            clickedDate={props.clickedDate}
+            timeSlots={props.timeSlots}
+            getTime={props.getTime}
+          ></Timeslots>
+        </div>
       </div>
     </div>
   );

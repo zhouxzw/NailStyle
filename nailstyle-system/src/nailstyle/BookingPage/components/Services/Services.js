@@ -69,83 +69,93 @@ function Services(props) {
   }, []);
 
   return (
-    <div className="service-selection-container">
+    <div className="service-parent-container">
+      {/* SELECT */}
       <div className="service-nav-container nav">
         <h5>Select Services and Technician</h5>
-        <h4>SERVICES</h4>
       </div>
-      <div className="service-tabs">
-        {picListServices.map((src, i) => (
-          <div
-            onClick={() => toggleServices(i)}
-            className="service-selection"
-            key={"srvc-sel" + i}
-            style={
-              servicesState[i].toggled
-                ? { backgroundColor: "rgb(175, 101, 120)" }
-                : { backgroundImage: `url(${src})` }
-            }
-          >
-            <div className="service-title">{servicesState[i].name}</div>
-          </div>
-        ))}
-      </div>
-      <div className="service-options">
-        <ul className="service-option-list">
-          {servicesState
-            .filter((options, j) => {
-              if (options.toggled === true) {
-                return options;
-              }
-            })
-            .map((option) =>
-              option.serviceList.map(function (selection, i) {
-                return (
-                  <div
-                    key={"selection-key-" + i}
-                    className="service-info"
-                    id={"selection-id-" + i}
-                    style={
-                      option.serviceList[i].toggle
-                        ? { backgroundColor: "#E1B0BD" }
-                        : null
+      {/* SERVICE */}
+      <div className="service-container">
+        <div className="service-desktop-formatter">
+          <h4>SERVICES</h4>
+          <div className="service-selection-container">
+            <div className="service-tabs">
+              {picListServices.map((src, i) => (
+                <div
+                  onClick={() => toggleServices(i)}
+                  className="service-selection"
+                  key={"srvc-sel" + i}
+                  style={
+                    servicesState[i].toggled
+                      ? { backgroundColor: "rgb(175, 101, 120)" }
+                      : { backgroundImage: `url(${src})` }
+                  }
+                >
+                  <div className="service-title">{servicesState[i].name}</div>
+                </div>
+              ))}
+            </div>
+            <div className="service-options">
+              <ul className="service-option-list">
+                {servicesState
+                  .filter((options, j) => {
+                    if (options.toggled === true) {
+                      return options;
                     }
-                    onClick={() => {
-                      toggleSelection(i);
-                      props.getService(selection.desc);
-                      props.getPrice(selection.price);
-                    }}
-                  >
-                    <li>{selection.desc}</li>
-                    <li>{"$" + selection.price}</li>
-                  </div>
-                );
-              })
-            )}
-        </ul>
-      </div>
-      <div className="technician-container">
-        <h3>AVAILABLE TECHNICIANS</h3>
-        <ul class="technician-options">
-          {technicians &&
-            technicians.map((tech, i) => (
-              <div
-                className="tech-names"
-                key={"tech-name-" + i}
-                onClick={() => {
-                  toggleTech(i);
-                  props.getTech(tech.name);
-                }}
-                style={
-                  tech.toggle
-                    ? { backgroundColor: "#E1B0BD" }
-                    : { backgroundColor: null }
-                }
-              >
-                <li>{tech.name}</li>
-              </div>
-            ))}
-        </ul>
+                  })
+                  .map((option) =>
+                    option.serviceList.map(function (selection, i) {
+                      return (
+                        <div
+                          key={"selection-key-" + i}
+                          className="service-info"
+                          id={"selection-id-" + i}
+                          style={
+                            option.serviceList[i].toggle
+                              ? { backgroundColor: "#E1B0BD" }
+                              : null
+                          }
+                          onClick={() => {
+                            toggleSelection(i);
+                            props.getService(selection.desc);
+                            props.getPrice(selection.price);
+                          }}
+                        >
+                          <li>{selection.desc}</li>
+                          <li>{"$" + selection.price}</li>
+                        </div>
+                      );
+                    })
+                  )}
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {/* TECH */}
+        <div className="technician-container">
+          <h4>AVAILABLE TECHNICIANS</h4>
+          <ul class="technician-options">
+            {technicians &&
+              technicians.map((tech, i) => (
+                <div
+                  className="tech-names"
+                  key={"tech-name-" + i}
+                  onClick={() => {
+                    toggleTech(i);
+                    props.getTech(tech.name);
+                  }}
+                  style={
+                    tech.toggle
+                      ? { backgroundColor: "#E1B0BD" }
+                      : { backgroundColor: null }
+                  }
+                >
+                  <li>{tech.name}</li>
+                </div>
+              ))}
+          </ul>
+        </div>
       </div>
     </div>
   );

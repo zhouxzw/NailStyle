@@ -23,12 +23,24 @@
 
 @media only screen and (min-width: 1024px) {
   .circle {
-    width: 2vw;
-    height: 2vw;
+    width: 2.5vw;
+    height: 2.5vw;
   }
 
   .bar {
-    width: 33%;
-    height: 0.75vw;
+    width: 28.5%;
+    height: 0.65vw;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .bar {
+    height: 0.5vw;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .bar {
+    width: 27%;
   }
 }

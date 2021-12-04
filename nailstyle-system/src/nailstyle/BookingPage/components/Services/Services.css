@@ -1,4 +1,15 @@
-.service-selection-container {
+.service-parent-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.service-container {
+}
+
+.service-nav-container {
+}
+
+.service-toggle-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -6,27 +17,20 @@
   background-color: white;
 }
 
-.service-nav-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-}
-
 .service-tabs {
   width: 100%;
-  cursor: pointer;
 }
 
 .service-selection {
   flex-shrink: 0;
-  height: calc(1em + 3.25vh);
+  height: 6.1vh;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 
 .service-options {
@@ -56,8 +60,7 @@
 .technician-container {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  width: 100%;
+  width: auto;
   margin-top: 1em;
 }
 
@@ -77,4 +80,47 @@
 .tech-names > li {
   margin-left: 7%;
   font-size: 0.9em;
+}
+
+@media only screen and (min-width: 1024px) {
+  .service-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .service-desktop-formatter {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-right: 1em;
+  }
+
+  .service-selection-container {
+    display: grid;
+    grid-template-columns: 215px auto;
+  }
+
+  .service-tabs {
+    width: 95%;
+  }
+
+  .service-options {
+  }
+
+  .service-selection {
+  }
+
+  .service-info {
+    width: 100%;
+  }
+
+  .technician-container {
+    margin-top: 0;
+    margin-left: 1em;
+    width: 30%;
+  }
+
+  .technician-selection-container {
+    width: 100%;
+  }
 }

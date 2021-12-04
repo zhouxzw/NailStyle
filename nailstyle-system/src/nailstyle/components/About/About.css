@@ -1,5 +1,5 @@
 .about-parent-ctn {
-  background: url(./herobg.jpg) no-repeat;
+  background: #202020 no-repeat;
   background-size: cover;
   display: flex;
   width: 100%;
@@ -11,19 +11,36 @@
   height: auto;
 }
 
+.about-desktop-formatter {
+  display: flex;
+  max-width: 785px;
+}
+
+.about-svg {
+  display: none;
+  position: relative;
+  left: 2em;
+  background: url(./nailstylehands.svg) no-repeat;
+  background-position: center;
+  background-size: 100%;
+  width: 95%;
+  height: auto;
+}
+
 .about-ctn {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
   padding: 3em 0;
+  width: 100%;
 }
 
 .about-header {
   font-family: "Caladea", sans-serif;
   font-style: italic;
   color: white;
+  font-size: 2em;
 }
 
 .about-header span {
@@ -55,14 +72,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0 2em;
-  margin-bottom: 2em;
-  width: 80%;
+  margin: 2em 0;
+  width: 50%;
 }
 
 .hero-btn {
   margin: 0.25em 0;
-  padding: 1em;
   width: 100%;
   height: 45px;
   font-size: 0.75em;
@@ -79,21 +94,38 @@
 }
 
 @media only screen and (min-width: 768px) {
-  .line {
-    width: 785px;
+  .about-ctn {
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .about-desktop-formatter {
+    width: 80%;
+  }
+
+  .about-svg {
+    display: inline;
+  }
+
+  .about-header {
+    font-size: 4.5em;
+    width: auto;
+    margin: 0.25em 0;
   }
 
   .about-desc {
-    width: 785px;
+    text-align: left;
+  }
+
+  .about-paragraph {
+    margin: 0;
+    width: 100%;
+    max-width: 500px;
   }
 
   .about-desc p {
-    font-size: 0.95em;
-    color: white;
-  }
-
-  .header-paragraph {
-    max-width: none;
+    font-size: 1em;
+    font-weight: lighter;
   }
 
   .hero-btn-book a {
@@ -102,9 +134,10 @@
 
   .hero-btn-ctn {
     flex-direction: row;
+    justify-content: flex-start;
+    padding: 0;
   }
 
   .hero-btn {
-    margin: 0 1em;
   }
 }

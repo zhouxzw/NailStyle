@@ -16,7 +16,7 @@ function Popup(props) {
         <h3>Today: {today} </h3>
         <h3>Tomorrow: {tomorrow.toLocaleDateString()}</h3>
       </div>
-      <div className="confirm-container">
+      <div className="popup-confirm-container">
         <label>TYPE (YES)</label>
         <input
           className="confirm-input"

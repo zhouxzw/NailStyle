@@ -9,6 +9,9 @@ export default function Contact() {
       <div className="contact-child-ctn">
         <div className="contact-header-ctn">
           <span className="header">CONTACT US</span>
+          <p className="header-paragraph">
+            Get in touch at our convenient location along Peace River.
+          </p>
         </div>
 
         <div className="contact-map-ctn"></div>

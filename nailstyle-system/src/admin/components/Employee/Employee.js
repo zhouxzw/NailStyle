@@ -52,13 +52,14 @@ const Employee = () => {
     // }
     // setActive(!isActive);
   }
+  function addNewEmployee() {}
 
   return (
     <div className="employee-container">
       <input className="filter-bar" placeholder="Filter..." type="text"></input>
       <div className="employee-header-container">
         <h1>List of Employees</h1>
-        <button className="employee-add-btn">
+        <button className="employee-add-btn" onClick={() => addNewEmployee()}>
           <BsPlus className="add-icon"></BsPlus>
           <span>New Employee</span>
         </button>

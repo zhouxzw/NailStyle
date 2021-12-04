@@ -17,7 +17,8 @@
 
 .srvc-header-ctn {
   text-align: center;
-  padding: 3em 0.5em 1.5em 0.5em;
+  padding: 3em 0 1.5em 0;
+  width: 100%;
 }
 
 ::-webkit-scrollbar {
@@ -130,10 +131,6 @@ ul.srvc-price li {
     width: 90%;
     max-width: 785px;
     min-width: 785px;
-  }
-
-  .srvc-header-ctn p {
-    font-size: 0.95em;
   }
 
   .srvc-display-ctn {

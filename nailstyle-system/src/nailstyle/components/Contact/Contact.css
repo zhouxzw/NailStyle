@@ -17,6 +17,8 @@
 
 .contact-header-ctn {
   text-align: center;
+  padding: 4em 0 1.5em 0;
+  width: 100%;
 }
 
 .contact-map-ctn {
@@ -30,14 +32,26 @@
 
 .contact-info-parent {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   width: 80%;
   margin-bottom: 3em;
-  font-size: 0.8em;
+  font-size: 0.9em;
 }
 
 .contact-info-parent span {
   font-weight: bold;
+}
+
+.contact-info-ctn,
+.contact-intouch-ctn,
+.contact-social-ctn {
+  margin: 1em 0;
+}
+
+.contact-info-ctn span,
+.contact-intouch-ctn span,
+.contact-social-ctn span {
+  font-size: 1.1em;
 }
 
 .contact-address,
@@ -57,12 +71,15 @@
   display: flex;
 }
 
+.contact-hours ul {
+  text-align: left;
+}
+
 .contact-day {
   margin-right: 1em;
 }
 
 .contact-social-ctn {
-  text-align: right;
 }
 
 .social {
@@ -71,7 +88,18 @@
 
 @media only screen and (min-width: 768px) {
   .contact-info-parent {
-    width: 62%;
-    max-width: 785px;
+    flex-direction: row;
+    text-align: initial;
+    justify-content: space-between;
+    font-size: 1em;
   }
+
+  .contact-info-ctn span,
+  .contact-intouch-ctn span,
+  .contact-social-ctn span {
+    font-size: 1.15em;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
 }

@@ -7,32 +7,31 @@ export default function About() {
 
   return (
     <div className="about-parent-ctn" id="about">
-      <div className="about-ctn">
-        <h1 className="about-header">
-          Let Your Nails <span>Glow</span>
-        </h1>
+      <div className="about-desktop-formatter">
+        <div className="about-ctn">
+          <h1 className="about-header">
+            Let Your Nails <span>Glow</span>
+          </h1>
 
-        <div className="about-desc">
-          <p className="about-paragraph">
-            At NailStyle, we pride ourselves in providing a memorable experience
-            inside our salon to make you feel more confident outside. With our
-            technical expertise, dedicated staff and comforting environment,
-            your certainty is guaranteed.{" "}
-          </p>
+          <div className="about-desc">
+            <p className="about-paragraph">
+              At NailStyle, we pride ourselves in providing a memorable
+              experience inside our salon to make you feel more confident
+              outside. Let us help you connect with your own beauty.{" "}
+            </p>
+          </div>
+          <div className="hero-btn-ctn">
+            <button
+              className="hero-btn"
+              onClick={() => {
+                history.push("/bookings");
+              }}
+            >
+              Book Now
+            </button>
+          </div>
         </div>
-      </div>
-      <div className="hero-btn-ctn">
-        <button
-          className="hero-btn"
-          onClick={() => {
-            history.push("/bookings");
-          }}
-        >
-          Book Now
-        </button>
-        <button href="#" className="hero-btn">
-          Contact Us
-        </button>
+        <div className="about-svg"></div>
       </div>
     </div>
   );

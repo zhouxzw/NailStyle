@@ -38,7 +38,9 @@ export default function Gallery() {
       <div className="gallery-header-ctn">
         <span className="header">GALLERY</span>
 
-        <p className="header-paragraph"></p>
+        <p className="header-paragraph">
+          A showcase of some of our finest pieces of client work.
+        </p>
       </div>
       <div className="gallery-display-ctn">
         <div className="gallery-display-child">

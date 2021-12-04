@@ -96,17 +96,16 @@ const Booking = () => {
 
   return (
     <div className="booking-container">
-      <div className="calender-size">
-        <Calendar
-          minDate={new Date()}
-          maxDate={maxDate}
-          prev2Label={null}
-          next2Label={null}
-          showFixedNumberOfWeeks={true}
-          onChange={onDateChange}
-          locale={"en-US"}
-        />
-      </div>
+      <Calendar
+        className="admin-booking-calendar"
+        minDate={new Date()}
+        maxDate={maxDate}
+        prev2Label={null}
+        next2Label={null}
+        showFixedNumberOfWeeks={true}
+        onChange={onDateChange}
+        locale={"en-US"}
+      />
 
       <div className="booking-slots">
         {bookings &&

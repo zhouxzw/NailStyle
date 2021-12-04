@@ -3,15 +3,7 @@
   align-items: center;
   flex-direction: column;
   margin: 7.5rem 0;
-  width: 65%;
-}
-
-.react-calendar {
-  background: white;
-  font-family: "Catamaran", sans-serif;
-  border: none;
-  border-radius: 2px;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  width: 100%;
 }
 
 .booking-slots {
@@ -109,92 +101,6 @@
   cursor: pointer;
 }
 
-.react-calendar__navigation__label {
-  pointer-events: none;
-}
-.react-calendar__navigation__label__labelText {
-  font-size: 2.3em;
-}
-
-.react-calendar__navigation__arrow {
-  font-size: 2em;
-}
-
-.react-calendar,
-.react-calendar *,
-.react-calendar *:before,
-.react-calendar *:after {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-.react-calendar button {
-  margin: 0;
-  border: 0;
-  outline: none;
-}
-.react-calendar button:enabled:hover {
-  cursor: pointer;
-}
-.react-calendar__navigation {
-  padding: 2em;
-}
-.react-calendar__navigation button {
-  min-width: 44px;
-  background: none;
-}
-.react-calendar__navigation button:enabled:hover {
-  background-color: #e6e6e6;
-}
-
-.react-calendar__month-view__weekdays {
-  text-align: center;
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: 1.2em;
-}
-
-.react-calendar__month-view__weekdays__weekday > abbr {
-  text-decoration: none;
-}
-
-.react-calendar__month-view__days__day--neighboringMonth {
-  color: #757575;
-}
-
-.react-calendar__tile {
-  max-width: 100%;
-  text-align: center;
-  padding: 2.5em 1.5em;
-  background: none;
-  font-size: 1em;
-}
-.react-calendar__tile:disabled {
-  background-color: #f0f0f0;
-}
-.react-calendar__tile:enabled:hover,
-.react-calendar__tile:enabled:focus {
-  background-color: var(--calender-pink);
-}
-.react-calendar__tile--now {
-  background: #0ead69 !important;
-}
-.react-calendar__tile--now:enabled:hover,
-.react-calendar__tile--now:enabled:focus {
-  background: #0ead69;
-}
-.react-calendar__tile--hasActive {
-  background: var(--calender-pink);
-}
-.react-calendar__tile--hasActive:enabled:hover,
-.react-calendar__tile--hasActive:enabled:focus {
-  background: var(--calender-pink);
-}
-.react-calendar__tile--active {
-  background: var(--calender-pink);
-  color: black;
-}
-.react-calendar__tile--active:enabled:hover,
-.react-calendar__tile--active:enabled:focus {
-  background: var(--calender-pink);
+.admin-booking-calendar .react-calendar__tile {
+  padding: 3em 0.3em;
 }

@@ -1,0 +1,80 @@
+.popup-shade {
+  position: fixed;
+  background-color: #00000050;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-parent-container {
+  background-color: white;
+  margin: 0 auto;
+  padding: 2em 3.5em;
+  width: 40%;
+  height: 55%;
+}
+
+.popup-fields {
+  display: flex;
+  flex-direction: column;
+}
+
+.popup-header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.popup-exit {
+  font-size: 2.5em;
+  cursor: pointer;
+}
+
+.employee-field {
+  color: #505050;
+  width: 100%;
+}
+
+.employee-field h4 {
+  font-size: 1.05em;
+  color: #505050;
+  margin: 0;
+}
+
+.popup-input {
+  width: 100%;
+  height: 3em;
+  margin-bottom: 2em;
+  padding: 0 0.5em;
+  box-sizing: border-box;
+  font-size: 0.9em;
+  color: #505050;
+}
+
+.popup-dateofhire {
+  font-size: 0.9em;
+  margin-bottom: 2em;
+}
+
+.popup-dateofhire span {
+  font-weight: bold;
+}
+
+.popup-add-button {
+  width: 20%;
+  height: 3em;
+  background-color: var(--primary-pink);
+  color: white;
+  border: none;
+  box-sizing: border-box;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.popup-add-button:hover {
+  opacity: 0.9;
+}

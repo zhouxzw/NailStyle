@@ -21,18 +21,17 @@
   width: 100%;
 }
 
-::-webkit-scrollbar {
-  width: 0;
-  height: 0;
-  background: transparent;
-}
-
 .srvc-nav {
   display: flex;
   overflow: scroll;
   scrollbar-width: none;
   width: 100%;
   cursor: pointer;
+}
+
+.srvc-nav::-webkit-scrollbar {
+  height: 0;
+  width: 0;
 }
 
 .srvc-ctgs {

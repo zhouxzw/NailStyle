@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
+import { useState } from "react";
+
 import "./Services.css";
 import {
   picListServices,
@@ -10,9 +10,9 @@ function Services(props) {
   const [servicesState, setService] = useState(() => {
     return listOfServices;
   });
-  const [technicians, setTechnicians] = useState([]);
 
-  const [update, setUpdate] = useState(false);
+  const technicians = props.allTechs;
+  //const [technicians, setTechnicians] = useState(test);
 
   //https://stackoverflow.com/questions/62918710/how-to-update-state-with-usestate-in-an-array-of-objects
   function toggleServices(i) {
@@ -54,19 +54,7 @@ function Services(props) {
     });
     //user click will generate the index of the technician and we set that toggle to true
     techCopyList[index].toggle = true;
-    //update state
-    setTechnicians(techCopyList);
   }
-
-  useEffect(() => {
-    async function retrieveEmployees() {
-      const response = await axios.get("/employees");
-
-      setTechnicians(response.data);
-    }
-
-    retrieveEmployees();
-  }, []);
 
   return (
     <div className="service-parent-container">
@@ -135,7 +123,7 @@ function Services(props) {
         {/* TECH */}
         <div className="technician-container">
           <h4>AVAILABLE TECHNICIANS</h4>
-          <ul class="technician-options">
+          <ul className="technician-options">
             {technicians &&
               technicians.map((tech, i) => (
                 <div

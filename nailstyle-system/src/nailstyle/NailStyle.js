@@ -5,7 +5,6 @@ import Login from "../admin/Login";
 import Admin from "../admin/Admin";
 import React, { useState, useContext } from "react";
 import Navbar from "./components/Navbar/Navbar";
-import Hero from "./components/Hero/Hero";
 import About from "./components/About/About";
 import Services from "./components/Services/Services";
 import Gallery from "./components/Gallery/Gallery";

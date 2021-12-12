@@ -31,8 +31,6 @@ export default function Gallery() {
     setGallery(newList);
   }
 
-  function hover() {}
-
   return (
     <div className="gallery-parent-ctn" id="gallery">
       <div className="gallery-header-ctn">
@@ -66,6 +64,7 @@ export default function Gallery() {
                       onClick={() => toggleGallery(i)}
                       className="navbar-picture"
                       style={{ backgroundImage: `url(${src.img})` }}
+                      key={"gal " + i}
                     />
                   );
                 })}

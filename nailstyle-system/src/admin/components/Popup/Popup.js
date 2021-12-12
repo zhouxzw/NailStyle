@@ -9,6 +9,8 @@ function Popup(props) {
 
   const [confirm, setConfirm] = useState();
 
+  function endDate() {}
+
   return (
     <div className="popup-container">
       <h2 className="date-title">Date Change</h2>
@@ -17,14 +19,16 @@ function Popup(props) {
         <h3>Tomorrow: {tomorrow.toLocaleDateString()}</h3>
       </div>
       <div className="popup-confirm-container">
-        <label>TYPE (YES)</label>
+        <label>CONFIRM (YES)</label>
         <input
           className="confirm-input"
+          maxLength="3"
+          type="text"
           onChange={(event) => setConfirm(event.target.value.toUpperCase())}
         ></input>
       </div>
       <div className="popup-buttons">
-        <button>Confirm</button>
+        <button onClick={endDate()}>Submit</button>
         <button
           onClick={() => {
             props.cancel(false);

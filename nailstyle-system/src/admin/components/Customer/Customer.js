@@ -13,7 +13,7 @@ const Customer = () => {
   useEffect(() => {
     async function retrieveCustomers() {
       const response = await axios.get("/customers");
-      console.log("data", response.data);
+      //console.log("data", response.data);
 
       const modData = response.data;
       modData.map((customer, i) => {
@@ -39,7 +39,7 @@ const Customer = () => {
   }, []);
 
   function showDetail(customer) {
-    //setExtend(!extend);
+    setExtend(!extend);
 
     let toggler = !customer.toggle;
     let copy = customers;
@@ -50,7 +50,6 @@ const Customer = () => {
       }
     }
     setCustomers(customers);
-    console.log(copy);
   }
 
   return (
@@ -87,7 +86,13 @@ const Customer = () => {
               }
             })
             .map((customer, i) => (
-              <div key={i}>
+              <div
+                className="whole-card"
+                key={"customer" + i}
+                style={
+                  customer.toggle ? { border: "0.5px solid #c4c4c4" } : null
+                }
+              >
                 <div
                   className="customer-card"
                   onClick={() => showDetail(customer)}

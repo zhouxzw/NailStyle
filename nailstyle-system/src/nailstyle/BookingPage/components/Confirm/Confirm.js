@@ -16,9 +16,9 @@ function Confirm(props) {
         <h5>Confirm Appointment</h5>
       </div>
       <div className="customer-details-container">
-        <h3>{props.personalInfo.name}</h3>
-        <p>{props.personalInfo.email}</p>
-        <p>{props.personalInfo.phone}</p>
+        <div>{props.personalInfo.name}</div>
+        <div>{props.personalInfo.email}</div>
+        <div>{props.personalInfo.phone}</div>
       </div>
     </div>
   );

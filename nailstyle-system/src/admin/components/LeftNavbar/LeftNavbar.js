@@ -122,7 +122,6 @@ const Navbar = (props) => {
                 className="category-title"
                 onClick={() => {
                   props.getDateChange(!props.changeDate);
-                  console.log(props.changeDate);
                 }}
               >
                 Date Change

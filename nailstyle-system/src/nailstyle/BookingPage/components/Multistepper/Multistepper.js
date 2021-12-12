@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import "./Multistepper.css";
 
 function Multistepper(props) {

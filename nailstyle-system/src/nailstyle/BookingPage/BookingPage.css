@@ -33,6 +33,7 @@ h5 {
   justify-content: space-between;
   width: 92%;
   height: auto;
+  margin-top: 1.5rem;
 }
 
 .booking-float-container {
@@ -107,5 +108,8 @@ h5 {
   .home-symbol {
     width: 25%;
     max-width: 300px;
+  }
+  h5 {
+    font-size: 1.1em;
   }
 }

@@ -36,7 +36,7 @@
   cursor: pointer;
 }
 .react-calendar__navigation {
-  padding: 1em 0;
+  padding: 1em;
   border-bottom: 1px solid #c4c4c4;
 }
 .react-calendar__navigation button {

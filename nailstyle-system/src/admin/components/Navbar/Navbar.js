@@ -43,7 +43,7 @@ export default function Navbar() {
       <div
         className="logo"
         onClick={() => {
-          history.push("/");
+          window.location.href = "/";
         }}
       >
         NailStyle

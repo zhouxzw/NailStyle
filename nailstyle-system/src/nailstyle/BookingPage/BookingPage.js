@@ -13,10 +13,11 @@ function BookingPage() {
   const history = useHistory();
   const [page, setPage] = useState(1);
 
-  const [service, setService] = useState("");
+  const [service, setService] = useState();
   const [price, setPrice] = useState("-");
-  const [technician, setTechnician] = useState("");
-  const [time, setTime] = useState("");
+  const [technician, setTechnician] = useState();
+  const [allTechnicians, setAllTechnicians] = useState([]);
+  const [time, setTime] = useState();
   const [date, setDate] = useState(
     new Date().toLocaleDateString("en-US").replaceAll("/", "-")
   );
@@ -105,6 +106,24 @@ function BookingPage() {
     getEmployeeTimes();
   }, [technician]);
 
+  useEffect(() => {
+    async function retrieveEmployees() {
+      const response = await axios.get("/employees");
+
+      setAllTechnicians(response.data);
+    }
+
+    retrieveEmployees();
+  }, []);
+
+  //css styling for button for UX
+  const buttonStyle = {
+    backgroundColor: "rgba(255, 255, 255, 0.4)",
+    borderRadius: "9px",
+    boxShadow: "0 0 15px rgba(33,33,33,.4)",
+    transition: "1s ease",
+  };
+
   return (
     <div className="booking-page-container">
       <div className="booking-navbar">
@@ -113,7 +132,8 @@ function BookingPage() {
           src={NailStyleLogo}
           alt="NailStyle"
           onClick={() => {
-            history.push("/");
+            //history.push("/");
+            window.location.href = "/";
           }}
         />
       </div>
@@ -126,6 +146,7 @@ function BookingPage() {
               getService={(service) => setService(service)}
               getPrice={(price) => setPrice(price)}
               getTech={(technician) => setTechnician(technician)}
+              allTechs={allTechnicians}
             ></Services>
           )}
           {page === 2 && (
@@ -170,7 +191,33 @@ function BookingPage() {
             </button>
           )}
           {page !== 4 && (
-            <button className="next-button" onClick={() => nextPage()}>
+            <button
+              className="next-button"
+              onClick={() => {
+                //console.log(page);
+
+                if (
+                  service !== undefined &&
+                  technician !== undefined &&
+                  page === 1
+                ) {
+                  nextPage();
+                } else if (time !== undefined && page === 2) {
+                  nextPage();
+                } else if (
+                  personalInfo.name !== "" &&
+                  personalInfo.phone !== "" &&
+                  personalInfo.email !== "" &&
+                  page === 3
+                ) {
+                  nextPage();
+                } else {
+                  window.alert(
+                    "Pleae make sure to select and fill all options"
+                  );
+                }
+              }}
+            >
               Next
             </button>
           )}

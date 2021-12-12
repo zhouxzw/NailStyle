@@ -61,6 +61,16 @@
   padding: 0.75em 0;
 }
 
+.contact-social-media {
+  display: flex;
+  width: 50%;
+  justify-content: flex-start;
+}
+
+.contact-social-media > a {
+  margin-right: 0.8rem;
+}
+
 .contact-address p,
 .contact-phone-email p,
 .contact-social-ctn p {
@@ -99,7 +109,14 @@
   .contact-social-ctn span {
     font-size: 1.15em;
   }
-}
 
-@media only screen and (min-width: 1024px) {
+  .contact-social-media {
+    display: flex;
+    width: 80%;
+    justify-content: flex-start;
+  }
+
+  .contact-social-media > a {
+    margin-right: 0.8rem;
+  }
 }

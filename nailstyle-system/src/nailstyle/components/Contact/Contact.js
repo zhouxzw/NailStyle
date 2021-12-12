@@ -50,11 +50,17 @@ export default function Contact() {
           <div className="contact-social-ctn">
             <span>FOLLOW US</span>
             <div className="contact-social-media">
-              <a href="#">
-                <FaFacebookSquare className="social"></FaFacebookSquare>
+              <a href="">
+                <FaFacebookSquare
+                  className="social"
+                  style={{ color: "#303030" }}
+                ></FaFacebookSquare>
               </a>
-              <a href="#">
-                <FaInstagram className="social"></FaInstagram>
+              <a href="">
+                <FaInstagram
+                  className="social"
+                  style={{ color: "#303030" }}
+                ></FaInstagram>
               </a>
             </div>
           </div>

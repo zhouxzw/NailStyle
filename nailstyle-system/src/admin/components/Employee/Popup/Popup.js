@@ -1,14 +1,12 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import "./Popup.css";
 import { BsX } from "react-icons/bs";
 
 function Popup(props) {
-  const popup = useRef(null);
-  const [isActive, setActive] = useState(false);
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
+  const [name, setName] = useState();
+  const [email, setEmail] = useState();
+  const [phone, setPhone] = useState();
 
   const newDate = new Date();
   var currentDate =
@@ -35,9 +33,7 @@ function Popup(props) {
   function closePopup() {
     props.getState((prevState) => {
       prevState = !prevState;
-      console.log("got here");
     });
-    console.log("got here");
   }
 
   return (
@@ -80,7 +76,21 @@ function Popup(props) {
           <div className="popup-dateofhire">
             Current Date (of Hire): <span>{currentDate}</span>
           </div>
-          <button className="popup-add-button" onClick={() => addNewEmployee}>
+          <button
+            className="popup-add-button"
+            onClick={() => {
+              if (
+                name !== undefined &&
+                email !== undefined &&
+                phone !== undefined
+              ) {
+                addNewEmployee();
+                closePopup();
+              } else {
+                window.alert("Enter information");
+              }
+            }}
+          >
             ADD
           </button>
         </div>

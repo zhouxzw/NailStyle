@@ -63,7 +63,7 @@ const Analytic = () => {
 
   function sumPrice(dataSet, currentWeek) {
     //.log(dataSet);
-    console.log(currentWeek);
+    //console.log(currentWeek);
 
     let data = [];
 

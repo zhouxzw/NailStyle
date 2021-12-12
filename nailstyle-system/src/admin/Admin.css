@@ -28,7 +28,7 @@
   width: auto;
   height: auto;
   background-color: #9f2958;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
 }
 

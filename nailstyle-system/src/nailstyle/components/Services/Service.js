@@ -11,13 +11,21 @@ export default function Service(props) {
 
       <div className="srvc-display-list">
         <ul className="srvc-type">
-          {serviceList.map((item) => (
-            <li className={item.id === 0 ? "first-srvc" : null}>{item.desc}</li>
+          {serviceList.map((item, i) => (
+            <li
+              className={item.id === 0 ? "first-srvc" : null}
+              key={"srvctype " + i}
+            >
+              {item.desc}
+            </li>
           ))}
         </ul>
         <ul className="srvc-price">
-          {serviceList.map((item) => (
-            <li className={item.id === 0 ? "first-srvc" : null}>
+          {serviceList.map((item, i) => (
+            <li
+              className={item.id === 0 ? "first-srvc" : null}
+              key={"srv " + i}
+            >
               ${item.price}
             </li>
           ))}

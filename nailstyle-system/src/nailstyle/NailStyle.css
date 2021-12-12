@@ -1,8 +1,3 @@
-html {
-  height: 100%;
-  margin: 0 auto;
-}
-
 :root {
   --primary-pink: #de7e98;
   --secondary-pink: #d7598b;
@@ -10,10 +5,17 @@ html {
   --calender-pink: #f08080;
 }
 
+html {
+  margin: 0;
+  overflow-x: hidden;
+}
+
 body {
   margin: 0;
+
   background: #eeeeee;
   font-family: "Catamaran", sans-serif;
+  overflow-x: hidden;
 }
 
 .ns-container {
@@ -21,6 +23,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100vw;
 }
 
 .header {

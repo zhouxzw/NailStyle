@@ -1,9 +1,8 @@
 import "./Employee.css";
-import { BsSearch, BsPlus } from "react-icons/bs";
+import { BsPlus } from "react-icons/bs";
 import { MdArrowDropDown } from "react-icons/md";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Customer from "../Customer/Customer";
 import Popup from "../Employee/Popup/Popup";
 
 const Employee = () => {
@@ -44,12 +43,9 @@ const Employee = () => {
   function toggleCard(employee) {
     employee.toggle = !employee.toggle;
     let copy = employees;
-    console.log(employee);
-    console.log("before: " + employee.toggle);
     for (let i = 0; i < copy.length; i++) {
       if (copy[i] === employee) {
         employee.toggle = !employee.toggle;
-        console.log("after: " + employee.toggle);
       }
     }
     setActive(!isActive);

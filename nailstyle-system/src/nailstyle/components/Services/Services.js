@@ -4,7 +4,7 @@ import pic2 from "./pics/2.jpg";
 import pic3 from "./pics/3.jpg";
 import pic4 from "./pics/4.jpg";
 import pic5 from "./pics/5.jpg";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import ServiceDisplay from "./ServiceDisplay";
 
 export const picListServices = [pic1, pic2, pic3, pic4, pic5];
@@ -86,7 +86,6 @@ function Services() {
   const [servicesState, setService] = useState(() => {
     return listOfServices;
   });
-  const style = { background: null };
 
   //https://stackoverflow.com/questions/62918710/how-to-update-state-with-usestate-in-an-array-of-objects
   function toggleServices(i) {
@@ -107,7 +106,7 @@ function Services() {
         <div className="srvc-header-ctn">
           <span className="header">SERVICES</span>
 
-          <p class="header-paragraph">
+          <p className="header-paragraph">
             Our premium manicure and pedicure nail care services will leave you
             feeling refreshed and confident once more.
           </p>
@@ -116,19 +115,18 @@ function Services() {
         <div className="srvc-panel-ctn">
           <div className="srvc-nav">
             {picListServices.map((src, i) => (
-              <>
-                <div
-                  onClick={() => toggleServices(i)}
-                  className="srvc-ctgs"
-                  style={
-                    servicesState[i].toggled
-                      ? { backgroundColor: "rgb(222, 126, 152, 1)" }
-                      : { backgroundImage: `url(${src})` }
-                  }
-                >
-                  <div className="service-title">{servicesState[i].name}</div>
-                </div>
-              </>
+              <div
+                key={"src-nav " + i}
+                onClick={() => toggleServices(i)}
+                className="srvc-ctgs"
+                style={
+                  servicesState[i].toggled
+                    ? { backgroundColor: "rgb(222, 126, 152, 1)" }
+                    : { backgroundImage: `url(${src})` }
+                }
+              >
+                <div className="service-title">{servicesState[i].name}</div>
+              </div>
             ))}
           </div>
 

@@ -1,6 +1,7 @@
 .service-parent-container {
   display: flex;
   flex-direction: column;
+  margin-top: 2rem;
 }
 
 .service-container {
@@ -48,7 +49,9 @@
   background-color: white;
 }
 
-.service-info:hover {
+.service-info:hover,
+.tech-names {
+  cursor: pointer;
 }
 
 .service-info > li {

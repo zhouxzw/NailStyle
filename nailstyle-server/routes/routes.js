@@ -368,6 +368,14 @@ router.get("/employee/times", async (req, res) => {
   }
 });
 
-router.post("/timeslots", async (req, res) => {});
+router.post("/endday", async (req, res) => {
+  try {
+    const employee = await Employee.updateMany();
+
+    res.json(employee);
+  } catch (error) {
+    res.json({ message: error });
+  }
+});
 
 module.exports = router;

@@ -370,9 +370,57 @@ router.get("/employee/times", async (req, res) => {
 
 router.post("/endday", async (req, res) => {
   try {
-    const employee = await Employee.updateMany();
+    const employee = await Employee.find();
+    const today = new Date();
+    const tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
 
-    res.json(employee);
+    const thirdMonth = new Date(addMonths(new Date(), 2)).toLocaleString(
+      "default",
+      { month: "long" }
+    );
+    //this gets the first day of two months ahead
+    //https://stackoverflow.com/questions/605113/find-first-day-of-previous-month-in-javascript
+    let firstDayOfThirdMonth = new Date(
+      today.getFullYear(),
+      today.getMonth() + 2,
+      1
+    );
+    firstDayOfThirdMonth = firstDayOfThirdMonth
+      .toLocaleDateString("en-US")
+      .replace(/\//gi, "-");
+
+    //current day + one month
+    let dayOneMonthFromNow = new Date(addMonths(tomorrow, 1));
+    dayOneMonthFromNow = dayOneMonthFromNow
+      .toLocaleDateString("en-US")
+      .replace(/\//gi, "-");
+
+    console.log(dayOneMonthFromNow);
+
+    for (let i = 0; i < employee.length; i++) {
+      let firstMonthObj = employee[i].availability[0].days;
+
+      //when the current month has one day left, remove its obj in availability list
+      //and append the third month obj
+      if (firstMonthObj.length === 1) {
+        employee[i].availability.shift();
+        const newObj = { month: thirdMonth };
+        //add the third month into availability
+        //this now becomes the first index
+        employee[i].availability.push(newObj);
+
+        //add the first day of 2 months ahead
+        employee[i].availability[1].days.push({ date: firstDayOfThirdMonth });
+      } else {
+        //always remove today
+        employee[i].availability[0].days.shift();
+        //add next day of next month
+        employee[i].availability[1].days.push({ date: dayOneMonthFromNow });
+      }
+      employee[i].save();
+    }
+    res.json({ message: "date changed" });
   } catch (error) {
     res.json({ message: error });
   }

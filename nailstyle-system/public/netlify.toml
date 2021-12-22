@@ -1,4 +1,0 @@
-[build]
-  base = "nailstyle-system/"
-  publish = "build/"
-  command = "echo 'default context'"

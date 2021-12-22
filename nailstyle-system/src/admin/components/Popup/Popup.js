@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useState } from "react";
 
 import "./Popup.css";
@@ -9,7 +10,10 @@ function Popup(props) {
 
   const [confirm, setConfirm] = useState();
 
-  function endDate() {}
+  async function endDate() {
+    const request = await axios.post("/endday");
+    console.log(request);
+  }
 
   return (
     <div className="popup-container">
@@ -28,7 +32,15 @@ function Popup(props) {
         ></input>
       </div>
       <div className="popup-buttons">
-        <button onClick={endDate()}>Submit</button>
+        <button
+          onClick={() => {
+            if (confirm === "YES") {
+              endDate();
+            }
+          }}
+        >
+          Submit
+        </button>
         <button
           onClick={() => {
             props.cancel(false);

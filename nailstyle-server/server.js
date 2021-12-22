@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const express = require("express");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
-require("dotenv/config");
+require("dotenv").config();
 
 const app = express();
 
@@ -30,6 +30,6 @@ mongoose.connect(
 );
 
 //Server
-app.listen(4000, () => {
+app.listen(process.env.PORT || 4000, () => {
   console.log("Server Running");
 });

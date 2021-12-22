@@ -341,7 +341,10 @@ router.post("/updatetimeslot", async (req, res) => {
 // get all employees
 router.get("/employees", async (req, res) => {
   try {
-    const employees = await Employee.find();
+    const employees = await Employee.find(
+      {},
+      { _id: 0, email: 0, phone: 0, dateofhire: 0 }
+    );
     res.json(employees);
   } catch (e) {
     res.json({ message: e });

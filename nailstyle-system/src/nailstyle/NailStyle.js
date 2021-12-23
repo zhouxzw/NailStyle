@@ -36,7 +36,7 @@ function NailStyle() {
         </div>
       </Route>
 
-      <Route exact path="/admin">
+      <Route path="/admin">
         {loggedIn === false ? <Login></Login> : <Admin></Admin>}
       </Route>
 

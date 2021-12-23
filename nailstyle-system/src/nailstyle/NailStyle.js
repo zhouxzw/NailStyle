@@ -22,7 +22,7 @@ function NailStyle() {
   };
 
   return (
-    <Router basename="/">
+    <Router>
       <Switch>
         <Route exact path="/">
           <div className="ns-container">

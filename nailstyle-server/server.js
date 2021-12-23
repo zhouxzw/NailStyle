@@ -22,6 +22,12 @@ app.use(
 const routes = require("./routes/routes");
 app.use("/", routes);
 
+app.use(express.static(path.join(__dirname, "build")));
+
+app.get("/*", function (req, res) {
+  res.sendFile(path.join(__dirname, "build", "index.html"));
+});
+
 //Connect to MongoDB
 mongoose.connect(
   process.env.DB_CONNECTION,

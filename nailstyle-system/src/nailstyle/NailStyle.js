@@ -1,5 +1,5 @@
 import "./NailStyle.css";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { HashRouter as Router, Route } from "react-router-dom";
 import { Switch } from "react-router-dom";
 import Login from "../admin/Login";
 import Admin from "../admin/Admin";

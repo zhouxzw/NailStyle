@@ -82,13 +82,16 @@ const Booking = () => {
           date: clickedDate,
         },
       });
-      request.data.sort(function (a, b) {
+
+      let newData = request.data;
+
+      newData.sort(function (a, b) {
         return (
           new Date("2021/12/12 " + a.time) - new Date("2021/12/12 " + b.time)
         );
       });
 
-      setBookings(request.data);
+      setBookings(newData);
       //console.log("Next Current Bookings:", request.data);
     }
     fetchNextDate(clickedDate);

@@ -1,6 +1,7 @@
 {
   "name": "nailstyle-system",
   "version": "0.1.0",
+  "homepage": "https://compassionate-newton-cb04ad.netlify.app/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",

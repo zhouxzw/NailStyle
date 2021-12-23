@@ -21,7 +21,7 @@ function NailStyle() {
   };
 
   return (
-    <Router basename="/">
+    <Router basename={process.env.PUBLIC_URL}>
       <Switch>
         <Route exact path="/">
           <div className="ns-container">

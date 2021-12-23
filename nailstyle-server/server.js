@@ -13,7 +13,7 @@ app.use(cookieParser());
 
 app.use(
   cors({
-    origin: "https://nailstyle.herokuapp.com",
+    origin: "*",
     credentials: true,
   })
 );

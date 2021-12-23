@@ -32,12 +32,6 @@ function addMonths(date, months) {
   return date;
 }
 
-router.use(express.static(path.join(__dirname, "build")));
-
-router.get("/*", function (req, res) {
-  res.sendFile(path.join(__dirname, "build", "index.html"));
-});
-
 //clears the cookie
 router.get("/logout", (req, res) => {
   res

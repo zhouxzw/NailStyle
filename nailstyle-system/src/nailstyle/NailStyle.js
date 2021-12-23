@@ -23,7 +23,7 @@ function NailStyle() {
 
   return (
     <Router>
-      <Route path="/" exact>
+      <Route exact path="/">
         <div className="ns-container">
           <Navbar blurBg={(blur) => setBlur(blur)}></Navbar>
           <div className="blur-effect" style={blur ? blurBackground : null}>
@@ -36,7 +36,7 @@ function NailStyle() {
         </div>
       </Route>
 
-      <Route path="/admin">
+      <Route exact path="/admin">
         {loggedIn === false ? <Login></Login> : <Admin></Admin>}
       </Route>
 

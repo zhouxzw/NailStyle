@@ -1,6 +1,5 @@
 import "./NailStyle.css";
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import { Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Login from "../admin/Login";
 import Admin from "../admin/Admin";
 import React, { useState, useContext } from "react";
@@ -22,7 +21,7 @@ function NailStyle() {
   };
 
   return (
-    <Router>
+    <Router basename="/">
       <Switch>
         <Route exact path="/">
           <div className="ns-container">

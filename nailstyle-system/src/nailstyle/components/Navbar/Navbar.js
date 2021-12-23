@@ -82,7 +82,7 @@ function Navbar(props) {
                       to="/#home"
                       onClick={onClick}
                     >
-                      HOME
+                      HOMER
                     </HashLink>
                   </li>
                   <li className="home-link">

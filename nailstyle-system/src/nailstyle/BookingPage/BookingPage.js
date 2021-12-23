@@ -108,7 +108,9 @@ function BookingPage() {
 
   useEffect(() => {
     async function retrieveEmployees() {
-      const response = await axios.get("/employees");
+      const response = await axios.get(
+        "https://nailstyle.herokuapp.com/employees"
+      );
 
       setAllTechnicians(response.data);
     }

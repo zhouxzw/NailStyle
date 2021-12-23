@@ -273,7 +273,7 @@ router.get("/bookings", async (req, res) => {
 */
 
 //route to get all customers
-router.get("/customersz", verify, async (req, res) => {
+router.get("/customers", verify, async (req, res) => {
   try {
     const customers = await Customer.find();
     res.json(customers);

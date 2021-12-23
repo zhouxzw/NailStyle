@@ -23,26 +23,28 @@ function NailStyle() {
 
   return (
     <Router>
-      <Route exact path="/">
-        <div className="ns-container">
-          <Navbar blurBg={(blur) => setBlur(blur)}></Navbar>
-          <div className="blur-effect" style={blur ? blurBackground : null}>
-            <About></About>
-            <Services></Services>
-            <Gallery></Gallery>
-            <Contact></Contact>
-            <Footer></Footer>
+      <Switch>
+        <Route exact path="/">
+          <div className="ns-container">
+            <Navbar blurBg={(blur) => setBlur(blur)}></Navbar>
+            <div className="blur-effect" style={blur ? blurBackground : null}>
+              <About></About>
+              <Services></Services>
+              <Gallery></Gallery>
+              <Contact></Contact>
+              <Footer></Footer>
+            </div>
           </div>
-        </div>
-      </Route>
+        </Route>
 
-      <Route path="/admin">
-        {loggedIn === false ? <Login></Login> : <Admin></Admin>}
-      </Route>
+        <Route path="/admin">
+          {loggedIn === false ? <Login></Login> : <Admin></Admin>}
+        </Route>
 
-      <Route path="/bookings">
-        <Booking></Booking>
-      </Route>
+        <Route path="/bookings">
+          <Booking></Booking>
+        </Route>
+      </Switch>
     </Router>
   );
 }

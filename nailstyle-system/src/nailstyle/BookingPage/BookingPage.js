@@ -111,7 +111,6 @@ function BookingPage() {
       const response = await axios.get(
         "https://nailstyle-server.herokuapp.com/employees"
       );
-
       setAllTechnicians(response.data);
     }
 

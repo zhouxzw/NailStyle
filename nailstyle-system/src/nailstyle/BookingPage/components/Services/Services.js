@@ -126,21 +126,23 @@ function Services(props) {
           <ul className="technician-options">
             {technicians &&
               technicians.map(function (tech, i) {
-                <div
-                  className="tech-names"
-                  key={"tech-name-" + i}
-                  onClick={() => {
-                    toggleTech(i);
-                    props.getTech(tech.name);
-                  }}
-                  style={
-                    tech.toggle
-                      ? { backgroundColor: "#E1B0BD" }
-                      : { backgroundColor: null }
-                  }
-                >
-                  <li>{tech.name}</li>
-                </div>;
+                return (
+                  <div
+                    className="tech-names"
+                    key={"tech-name-" + i}
+                    onClick={() => {
+                      toggleTech(i);
+                      props.getTech(tech.name);
+                    }}
+                    style={
+                      tech.toggle
+                        ? { backgroundColor: "#E1B0BD" }
+                        : { backgroundColor: null }
+                    }
+                  >
+                    <li>{tech.name}</li>
+                  </div>
+                );
               })}
           </ul>
         </div>

@@ -9,6 +9,7 @@ function Login(props) {
   const { getLoggedIn } = useContext(AuthContext);
 
   const login = async () => {
+    axios.defaults.withCredentials = true;
     await axios({
       method: "POST",
       data: {

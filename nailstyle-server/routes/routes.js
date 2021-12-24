@@ -401,7 +401,7 @@ router.post("/endday", async (req, res) => {
       .toLocaleDateString("en-US")
       .replace(/\//gi, "-");
 
-    console.log(dayOneMonthFromNow);
+    //console.log(dayOneMonthFromNow);
 
     for (let i = 0; i < employee.length; i++) {
       let firstMonthObj = employee[i].availability[0].days;

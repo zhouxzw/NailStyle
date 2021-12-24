@@ -9,13 +9,14 @@ function Login(props) {
   const { getLoggedIn } = useContext(AuthContext);
 
   const login = async () => {
-    await axios("https://nailstyle-server.herokuapp.com/login", {
+    await axios({
       method: "POST",
       data: {
         username: username,
         password: password,
       },
       withCredentials: true,
+      url: "https://nailstyle-server.herokuapp.com/login",
     }).then((res) => {
       getLoggedIn();
     });

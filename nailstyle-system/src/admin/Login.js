@@ -10,12 +10,12 @@ function Login(props) {
 
   const login = async () => {
     await axios("https://nailstyle-server.herokuapp.com/login", {
+      withCredentials: true,
       method: "POST",
       data: {
         username: username,
         password: password,
       },
-      withCredentials: true,
     }).then((res) => {
       getLoggedIn();
     });

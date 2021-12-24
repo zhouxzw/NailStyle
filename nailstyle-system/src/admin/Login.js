@@ -22,17 +22,19 @@ function Login(props) {
     });
   };
 
+  /*
   const register = () => {
     axios({
       method: "POST",
       data: {
-        username: "anthony.le",
-        password: "#Nailstyle2021",
+        username: adminUsername,
+        password: adminPassword,
       },
       withCredentials: true,
-      url: "https://nailstyle-server.herokuapp.com/register",
+      url: "",
     }).then((res) => console.log(res));
   };
+*/
 
   return (
     <div>
@@ -47,19 +49,17 @@ function Login(props) {
           <input
             className="login-input"
             placeholder="Password"
+            type="password"
             onChange={(e) => setPassword(e.target.value)}
           />
-          <button className="login-button" onClick={login}>
-            Login
-          </button>
-
           <button
+            className="login-button"
             onClick={(e) => {
               e.preventDefault();
-              register();
+              login();
             }}
           >
-            Register
+            Login
           </button>
         </div>
       </div>

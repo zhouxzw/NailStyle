@@ -61,17 +61,10 @@ export default function Navbar() {
             >
               <ul>
                 <li>
-                  <div
-                    onClick={(e) => {
-                      e.preventDefault();
-                      logOut();
-                    }}
-                  >
-                    Log Out
-                  </div>
+                  <a onClick={logOut()}>Log Out</a>
                 </li>
                 <li>
-                  <div>Accessibility</div>
+                  <a>Accessibility</a>
                 </li>
               </ul>
             </div>

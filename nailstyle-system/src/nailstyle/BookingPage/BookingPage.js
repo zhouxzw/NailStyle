@@ -87,7 +87,9 @@ function BookingPage() {
       },
       url: "https://nailstyle-server.herokuapp.com/updatetimeslot",
       withCredentials: true,
-    }).then((res) => {});
+    }).then((res) => {
+      window.location.href = "/";
+    });
   };
 
   useEffect(() => {
@@ -190,7 +192,6 @@ function BookingPage() {
                 e.preventDefault();
                 submitForm();
                 submitTime();
-                //window.location.href = "/";
               }}
             >
               Finish

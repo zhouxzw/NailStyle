@@ -18,12 +18,6 @@ function Login(props) {
       },
       withCredentials: true,
       url: "https://nailstyle-server.herokuapp.com/login",
-      credentials: "same-origin",
-      mode: "no-cors",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
     }).then((res) => {
       getLoggedIn();
     });

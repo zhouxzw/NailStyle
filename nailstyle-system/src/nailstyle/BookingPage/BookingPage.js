@@ -185,8 +185,8 @@ function BookingPage() {
           {page === 4 && (
             <button
               className="finish-button"
-              type="button"
-              onClick={() => {
+              onClick={(e) => {
+                e.preventDefault();
                 submitForm();
                 submitTime();
                 window.location.href = "/";

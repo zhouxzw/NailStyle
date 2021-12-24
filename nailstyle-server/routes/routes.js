@@ -109,7 +109,7 @@ const verify = (req, res, next) => {
   }
 };
 
-router.get("/loggedIn", (req, res) => {
+router.get("/loggedin", (req, res) => {
   try {
     const token = req.cookies.token;
     if (!token) {

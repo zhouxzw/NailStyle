@@ -36,6 +36,7 @@
   cursor: pointer;
 }
 .react-calendar__navigation {
+  display: flex;
   padding: 1em;
   border-bottom: 1px solid #c4c4c4;
 }

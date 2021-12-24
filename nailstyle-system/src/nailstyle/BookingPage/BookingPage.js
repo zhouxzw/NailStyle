@@ -189,7 +189,7 @@ function BookingPage() {
                 e.preventDefault();
                 submitForm();
                 submitTime();
-                window.location.href = "/";
+                //window.location.href = "/";
               }}
             >
               Finish

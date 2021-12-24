@@ -188,6 +188,7 @@ function BookingPage() {
               onClick={() => {
                 submitForm();
                 submitTime();
+                window.location.href = "/";
               }}
             >
               Finish

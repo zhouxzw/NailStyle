@@ -13,7 +13,7 @@ app.use(cookieParser());
 
 app.use(
   cors({
-    origin: "https://nailstyle-server.herokuapp.com",
+    origin: "https://compassionate-newton-cb04ad.netlify.app",
     credentials: true,
   })
 );

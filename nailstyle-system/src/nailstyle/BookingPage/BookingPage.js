@@ -185,6 +185,7 @@ function BookingPage() {
           {page === 4 && (
             <button
               className="finish-button"
+              type="button"
               onClick={() => {
                 submitForm();
                 submitTime();

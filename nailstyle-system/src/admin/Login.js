@@ -16,6 +16,7 @@ function Login(props) {
         username: username,
         password: password,
       },
+      withCredentials: true,
       url: "https://nailstyle-server.herokuapp.com/login",
     }).then((res) => {
       getLoggedIn();

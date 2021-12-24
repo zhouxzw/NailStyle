@@ -4,7 +4,7 @@ import React, { useEffect, useState, createContext } from "react";
 const AuthContext = createContext();
 
 function AuthContextProvider(props) {
-  const [loggedIn, setLoggedIn] = useState(undefined);
+  const [loggedIn, setLoggedIn] = useState(false);
 
   async function getLoggedIn() {
     const loggedInRes = await axios.get(

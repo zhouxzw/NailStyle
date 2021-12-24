@@ -14,7 +14,7 @@ export default function Navbar() {
   const history = useHistory();
 
   async function logOut() {
-    await axios.get("/logout");
+    await axios.get("https://nailstyle-server.herokuapp.com/logout");
     await getLoggedIn();
     history.push("/admin");
   }

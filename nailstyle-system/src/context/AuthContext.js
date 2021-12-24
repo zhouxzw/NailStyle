@@ -7,7 +7,9 @@ function AuthContextProvider(props) {
   const [loggedIn, setLoggedIn] = useState(undefined);
 
   async function getLoggedIn() {
-    const loggedInRes = await axios.get("/loggedIn");
+    const loggedInRes = await axios.get(
+      "https://nailstyle-server.herokuapp.com/loggedIn"
+    );
     setLoggedIn(loggedInRes.data);
   }
 

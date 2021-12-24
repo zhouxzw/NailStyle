@@ -11,7 +11,9 @@ function Popup(props) {
   const [confirm, setConfirm] = useState();
 
   async function endDate() {
-    const request = await axios.post("/endday");
+    const request = await axios.post(
+      "https://nailstyle-server.herokuapp.com/endday"
+    );
     console.log(request);
   }
 

@@ -25,7 +25,7 @@ function Popup(props) {
         phone: phone,
         dateofhire: currentDate,
       },
-      url: "/employees",
+      url: "https://nailstyle-server.herokuapp.com/employees",
       withCredentials: true,
     }).then((res) => {});
   };

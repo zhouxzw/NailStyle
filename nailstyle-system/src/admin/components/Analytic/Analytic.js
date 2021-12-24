@@ -83,7 +83,9 @@ const Analytic = () => {
 
   useEffect(() => {
     async function retrieveData() {
-      const response = await axios.get("/customers");
+      const response = await axios.get(
+        "https://nailstyle-server.herokuapp.com/customers"
+      );
       filterData(response.data);
     }
     retrieveData();

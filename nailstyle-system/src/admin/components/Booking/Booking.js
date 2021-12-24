@@ -41,32 +41,38 @@ const Booking = () => {
     //update state of bookings
     setBookings(filterBookings);
 
-    const delResponse = await axios.delete("/deletebooking", {
-      params: {
-        phone: phone,
-      },
-    });
+    const delResponse = await axios.delete(
+      "https://nailstyle-server.herokuapp.com/deletebooking",
+      {
+        params: {
+          phone: phone,
+        },
+      }
+    );
   }
 
   //process payment once a customer has finished their service
   //store client info for future visits
 
   async function processAppt(client, index) {
-    const response = await axios.patch("/processappointment", {
-      name: client.name,
-      phone: client.phone,
-      email: client.email,
-      visits: [
-        {
-          appointment: {
-            date: client.date,
-            service: client.service,
-            technician: client.technician,
-            price: serivcePrice,
+    const response = await axios.patch(
+      "https://nailstyle-server.herokuapp.com/processappointment",
+      {
+        name: client.name,
+        phone: client.phone,
+        email: client.email,
+        visits: [
+          {
+            appointment: {
+              date: client.date,
+              service: client.service,
+              technician: client.technician,
+              price: serivcePrice,
+            },
           },
-        },
-      ],
-    });
+        ],
+      }
+    );
 
     //Remove the processed booking from database
     deleteBooking(client.phone, index);
@@ -77,11 +83,14 @@ const Booking = () => {
     async function fetchNextDate(clickedDate) {
       //console.log(clickedDate);
 
-      const request = await axios.get("/bookings", {
-        params: {
-          date: clickedDate,
-        },
-      });
+      const request = await axios.get(
+        "https://nailstyle-server.herokuapp.com/bookings",
+        {
+          params: {
+            date: clickedDate,
+          },
+        }
+      );
 
       let newData = request.data;
 

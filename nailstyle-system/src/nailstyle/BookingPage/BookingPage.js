@@ -10,7 +10,6 @@ import Confirm from "./components/Confirm/Confirm";
 import axios from "axios";
 
 function BookingPage() {
-  const history = useHistory();
   const [page, setPage] = useState(1);
 
   const [service, setService] = useState();
@@ -71,7 +70,7 @@ function BookingPage() {
         time: time,
         email: personalInfo.email,
       },
-      url: "/book",
+      url: "https://nailstyle-server.herokuapp.com/book",
       withCredentials: true,
     }).then((res) => {});
   };
@@ -86,18 +85,21 @@ function BookingPage() {
         date: date,
         time: twentyFourHourTime,
       },
-      url: "/updatetimeslot",
+      url: "https://nailstyle-server.herokuapp.com/updatetimeslot",
       withCredentials: true,
     }).then((res) => {});
   };
 
   useEffect(() => {
     async function getEmployeeTimes() {
-      const request = await axios.get("/employee/times", {
-        params: {
-          name: technician,
-        },
-      });
+      const request = await axios.get(
+        "https://nailstyle-server.herokuapp.com/employee/times",
+        {
+          params: {
+            name: technician,
+          },
+        }
+      );
 
       //console.log(request.data);
       setTimeSlots(request.data);

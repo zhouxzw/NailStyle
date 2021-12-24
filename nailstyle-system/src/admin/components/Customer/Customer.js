@@ -12,7 +12,9 @@ const Customer = () => {
 
   useEffect(() => {
     async function retrieveCustomers() {
-      const response = await axios.get("/customers");
+      const response = await axios.get(
+        "https://nailstyle-server.herokuapp.com/customers"
+      );
       //console.log("data", response.data);
 
       const modData = response.data;

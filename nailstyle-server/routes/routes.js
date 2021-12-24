@@ -354,7 +354,7 @@ router.get("/employees", async (req, res) => {
 });
 
 // get all employees (for admin)
-router.get("/employees/allinfo", async (req, res) => {
+router.get("/employees/allinfo", verify, async (req, res) => {
   try {
     const employees = await Employee.find();
     res.json(employees);

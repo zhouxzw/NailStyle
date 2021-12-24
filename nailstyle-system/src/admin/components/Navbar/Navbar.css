@@ -78,7 +78,7 @@
   margin: 0;
 }
 
-.dropdown-menu li a {
+.dropdown-menu li div {
   text-decoration: none;
   font-size: 0.85em;
   color: white;

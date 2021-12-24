@@ -340,13 +340,23 @@ router.post("/updatetimeslot", async (req, res) => {
   }
 });
 
-// get all employees
+// get all employees (for bookings)
 router.get("/employees", async (req, res) => {
   try {
     const employees = await Employee.find(
       {},
       { _id: 0, email: 0, phone: 0, dateofhire: 0 }
     );
+    res.json(employees);
+  } catch (e) {
+    res.json({ message: e });
+  }
+});
+
+// get all employees (for admin)
+router.get("/employees/allinfo", async (req, res) => {
+  try {
+    const employees = await Employee.find();
     res.json(employees);
   } catch (e) {
     res.json({ message: e });

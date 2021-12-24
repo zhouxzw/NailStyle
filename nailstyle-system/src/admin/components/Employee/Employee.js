@@ -13,7 +13,7 @@ const Employee = () => {
   useEffect(() => {
     async function retrieveEmployees() {
       const response = await axios.get(
-        "https://nailstyle-server.herokuapp.com/employees"
+        "https://nailstyle-server.herokuapp.com/employees/allinfo"
       );
       const modData = response.data;
 

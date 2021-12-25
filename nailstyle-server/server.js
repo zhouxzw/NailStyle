@@ -13,7 +13,7 @@ app.use(cookieParser());
 
 app.use(
   cors({
-    origin: "https://compassionate-newton-cb04ad.netlify.app",
+    origin: "https://hxnails.ca'",
     credentials: true,
   })
 );

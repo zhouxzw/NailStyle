@@ -40,7 +40,7 @@ const Employee = () => {
     }
 
     retrieveEmployees();
-  });
+  }, []);
 
   function toggleCard(employee) {
     employee.toggle = !employee.toggle;

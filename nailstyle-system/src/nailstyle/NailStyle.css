@@ -12,8 +12,7 @@ html {
 
 body {
   margin: 0;
-
-  background: #eeeeee;
+  background: #ffffff;
   font-family: "Catamaran", sans-serif;
   overflow-x: hidden;
 }
@@ -30,9 +29,9 @@ body {
   text-align: center;
   display: inline-block;
   padding: 0.25em 0;
-  font-size: 1.05em;
+  font-size: 1.35em;
   font-weight: bold;
-  color: var(--primary-font-color);
+  color: var(--primary-pink);
 }
 
 .header-paragraph {

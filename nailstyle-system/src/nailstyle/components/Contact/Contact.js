@@ -19,7 +19,7 @@ export default function Contact() {
         <div className="contact-info-parent">
           <div className="contact-info-ctn">
             <div className="contact-hrs-location">
-              <span>HOURS & LOCATION</span>
+              <span>LOCATION & HOURS</span>
             </div>
             <div className="contact-address">
               <p>#10003 102 Ave, T8S 1S3</p>
@@ -43,8 +43,8 @@ export default function Contact() {
           <div className="contact-intouch-ctn">
             <span>GET IN TOUCH</span>
             <div className="contact-phone-email">
-              <p>Telephone: (780) 624-8886</p>
-              <p>Email: nailstylepeaceriver@email.ca</p>
+              <p>Telephone: (000) 000-0000</p>
+              <p>Email: nsnails@nsnails.com</p>
             </div>
           </div>
           <div className="contact-social-ctn">

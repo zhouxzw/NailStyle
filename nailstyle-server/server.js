@@ -13,7 +13,7 @@ app.use(cookieParser());
 
 app.use(
   cors({
-    origin: "https://hxnails.ca'",
+    origin: "hxnails.ca",
     credentials: true,
   })
 );

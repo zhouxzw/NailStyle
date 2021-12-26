@@ -22,8 +22,8 @@ export default function Contact() {
               <span>LOCATION & HOURS</span>
             </div>
             <div className="contact-address">
-              <p>#10003 102 Ave, T8S 1S3</p>
-              <p>Peace River AB, Canada</p>
+              <p>#30102 8 Ave, T8B 9K8</p>
+              <p>Somewhere AB, Canada</p>
             </div>
             <div className="contact-hours">
               <ul className="contact-day">
@@ -33,9 +33,9 @@ export default function Contact() {
                 <li>Sun:</li>
               </ul>
               <ul className="contact-time">
-                <li>10:00am - 6:00pm</li>
-                <li>10:00am - 9:00pm</li>
-                <li>10:00am - 5:00pm</li>
+                <li>11:00am - 7:00pm</li>
+                <li>11:00am - 9:00pm</li>
+                <li>11:00am - 6:00pm</li>
                 <li>Closed</li>
               </ul>
             </div>
@@ -43,7 +43,7 @@ export default function Contact() {
           <div className="contact-intouch-ctn">
             <span>GET IN TOUCH</span>
             <div className="contact-phone-email">
-              <p>Telephone: (000) 000-0000</p>
+              <p>Telephone: (123) 456-7890</p>
               <p>Email: nsnails@nsnails.com</p>
             </div>
           </div>

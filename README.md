@@ -6,9 +6,3 @@ A website template for salon businesses. Includes a custom booking page and admi
 
 ## URL
 https://hxnails.ca
-
-## How to Install and Run
-1. Clone/download the repo
-2. Open project in code editor of choice
-3. In the terminal of the source folder, run ```npm install```, then ```npm start```
-4. Open browser to "localhost:3000"
